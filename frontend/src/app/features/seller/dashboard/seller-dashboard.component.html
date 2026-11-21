@@ -1,0 +1,123 @@
+<div class="dashboard-page">
+  <div class="page-header">
+    <div>
+      <h2><i class="fa-solid fa-chart-line"></i> Merchant Dashboard</h2>
+      <p class="page-subtitle">Real-time revenue, catalog health, and inventory status</p>
+    </div>
+    <div class="header-actions">
+      <a routerLink="/seller/products" class="btn btn-primary btn-sm">
+        <i class="fa-solid fa-plus"></i> Add Product
+      </a>
+      <a routerLink="/seller/inventory" class="btn btn-outline btn-sm">
+        <i class="fa-solid fa-warehouse"></i> Manage Stock
+      </a>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div class="empty-state" *ngIf="loading && !metrics">
+    <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+    <p>Calculating merchant metrics...</p>
+  </div>
+
+  <!-- Error Alert -->
+  <div class="alert alert-danger" *ngIf="errorMessage">
+    <i class="fa-solid fa-circle-exclamation"></i>
+    <span>{{ errorMessage }}</span>
+  </div>
+
+  <!-- Summary Metric Cards -->
+  <div class="metrics-grid" *ngIf="metrics">
+    <!-- Total Revenue Card -->
+    <div class="card metric-card">
+      <div class="metric-icon-wrap bg-blue">
+        <i class="fa-solid fa-indian-rupee-sign"></i>
+      </div>
+      <div class="metric-content">
+        <span class="metric-label">Total Revenue</span>
+        <h3 class="metric-value">{{ metrics.totalRevenueInr | inr }}</h3>
+        <span class="metric-hint">Settled & in-transit orders</span>
+      </div>
+    </div>
+
+    <!-- Total Orders Card -->
+    <div class="card metric-card">
+      <div class="metric-icon-wrap bg-purple">
+        <i class="fa-solid fa-truck-fast"></i>
+      </div>
+      <div class="metric-content">
+        <span class="metric-label">Total Orders</span>
+        <h3 class="metric-value">{{ metrics.totalOrdersCount }}</h3>
+        <span class="metric-hint">Customer checkouts</span>
+      </div>
+    </div>
+
+    <!-- Active Products Card -->
+    <div class="card metric-card">
+      <div class="metric-icon-wrap bg-green">
+        <i class="fa-solid fa-tags"></i>
+      </div>
+      <div class="metric-content">
+        <span class="metric-label">Active Products</span>
+        <h3 class="metric-value">{{ metrics.activeProductsCount }}</h3>
+        <span class="metric-hint">Visible in marketplace</span>
+      </div>
+    </div>
+
+    <!-- Low Stock Alert Card -->
+    <div class="card metric-card" [class.alert-card]="metrics.lowStockCount > 0">
+      <div class="metric-icon-wrap bg-amber">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <div class="metric-content">
+        <span class="metric-label">Low Stock SKUs</span>
+        <h3 class="metric-value" [class.danger-text]="metrics.lowStockCount > 0">{{ metrics.lowStockCount }}</h3>
+        <span class="metric-hint">Threshold breached</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Low Stock Alert Table -->
+  <div class="card section-card" *ngIf="lowStockItems.length > 0">
+    <div class="section-card-header alert-header">
+      <div class="header-left">
+        <i class="fa-solid fa-triangle-exclamation danger-icon"></i>
+        <h3>Low-Stock Urgent Replenishment Alerts</h3>
+      </div>
+      <a routerLink="/seller/inventory" class="btn btn-outline btn-sm">Restock in Inventory</a>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>SKU</th>
+            <th>Current Stock</th>
+            <th>Alert Threshold</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of lowStockItems">
+            <td><strong>{{ item.productName }}</strong></td>
+            <td><code>{{ item.sku }}</code></td>
+            <td>
+              <span class="stock-pill low-stock">{{ item.stockQuantity }} units</span>
+            </td>
+            <td>{{ item.lowStockThreshold }} units</td>
+            <td>
+              <span class="badge badge-danger">Needs Restocking</span>
+            </td>
+            <td>
+              <a routerLink="/seller/inventory" class="btn btn-primary btn-sm">
+                Restock
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

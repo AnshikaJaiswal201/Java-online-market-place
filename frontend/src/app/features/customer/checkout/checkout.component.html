@@ -1,0 +1,125 @@
+<div class="checkout-page">
+  <!-- Order Success Screen -->
+  <div class="card order-success-card" *ngIf="placedOrder">
+    <div class="success-icon">
+      <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <h2>Order Placed Successfully!</h2>
+    <p class="order-num-text">Order Reference: <strong>{{ placedOrder.orderNumber }}</strong></p>
+    <p class="order-sub-text">We've received your order and the seller will process your shipment shortly.</p>
+
+    <div class="order-meta-box">
+      <div class="meta-row">
+        <span>Total Amount Paid:</span>
+        <strong>{{ placedOrder.totalAmount | inr }}</strong>
+      </div>
+      <div class="meta-row">
+        <span>Payment Method:</span>
+        <span>{{ placedOrder.paymentMethod }} ({{ placedOrder.paymentStatus }})</span>
+      </div>
+      <div class="meta-row">
+        <span>Deliver to:</span>
+        <span>{{ placedOrder.shippingAddress }}</span>
+      </div>
+    </div>
+
+    <div class="success-actions">
+      <a routerLink="/orders" class="btn btn-primary">
+        <i class="fa-solid fa-box"></i> View My Orders
+      </a>
+      <a routerLink="/products" class="btn btn-outline">
+        <i class="fa-solid fa-store"></i> Continue Shopping
+      </a>
+    </div>
+  </div>
+
+  <!-- Checkout Form -->
+  <div *ngIf="!placedOrder">
+    <div class="page-header">
+      <h2><i class="fa-solid fa-shield-halved"></i> Secure Checkout</h2>
+    </div>
+
+    <!-- Error Alert -->
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <span>{{ errorMessage }}</span>
+    </div>
+
+    <div class="checkout-grid" *ngIf="cart">
+      <div class="checkout-form-column">
+        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+          <!-- Shipping Address -->
+          <div class="card form-card">
+            <h3><i class="fa-solid fa-location-dot"></i> 1. Delivery Address</h3>
+            <div class="form-group">
+              <label for="address">Full Delivery Address (House/Flat No, Street, City, State, PIN Code) *</label>
+              <textarea 
+                id="address" 
+                rows="3" 
+                formControlName="shippingAddress" 
+                class="form-control" 
+                placeholder="e.g. Flat 402, Nilgiri Heights, Vastrapur, Ahmedabad, Gujarat - 380015. Mob: +91 9988776655"
+              ></textarea>
+              <div class="form-error" *ngIf="checkoutForm.get('shippingAddress')?.touched && checkoutForm.get('shippingAddress')?.invalid">
+                Delivery address is required (minimum 10 characters).
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Method -->
+          <div class="card form-card">
+            <h3><i class="fa-solid fa-credit-card"></i> 2. Payment Method</h3>
+            <div class="payment-options">
+              <label 
+                *ngFor="let method of paymentMethods" 
+                class="payment-option"
+                [class.selected]="checkoutForm.get('paymentMethod')?.value === method.id">
+                <input type="radio" formControlName="paymentMethod" [value]="method.id" />
+                <i [class]="method.icon + ' method-icon'"></i>
+                <span class="method-name">{{ method.name }}</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-place-order" [disabled]="checkoutForm.invalid || submitting">
+            <i class="fa-solid fa-lock" *ngIf="!submitting"></i>
+            <i class="fa-solid fa-spinner fa-spin" *ngIf="submitting"></i>
+            {{ submitting ? 'Processing Order...' : 'Pay ' + (cart.totalAmount | inr) + ' & Place Order' }}
+          </button>
+        </form>
+      </div>
+
+      <!-- Order Review Sidebar -->
+      <div class="order-review-column">
+        <div class="card review-card">
+          <h3>Order Items ({{ cart.totalItemCount }})</h3>
+          <div class="review-items-list">
+            <div class="review-item" *ngFor="let item of cart.items">
+              <img [src]="item.imageUrl || 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=100'" class="review-img" />
+              <div class="review-details">
+                <span class="review-title">{{ item.productName }}</span>
+                <span class="review-qty">Qty: {{ item.quantity }} &times; {{ item.price | inr }}</span>
+              </div>
+              <span class="review-subtotal">{{ item.subtotal | inr }}</span>
+            </div>
+          </div>
+
+          <div class="summary-divider"></div>
+          <div class="summary-line">
+            <span>Subtotal:</span>
+            <span>{{ cart.totalAmount | inr }}</span>
+          </div>
+          <div class="summary-line">
+            <span>Shipping:</span>
+            <span class="badge badge-success">FREE</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-line total-line">
+            <span>Total Payable:</span>
+            <span class="total-price">{{ cart.totalAmount | inr }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

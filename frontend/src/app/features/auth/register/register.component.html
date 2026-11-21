@@ -1,0 +1,96 @@
+<div class="auth-wrapper">
+  <div class="card auth-card">
+    <div class="auth-header">
+      <i class="fa-solid fa-user-plus auth-icon"></i>
+      <h2>Create Your Account</h2>
+      <p class="auth-subtitle">Join ShopVerse as a Customer or Seller</p>
+    </div>
+
+    <!-- Error Alert -->
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <span>{{ errorMessage }}</span>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- Account Type / Role Selector -->
+      <div class="form-group">
+        <label>I want to register as:</label>
+        <div class="role-selector">
+          <label class="role-option" [class.selected]="registerForm.get('role')?.value === 'CUSTOMER'">
+            <input type="radio" formControlName="role" value="CUSTOMER" />
+            <i class="fa-solid fa-basket-shopping"></i>
+            <span>Customer</span>
+          </label>
+          <label class="role-option" [class.selected]="registerForm.get('role')?.value === 'SELLER'">
+            <input type="radio" formControlName="role" value="SELLER" />
+            <i class="fa-solid fa-store"></i>
+            <span>Merchant / Seller</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="fullName">Full Name / Business Name *</label>
+        <input id="fullName" type="text" formControlName="fullName" class="form-control" placeholder="e.g. Aarav Patel or Sharma Handlooms" />
+        <div class="form-error" *ngIf="registerForm.get('fullName')?.touched && registerForm.get('fullName')?.invalid">
+          Full Name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input id="email" type="email" formControlName="email" class="form-control" placeholder="name@example.com" />
+        <div class="form-error" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+          Please enter a valid email address.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password (min 6 characters) *</label>
+        <input id="password" type="password" formControlName="password" class="form-control" placeholder="••••••••" />
+        <div class="form-error" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+          Password must be at least 6 characters.
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="phoneNumber">Mobile Number</label>
+          <input id="phoneNumber" type="text" formControlName="phoneNumber" class="form-control" placeholder="+91 9876543210" />
+        </div>
+        <div class="form-group col">
+          <label for="pinCode">PIN Code</label>
+          <input id="pinCode" type="text" formControlName="pinCode" class="form-control" placeholder="380015" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="addressLine1">Address</label>
+        <input id="addressLine1" type="text" formControlName="addressLine1" class="form-control" placeholder="Street, locality or shop address" />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="city">City</label>
+          <input id="city" type="text" formControlName="city" class="form-control" placeholder="e.g. Bengaluru" />
+        </div>
+        <div class="form-group col">
+          <label for="state">State</label>
+          <input id="state" type="text" formControlName="state" class="form-control" placeholder="e.g. Karnataka" />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block" [disabled]="registerForm.invalid || loading">
+        <i class="fa-solid fa-check" *ngIf="!loading"></i>
+        <i class="fa-solid fa-spinner fa-spin" *ngIf="loading"></i>
+        {{ loading ? 'Creating Account...' : 'Complete Registration' }}
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      <span>Already have an account?</span>
+      <a routerLink="/auth/login">Sign In</a>
+    </div>
+  </div>
+</div>

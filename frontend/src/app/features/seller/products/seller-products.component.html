@@ -1,0 +1,158 @@
+<div class="seller-products-page">
+  <div class="page-header">
+    <div>
+      <h2><i class="fa-solid fa-tags"></i> Product Catalog Management</h2>
+      <p class="page-subtitle">Manage listings, edit pricing in INR, and toggle marketplace visibility</p>
+    </div>
+    <button class="btn btn-primary" (click)="openAddModal()">
+      <i class="fa-solid fa-plus"></i> Add New Product
+    </button>
+  </div>
+
+  <!-- Success Toast -->
+  <div class="alert alert-success toast-alert" *ngIf="successMessage">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>{{ successMessage }}</span>
+  </div>
+
+  <!-- Loading State -->
+  <div class="empty-state" *ngIf="loading">
+    <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+    <p>Loading your products...</p>
+  </div>
+
+  <!-- Products Table -->
+  <div class="card table-card" *ngIf="!loading && products.length > 0">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>SKU</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of products" [class.inactive-row]="p.isActive === 0">
+            <td>
+              <div class="product-cell">
+                <img [src]="p.imageUrl || 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=100'" class="thumb-img" />
+                <div>
+                  <strong>{{ p.name }}</strong>
+                </div>
+              </div>
+            </td>
+            <td>{{ p.categoryName }}</td>
+            <td><code>{{ p.sku }}</code></td>
+            <td><strong>{{ p.price | inr }}</strong></td>
+            <td>
+              <span class="stock-badge" [class.low-stock]="p.lowStock">
+                {{ p.stockQuantity }} units
+              </span>
+            </td>
+            <td>
+              <span class="badge" [ngClass]="p.isActive === 1 ? 'badge-success' : 'badge-neutral'">
+                {{ p.isActive === 1 ? 'Active' : 'Deactivated' }}
+              </span>
+            </td>
+            <td>
+              <div class="action-buttons">
+                <button class="btn btn-outline btn-sm" (click)="openEditModal(p)" title="Edit Product">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+                <button 
+                  class="btn btn-sm" 
+                  [ngClass]="p.isActive === 1 ? 'btn-danger' : 'btn-primary'" 
+                  (click)="toggleStatus(p)" 
+                  [title]="p.isActive === 1 ? 'Soft Delete / Deactivate' : 'Reactivate Product'">
+                  <i [class]="p.isActive === 1 ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Empty State -->
+  <div class="empty-state card" *ngIf="!loading && products.length === 0">
+    <i class="fa-solid fa-box-open empty-icon"></i>
+    <h3>No products in your catalog</h3>
+    <p>Click "Add New Product" to list your first item on ShopVerse.</p>
+  </div>
+
+  <!-- Add/Edit Product Modal Dialog -->
+  <div class="modal-backdrop" *ngIf="showModal">
+    <div class="card modal-card">
+      <div class="modal-header">
+        <h3>{{ isEditing ? 'Edit Product' : 'Add New Marketplace Product' }}</h3>
+        <button class="btn-close" (click)="closeModal()">&times;</button>
+      </div>
+
+      <div class="alert alert-danger" *ngIf="errorMessage">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span>{{ errorMessage }}</span>
+      </div>
+
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="pName">Product Name *</label>
+            <input id="pName" type="text" formControlName="name" class="form-control" placeholder="e.g. boAt Rockerz 550 Wireless Bluetooth Headphones" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="pCat">Category *</label>
+              <select id="pCat" formControlName="categoryId" class="form-control">
+                <option value="">Select Category</option>
+                <option *ngFor="let cat of categories" [value]="cat.categoryId">{{ cat.categoryName }}</option>
+              </select>
+            </div>
+            <div class="form-group col">
+              <label for="pSku">SKU (Stock Keeping Unit) *</label>
+              <input id="pSku" type="text" formControlName="sku" class="form-control" placeholder="BOAT-ROC-550" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="pPrice">Price in INR (₹) *</label>
+              <input id="pPrice" type="number" step="0.01" formControlName="price" class="form-control" placeholder="1999.00" />
+            </div>
+            <div class="form-group col" *ngIf="!isEditing">
+              <label for="pStock">Initial Stock Quantity *</label>
+              <input id="pStock" type="number" formControlName="initialStock" class="form-control" placeholder="25" />
+            </div>
+            <div class="form-group col">
+              <label for="pThreshold">Low-Stock Alert Threshold *</label>
+              <input id="pThreshold" type="number" formControlName="lowStockThreshold" class="form-control" placeholder="5" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="pImg">Product Image URL</label>
+            <input id="pImg" type="text" formControlName="imageUrl" class="form-control" placeholder="https://example.com/image.jpg" />
+          </div>
+
+          <div class="form-group">
+            <label for="pDesc">Product Description</label>
+            <textarea id="pDesc" rows="3" formControlName="description" class="form-control" placeholder="Provide product specifications and key highlights..."></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" (click)="closeModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">
+            <i class="fa-solid fa-save"></i> {{ isEditing ? 'Save Changes' : 'Create Product' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="orders-page">
+  <div class="page-header">
+    <h2><i class="fa-solid fa-box"></i> My Orders</h2>
+    <p class="page-subtitle">Track your placed shipments and past orders</p>
+  </div>
+
+  <!-- Loading State -->
+  <div class="empty-state" *ngIf="loading">
+    <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+    <p>Loading your orders...</p>
+  </div>
+
+  <!-- Error Alert -->
+  <div class="alert alert-danger" *ngIf="errorMessage">
+    <i class="fa-solid fa-circle-exclamation"></i>
+    <span>{{ errorMessage }}</span>
+  </div>
+
+  <!-- Orders List -->
+  <div class="orders-list" *ngIf="!loading && orders.length > 0">
+    <div class="card order-card" *ngFor="let order of orders">
+      <!-- Order Header Bar -->
+      <div class="order-card-header">
+        <div class="header-left">
+          <span class="order-num">{{ order.orderNumber }}</span>
+          <span class="order-date">{{ order.createdAt | date:'mediumDate' }}</span>
+        </div>
+        <div class="header-right">
+          <span class="badge" [ngClass]="getStatusBadgeClass(order.orderStatus)">
+            {{ order.orderStatus }}
+          </span>
+          <span class="order-total">{{ order.totalAmount | inr }}</span>
+        </div>
+      </div>
+
+      <!-- Order Details Body -->
+      <div class="order-card-body">
+        <div class="order-items-sublist">
+          <div class="order-item-row" *ngFor="let item of order.items">
+            <img [src]="item.imageUrl || 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=100'" class="item-thumb" />
+            <div class="item-info">
+              <span class="item-name">{{ item.productName }}</span>
+              <span class="item-meta">Seller: {{ item.sellerName }} &bull; SKU: {{ item.sku }}</span>
+              <span class="item-pricing">Qty: {{ item.quantity }} &times; {{ item.unitPrice | inr }}</span>
+            </div>
+            <div class="item-subtotal">
+              {{ item.subtotal | inr }}
+            </div>
+          </div>
+        </div>
+
+        <div class="order-shipping-footer">
+          <span class="shipping-lbl"><i class="fa-solid fa-location-dot"></i> Shipped to:</span>
+          <span class="shipping-val">{{ order.shippingAddress }}</span>
+          <span class="payment-method-lbl"><i class="fa-regular fa-credit-card"></i> {{ order.paymentMethod }} ({{ order.paymentStatus }})</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty Orders State -->
+  <div class="empty-state card" *ngIf="!loading && orders.length === 0">
+    <i class="fa-solid fa-box-open empty-icon"></i>
+    <h3>No orders placed yet</h3>
+    <p>Discover our curated marketplace products and place your first order.</p>
+    <a routerLink="/products" class="btn btn-primary">
+      <i class="fa-solid fa-store"></i> Browse Catalog
+    </a>
+  </div>
+</div>

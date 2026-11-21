@@ -1,0 +1,105 @@
+<div class="cart-page">
+  <div class="page-header">
+    <h2><i class="fa-solid fa-cart-shopping"></i> Shopping Cart</h2>
+    <button class="btn btn-outline btn-sm" *ngIf="cart && cart.items.length > 0" (click)="clearCart()">
+      <i class="fa-solid fa-trash-can"></i> Clear Cart
+    </button>
+  </div>
+
+  <!-- Loading State -->
+  <div class="empty-state" *ngIf="loading">
+    <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+    <p>Loading your shopping cart...</p>
+  </div>
+
+  <!-- Error Alert -->
+  <div class="alert alert-danger" *ngIf="errorMessage">
+    <i class="fa-solid fa-circle-exclamation"></i>
+    <span>{{ errorMessage }}</span>
+  </div>
+
+  <!-- Cart with Items -->
+  <div class="cart-layout" *ngIf="!loading && cart && cart.items.length > 0">
+    <!-- Item List Table -->
+    <div class="card cart-items-card">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Unit Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cart.items">
+              <td>
+                <div class="item-product-info">
+                  <img [src]="item.imageUrl || 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=200'" class="item-img" />
+                  <div>
+                    <h4 class="item-title">{{ item.productName }}</h4>
+                    <span class="item-sku">SKU: {{ item.sku }}</span>
+                  </div>
+                </div>
+              </td>
+              <td>{{ item.price | inr }}</td>
+              <td>
+                <div class="qty-control">
+                  <button class="qty-btn" (click)="decreaseQuantity(item)">-</button>
+                  <span class="qty-value">{{ item.quantity }}</span>
+                  <button class="qty-btn" (click)="increaseQuantity(item)" [disabled]="item.quantity >= item.availableStock">+</button>
+                </div>
+                <small class="stock-hint" *ngIf="item.quantity >= item.availableStock">Max stock reached</small>
+              </td>
+              <td class="item-subtotal">{{ item.subtotal | inr }}</td>
+              <td>
+                <button class="btn-remove" (click)="removeItem(item)" title="Remove item">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Order Summary Sidebar -->
+    <div class="card summary-card">
+      <h3>Order Summary</h3>
+      <div class="summary-line">
+        <span>Total Items:</span>
+        <span>{{ cart.totalItemCount }}</span>
+      </div>
+      <div class="summary-line">
+        <span>Delivery / Shipping:</span>
+        <span class="badge badge-success">Free Delivery</span>
+      </div>
+      <div class="summary-divider"></div>
+      <div class="summary-line total-line">
+        <span>Grand Total:</span>
+        <span class="total-price">{{ cart.totalAmount | inr }}</span>
+      </div>
+
+      <button class="btn btn-primary btn-block btn-checkout" (click)="proceedToCheckout()">
+        <i class="fa-solid fa-shield-halved"></i> Proceed to Checkout
+      </button>
+
+      <div class="trust-badges">
+        <span><i class="fa-solid fa-lock"></i> 100% Secure Checkout</span>
+        <span><i class="fa-solid fa-rotate-left"></i> 7-Day Replacement</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty Cart State -->
+  <div class="empty-state card" *ngIf="!loading && (!cart || cart.items.length === 0)">
+    <i class="fa-solid fa-cart-arrow-down empty-icon"></i>
+    <h3>Your shopping cart is empty</h3>
+    <p>Looks like you haven't added anything to your cart yet.</p>
+    <a routerLink="/products" class="btn btn-primary">
+      <i class="fa-solid fa-store"></i> Start Shopping
+    </a>
+  </div>
+</div>

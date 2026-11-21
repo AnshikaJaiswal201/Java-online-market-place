@@ -1,0 +1,65 @@
+<header class="navbar">
+  <div class="navbar-container">
+    <!-- Brand Logo -->
+    <a routerLink="/" class="navbar-brand">
+      <i class="fa-solid fa-bag-shopping brand-icon"></i>
+      <span class="brand-name">ShopVerse</span>
+    </a>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links">
+      <a routerLink="/products" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-layer-group"></i> Catalog
+      </a>
+
+      <!-- Customer Links -->
+      <ng-container *ngIf="authService.isCustomer()">
+        <a routerLink="/cart" routerLinkActive="active" class="nav-link cart-link">
+          <i class="fa-solid fa-cart-shopping"></i> Cart
+          <span class="cart-badge" *ngIf="(cartCount$ | async) as count">{{ count }}</span>
+        </a>
+        <a routerLink="/orders" routerLinkActive="active" class="nav-link">
+          <i class="fa-solid fa-box"></i> My Orders
+        </a>
+      </ng-container>
+
+      <!-- Seller Links -->
+      <ng-container *ngIf="authService.isSeller()">
+        <a routerLink="/seller/dashboard" routerLinkActive="active" class="nav-link">
+          <i class="fa-solid fa-chart-line"></i> Dashboard
+        </a>
+        <a routerLink="/seller/products" routerLinkActive="active" class="nav-link">
+          <i class="fa-solid fa-tags"></i> My Products
+        </a>
+        <a routerLink="/seller/inventory" routerLinkActive="active" class="nav-link">
+          <i class="fa-solid fa-warehouse"></i> Inventory
+        </a>
+        <a routerLink="/seller/orders" routerLinkActive="active" class="nav-link">
+          <i class="fa-solid fa-truck-fast"></i> Orders
+        </a>
+      </ng-container>
+    </nav>
+
+    <!-- User Auth & Action Buttons -->
+    <div class="navbar-actions">
+      <ng-container *ngIf="(currentUser$ | async) as user; else guestTpl">
+        <div class="user-info">
+          <span class="user-name">{{ user.fullName }}</span>
+          <span class="badge" [ngClass]="authService.isSeller() ? 'badge-info' : 'badge-neutral'">
+            {{ authService.isSeller() ? 'Seller' : 'Customer' }}
+          </span>
+        </div>
+        <button (click)="logout()" class="btn btn-outline btn-sm">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+        </button>
+      </ng-container>
+
+      <ng-template #guestTpl>
+        <div class="guest-actions">
+          <a routerLink="/auth/login" class="btn btn-outline btn-sm">Login</a>
+          <a routerLink="/auth/register" class="btn btn-primary btn-sm">Register</a>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</header>

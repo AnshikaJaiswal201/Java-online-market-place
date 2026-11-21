@@ -1,0 +1,86 @@
+<div class="seller-orders-page">
+  <div class="page-header">
+    <div>
+      <h2><i class="fa-solid fa-truck-fast"></i> Order Processing & Fulfillment</h2>
+      <p class="page-subtitle">Track incoming customer orders, manage shipments, and update order statuses</p>
+    </div>
+  </div>
+
+  <!-- Success Toast -->
+  <div class="alert alert-success toast-alert" *ngIf="successMessage">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>{{ successMessage }}</span>
+  </div>
+
+  <!-- Loading State -->
+  <div class="empty-state" *ngIf="loading">
+    <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+    <p>Loading incoming orders...</p>
+  </div>
+
+  <!-- Orders Table -->
+  <div class="card table-card" *ngIf="!loading && orders.length > 0">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Order Ref</th>
+            <th>Customer</th>
+            <th>Purchased Items</th>
+            <th>Total Amount</th>
+            <th>Shipping Destination</th>
+            <th>Order Status</th>
+            <th>Status Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td>
+              <strong>{{ order.orderNumber }}</strong>
+              <br>
+              <small class="text-muted">{{ order.createdAt | date:'short' }}</small>
+            </td>
+            <td>
+              <span class="customer-name">{{ order.customerName }}</span>
+              <br>
+              <small class="text-muted">{{ order.customerEmail }}</small>
+            </td>
+            <td>
+              <div class="order-items-snippet">
+                <div class="snippet-item" *ngFor="let itm of order.items">
+                  &bull; {{ itm.productName }} &times; <strong>{{ itm.quantity }}</strong>
+                </div>
+              </div>
+            </td>
+            <td><strong>{{ order.totalAmount | inr }}</strong></td>
+            <td>
+              <span class="shipping-snippet" [title]="order.shippingAddress">
+                {{ order.shippingAddress }}
+              </span>
+            </td>
+            <td>
+              <span class="badge" [ngClass]="getStatusBadgeClass(order.orderStatus)">
+                {{ order.orderStatus }}
+              </span>
+            </td>
+            <td>
+              <select 
+                class="form-control status-select" 
+                [ngModel]="order.orderStatus" 
+                (ngModelChange)="onStatusChange(order, $event)">
+                <option *ngFor="let opt of statusOptions" [value]="opt">{{ opt }}</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Empty State -->
+  <div class="empty-state card" *ngIf="!loading && orders.length === 0">
+    <i class="fa-solid fa-truck-ramp-box empty-icon"></i>
+    <h3>No incoming orders yet</h3>
+    <p>Incoming customer orders containing your products will appear here for fulfillment.</p>
+  </div>
+</div>

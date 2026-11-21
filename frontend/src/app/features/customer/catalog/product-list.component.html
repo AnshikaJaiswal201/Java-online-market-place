@@ -1,0 +1,102 @@
+<div class="catalog-page">
+  <!-- Hero / Banner -->
+  <div class="hero-banner">
+    <h1>Explore Authentic Products & Crafts</h1>
+    <p>Directly sourced from trusted verified sellers across India with real-time stock assurance</p>
+    
+    <!-- Search Bar -->
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input 
+        type="text" 
+        [(ngModel)]="searchKeyword" 
+        (keyup.enter)="onSearch()" 
+        placeholder="Search boAt headphones, Banarasi silk sarees, spices..." 
+        class="search-input"
+      />
+      <button class="btn btn-primary" (click)="onSearch()">Search</button>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="alert alert-success toast-alert" *ngIf="successMessage">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>{{ successMessage }}</span>
+  </div>
+
+  <!-- Category Filter Pills -->
+  <div class="category-filters">
+    <button 
+      class="filter-pill" 
+      [class.active]="selectedCategoryId === undefined" 
+      (click)="selectCategory(undefined)">
+      All Products
+    </button>
+    <button 
+      *ngFor="let cat of categories" 
+      class="filter-pill" 
+      [class.active]="selectedCategoryId === cat.categoryId" 
+      (click)="selectCategory(cat.categoryId)">
+      {{ cat.categoryName }}
+    </button>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="product-grid" *ngIf="!loading && products.length > 0">
+    <div class="card product-card" *ngFor="let product of products">
+      <div class="product-image-wrap">
+        <img [src]="product.imageUrl || 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600'" [alt]="product.name" class="product-image" />
+        <span class="category-badge">{{ product.categoryName }}</span>
+      </div>
+
+      <div class="product-content">
+        <div class="sku-seller-row">
+          <span class="sku-tag">SKU: {{ product.sku }}</span>
+          <span class="seller-tag"><i class="fa-solid fa-shop"></i> {{ product.sellerName }}</span>
+        </div>
+
+        <h3 class="product-title" [title]="product.name">{{ product.name }}</h3>
+        <p class="product-desc">{{ product.description }}</p>
+
+        <div class="price-stock-row">
+          <div class="product-price">{{ product.price | inr }}</div>
+
+          <!-- Real-Time Stock Status -->
+          <div class="stock-status">
+            <span *ngIf="product.stockQuantity === 0" class="badge badge-danger">Out of Stock</span>
+            <span *ngIf="product.stockQuantity > 0 && product.lowStock" class="badge badge-warning">
+              Only {{ product.stockQuantity }} left!
+            </span>
+            <span *ngIf="product.stockQuantity > 0 && !product.lowStock" class="badge badge-success">
+              In Stock ({{ product.stockQuantity }})
+            </span>
+          </div>
+        </div>
+
+        <button 
+          class="btn btn-primary btn-add-cart" 
+          [disabled]="product.stockQuantity === 0" 
+          (click)="addToCart(product)">
+          <i class="fa-solid fa-cart-plus"></i>
+          {{ product.stockQuantity === 0 ? 'Out of Stock' : 'Add to Cart' }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div class="empty-state" *ngIf="loading">
+    <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+    <p>Loading catalog items...</p>
+  </div>
+
+  <!-- Empty State -->
+  <div class="empty-state card" *ngIf="!loading && products.length === 0">
+    <i class="fa-solid fa-box-open empty-icon"></i>
+    <h3>No active products found</h3>
+    <p>Try clearing your search query or selecting a different category.</p>
+    <button class="btn btn-outline" (click)="selectedCategoryId = undefined; searchKeyword = ''; loadProducts()">
+      Reset All Filters
+    </button>
+  </div>
+</div>

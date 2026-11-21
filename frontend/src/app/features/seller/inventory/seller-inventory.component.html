@@ -1,0 +1,116 @@
+<div class="inventory-page">
+  <div class="page-header">
+    <div>
+      <h2><i class="fa-solid fa-warehouse"></i> Real-Time Inventory Control</h2>
+      <p class="page-subtitle">Track available stock quantities per SKU and configure automated low-stock alert thresholds</p>
+    </div>
+  </div>
+
+  <!-- Success Toast -->
+  <div class="alert alert-success toast-alert" *ngIf="successMessage">
+    <i class="fa-solid fa-circle-check"></i>
+    <span>{{ successMessage }}</span>
+  </div>
+
+  <!-- Loading State -->
+  <div class="empty-state" *ngIf="loading">
+    <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+    <p>Loading inventory...</p>
+  </div>
+
+  <!-- Inventory Table -->
+  <div class="card table-card" *ngIf="!loading && inventory.length > 0">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>SKU</th>
+            <th>Price</th>
+            <th>Current Stock</th>
+            <th>Alert Threshold</th>
+            <th>Health Status</th>
+            <th>Last Restocked</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of inventory" [class.low-stock-row]="item.lowStock">
+            <td><strong>{{ item.productName }}</strong></td>
+            <td><code>{{ item.sku }}</code></td>
+            <td>{{ item.price | inr }}</td>
+            <td>
+              <span class="stock-count" [class.danger]="item.lowStock">
+                {{ item.stockQuantity }} units
+              </span>
+            </td>
+            <td>{{ item.lowStockThreshold }} units</td>
+            <td>
+              <span class="badge" [ngClass]="item.lowStock ? 'badge-danger' : 'badge-success'">
+                <i [class]="item.lowStock ? 'fa-solid fa-triangle-exclamation' : 'fa-solid fa-circle-check'"></i>
+                {{ item.lowStock ? 'Low Stock Alert' : 'Healthy Stock' }}
+              </span>
+            </td>
+            <td>
+              <small class="text-muted">{{ item.lastRestockedAt | date:'mediumDate' }}</small>
+            </td>
+            <td>
+              <button class="btn btn-outline btn-sm" (click)="openRestockModal(item)">
+                <i class="fa-solid fa-boxes-stacked"></i> Update Stock
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Empty Inventory -->
+  <div class="empty-state card" *ngIf="!loading && inventory.length === 0">
+    <i class="fa-solid fa-warehouse empty-icon"></i>
+    <h3>No inventory records found</h3>
+    <p>Inventory records are automatically created when you add products to your catalog.</p>
+    <a routerLink="/seller/products" class="btn btn-primary">
+      <i class="fa-solid fa-plus"></i> Add Product
+    </a>
+  </div>
+
+  <!-- Restock Modal -->
+  <div class="modal-backdrop" *ngIf="showModal && selectedItem">
+    <div class="card modal-card">
+      <div class="modal-header">
+        <h3>Update Stock &mdash; {{ selectedItem.productName }}</h3>
+        <button class="btn-close" (click)="closeModal()">&times;</button>
+      </div>
+
+      <form [formGroup]="stockForm" (ngSubmit)="onSubmit()">
+        <div class="modal-body">
+          <p class="sku-hint">SKU: <code>{{ selectedItem.sku }}</code></p>
+
+          <div class="form-group">
+            <label for="stockQty">Current Stock Quantity (Units in Warehouse) *</label>
+            <input id="stockQty" type="number" formControlName="stockQuantity" class="form-control" />
+            <div class="form-error" *ngIf="stockForm.get('stockQuantity')?.invalid">
+              Quantity must be zero or a positive integer.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="threshold">Low-Stock Alert Threshold *</label>
+            <input id="threshold" type="number" formControlName="lowStockThreshold" class="form-control" />
+            <div class="form-error" *ngIf="stockForm.get('lowStockThreshold')?.invalid">
+              Threshold must be at least 1 unit.
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" (click)="closeModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary" [disabled]="stockForm.invalid">
+            <i class="fa-solid fa-floppy-disk"></i> Save Stock
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
