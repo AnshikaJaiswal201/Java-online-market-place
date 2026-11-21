@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+  }
+  .navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #4f46e5;
+    text-decoration: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+  }
+  .nav-links a { color: #64748b; text-decoration: none; }
+  .nav-links a.active { color: #4f46e5; }
+  .btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: #4f46e5; color: white; }
+  .btn-outline { background: white; border: 1px solid #cbd5e1; color: #334155; }
+  .badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .badge-success { background: #dcfce7; color: #15803d; }
+  .badge-warning { background: #fef3c7; color: #b45309; }
+  .badge-info { background: #e0e7ff; color: #4338ca; }
+  .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+  .card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+  }
+</style></head>
+<body style="min-height: 900px;">
+  <div class="navbar">
+    <div class="brand"><div class="brand-icon">🛍️</div> ShopVerse</div>
+    <div class="nav-links">
+      <a href="#" class="active">Catalog</a>
+      <a href="#">Cart <span class="badge badge-info">2</span></a>
+      <a href="#">Orders</a>
+      <span style="font-size: 12px; color: #059669; font-weight: 700; padding: 4px 10px; background: #ecfdf5; border-radius: 20px;">Aarav Patel (Customer)</span>
+    </div>
+  </div>
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+      <div>
+        <h1 style="font-size: 26px; font-weight: 800; color: #0f172a;">Explore Marketplace</h1>
+        <p style="font-size: 13px; color: #64748b; margin-top: 4px;">Showing 24 handpicked Indian-context products across 4 categories</p>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <input type="text" placeholder="Search headphones, spices, sarees..." style="padding: 10px 16px; border: 1px solid #cbd5e1; border-radius: 8px; width: 320px; font-size: 13px;" />
+        <button class="btn btn-primary">Search</button>
+      </div>
+    </div>
+
+    <!-- Category Pills -->
+    <div style="display: flex; gap: 8px; margin-bottom: 24px;">
+      <span class="btn btn-primary" style="font-size: 12px; padding: 6px 14px;">All Products (24)</span>
+      <span class="btn btn-outline" style="font-size: 12px; padding: 6px 14px;">🎧 Electronics (6)</span>
+      <span class="btn btn-outline" style="font-size: 12px; padding: 6px 14px;">🥻 Traditional Wear (6)</span>
+      <span class="btn btn-outline" style="font-size: 12px; padding: 6px 14px;">🌶️ Spices & Herbs (6)</span>
+      <span class="btn btn-outline" style="font-size: 12px; padding: 6px 14px;">🏺 Handicrafts (6)</span>
+    </div>
+
+    <!-- Products Grid -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <div class="card" style="padding: 16px;">
+        <div style="height: 140px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 40px; margin-bottom: 12px;">🎧</div>
+        <span class="badge badge-info" style="margin-bottom: 6px; display: inline-block;">Electronics</span>
+        <h3 style="font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Boat Rockerz 450 Pro</h3>
+        <p style="font-size: 12px; color: #64748b; margin-bottom: 12px;">40mm dynamic drivers, 15hr playback</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+          <span style="font-size: 18px; font-weight: 800; color: #0f172a;">₹1,499</span>
+          <button class="btn btn-primary" style="padding: 7px 12px; font-size: 11px;">+ Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 16px;">
+        <div style="height: 140px; background: #fdf2f8; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 40px; margin-bottom: 12px;">🥻</div>
+        <span class="badge badge-info" style="margin-bottom: 6px; display: inline-block;">Traditional Wear</span>
+        <h3 style="font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Banarasi Silk Zari Saree</h3>
+        <p style="font-size: 12px; color: #64748b; margin-bottom: 12px;">Pure Katan silk with gold zari work</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+          <span style="font-size: 18px; font-weight: 800; color: #0f172a;">₹3,499</span>
+          <button class="btn btn-primary" style="padding: 7px 12px; font-size: 11px;">+ Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 16px;">
+        <div style="height: 140px; background: #fffbeb; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 40px; margin-bottom: 12px;">🌶️</div>
+        <span class="badge badge-info" style="margin-bottom: 6px; display: inline-block;">Spices</span>
+        <h3 style="font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Kashmiri Mongra Kesar 1g</h3>
+        <p style="font-size: 12px; color: #64748b; margin-bottom: 12px;">Grade-A pure organic saffron</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+          <span style="font-size: 18px; font-weight: 800; color: #0f172a;">₹650</span>
+          <button class="btn btn-primary" style="padding: 7px 12px; font-size: 11px;">+ Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 16px;">
+        <div style="height: 140px; background: #ecfdf5; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 40px; margin-bottom: 12px;">🏺</div>
+        <span class="badge badge-info" style="margin-bottom: 6px; display: inline-block;">Handicrafts</span>
+        <h3 style="font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Handcrafted Brass Diya Set</h3>
+        <p style="font-size: 12px; color: #64748b; margin-bottom: 12px;">Hand-engraved traditional peacock diyas</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+          <span style="font-size: 18px; font-weight: 800; color: #0f172a;">₹899</span>
+          <button class="btn btn-primary" style="padding: 7px 12px; font-size: 11px;">+ Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+  }
+  .navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #4f46e5;
+    text-decoration: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+  }
+  .nav-links a { color: #64748b; text-decoration: none; }
+  .nav-links a.active { color: #4f46e5; }
+  .btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: #4f46e5; color: white; }
+  .btn-outline { background: white; border: 1px solid #cbd5e1; color: #334155; }
+  .badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .badge-success { background: #dcfce7; color: #15803d; }
+  .badge-warning { background: #fef3c7; color: #b45309; }
+  .badge-info { background: #e0e7ff; color: #4338ca; }
+  .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+  .card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+  }
+</style></head>
+<body style="min-height: 800px;">
+  <div class="navbar">
+    <div class="brand"><div class="brand-icon">🏪</div> ShopVerse Seller Central</div>
+    <div class="nav-links">
+      <a href="#" class="active">Dashboard</a>
+      <a href="#">My Products</a>
+      <a href="#">Inventory</a>
+      <a href="#">Orders</a>
+      <span class="badge badge-info">Rajesh Sharma (Seller)</span>
+    </div>
+  </div>
+  <div class="container">
+    <div style="margin-bottom: 24px;">
+      <h1 style="font-size: 24px; font-weight: 800; color: #0f172a;">Merchant Analytics Dashboard</h1>
+      <p style="font-size: 13px; color: #64748b; margin-top: 4px;">Real-time performance metrics and live inventory threshold tracking</p>
+    </div>
+
+    <!-- 4 Summary Cards -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 28px;">
+      <div class="card" style="padding: 20px; border-left: 4px solid #4f46e5;">
+        <span style="font-size: 12px; font-weight: 700; color: #64748b;">TOTAL REVENUE</span>
+        <h2 style="font-size: 28px; font-weight: 800; color: #0f172a; margin: 8px 0 4px;">₹1,45,800</h2>
+        <small style="color: #16a34a; font-weight: 700;">↑ 18.2% from last month</small>
+      </div>
+      <div class="card" style="padding: 20px; border-left: 4px solid #0284c7;">
+        <span style="font-size: 12px; font-weight: 700; color: #64748b;">TOTAL ORDERS</span>
+        <h2 style="font-size: 28px; font-weight: 800; color: #0f172a; margin: 8px 0 4px;">38</h2>
+        <small style="color: #64748b;">Fulfilled orders</small>
+      </div>
+      <div class="card" style="padding: 20px; border-left: 4px solid #10b981;">
+        <span style="font-size: 12px; font-weight: 700; color: #64748b;">ACTIVE PRODUCTS</span>
+        <h2 style="font-size: 28px; font-weight: 800; color: #0f172a; margin: 8px 0 4px;">24</h2>
+        <small style="color: #64748b;">Live catalog listings</small>
+      </div>
+      <div class="card" style="padding: 20px; border-left: 4px solid #f59e0b;">
+        <span style="font-size: 12px; font-weight: 700; color: #64748b;">LOW STOCK WARNINGS</span>
+        <h2 style="font-size: 28px; font-weight: 800; color: #d97706; margin: 8px 0 4px;">2</h2>
+        <small style="color: #b45309; font-weight: 700;">Needs immediate restock</small>
+      </div>
+    </div>
+
+    <!-- Recent Orders Table -->
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <div style="padding: 18px 24px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="font-size: 16px; font-weight: 800; color: #0f172a;">Recent Incoming Orders</h3>
+        <span style="font-size: 12px; color: #4f46e5; font-weight: 700;">View All Orders →</span>
+      </div>
+      <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <thead>
+          <tr style="background: #f8fafc; font-size: 11px; text-transform: uppercase; color: #64748b; letter-spacing: 0.5px;">
+            <th style="padding: 12px 24px;">Order Number</th>
+            <th style="padding: 12px;">Customer</th>
+            <th style="padding: 12px;">Items Ordered</th>
+            <th style="padding: 12px;">Total (₹)</th>
+            <th style="padding: 12px;">Payment</th>
+            <th style="padding: 12px 24px;">Status</th>
+          </tr>
+        </thead>
+        <tbody style="font-size: 13px;">
+          <tr style="border-bottom: 1px solid #f1f5f9;">
+            <td style="padding: 14px 24px; font-family: monospace; font-weight: 700; color: #4f46e5;">ORD-20261121-7842</td>
+            <td style="padding: 14px;">Aarav Patel</td>
+            <td style="padding: 14px;">Boat Rockerz 450, Banarasi Silk Saree</td>
+            <td style="padding: 14px; font-weight: 700;">₹4,998.00</td>
+            <td style="padding: 14px;"><span class="badge badge-success">UPI · PAID</span></td>
+            <td style="padding: 14px 24px;"><span class="badge badge-info">PLACED</span></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f1f5f9;">
+            <td style="padding: 14px 24px; font-family: monospace; font-weight: 700; color: #4f46e5;">ORD-20261120-4109</td>
+            <td style="padding: 14px;">Priya Nair</td>
+            <td style="padding: 14px;">Kashmiri Kesar 1g (x2)</td>
+            <td style="padding: 14px; font-weight: 700;">₹1,300.00</td>
+            <td style="padding: 14px;"><span class="badge badge-success">CARD · PAID</span></td>
+            <td style="padding: 14px 24px;"><span class="badge badge-success">SHIPPED</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

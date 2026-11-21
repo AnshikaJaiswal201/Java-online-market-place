@@ -284,19 +284,17 @@ The application runs locally with the Angular frontend on `http://localhost:4200
 ### 4.1 Login Screen & Role Demarcation
 The login screen (`/auth/login`) features a clean, responsive authentication card. Users can enter their credentials or utilize pre-configured demo buttons (**Seller Demo** and **Customer Demo**). Entering invalid credentials displays an alert banner, whereas valid credentials generate a JWT token and redirect to the appropriate portal.
 
-```text
-[Output Description: Sign In to ShopVerse]
-Header: Lock icon, "Sign In to ShopVerse"
-Fields: Email Address, Password
-Buttons: [Sign In], [Seller Demo], [Customer Demo]
-Footer: "Don't have an account? Create Account"
-```
+![Figure 4.1 — ShopVerse Sign In & Role Selection Screen](screenshots/01_login_screen.png)
+*Figure 4.1 — ShopVerse Sign In & Role Selection Screen*
 
 ---
 
 ### 4.2 Customer Registration & Real-Time Database Save
 The registration portal (`/auth/register`) includes a role selector toggle (**Customer** vs. **Merchant / Seller**). Upon clicking **Complete Registration**, the user is saved into `shopverse_db.users` with a BCrypt encrypted password hash (`$2a$10$...`), and redirected to the login screen with a green notification banner:
 > **`✅ Account Registered & Saved in Database! Enter your password below to sign in.`**
+
+![Figure 4.2 — ShopVerse Account Registration Form](screenshots/02_register_screen.png)
+*Figure 4.2 — ShopVerse Account Registration Form with Role Selector*
 
 ---
 
@@ -309,24 +307,36 @@ The product catalog displays 24 curated Indian-context products divided into 4 c
 
 Each card features high-quality product images, rupee pricing (`₹`), stock availability indicator, and an **Add to Cart** button.
 
+![Figure 4.3 — Product Catalog with Multi-Category Filtering and Search](screenshots/03_product_catalog.png)
+*Figure 4.3 — Product Catalog with Multi-Category Filtering and Search*
+
 ---
 
 ### 4.4 Shopping Cart & Real-Time Calculations
 The shopping cart screen (`/cart`) displays all selected line items, unit price, quantity increment/decrement controls, item subtotal, and total checkout summary. If quantity is incremented beyond available inventory, the system alerts the user and prevents excess selection.
 
----
-
-### 4.5 Checkout & Instant Order Receipt
-The checkout view (`/checkout`) collects shipping details and payment selection (e.g. Mock UPI / COD). Submitting checkout initiates the `@Transactional` Spring Boot service, deducting inventory from MySQL, creating an order number (e.g., `ORD-20261121-7842`), and providing an order confirmation receipt.
+![Figure 4.4 — Shopping Cart View with Line Items and Order Summary](screenshots/04_shopping_cart.png)
+*Figure 4.4 — Shopping Cart View with Line Items and Order Summary*
 
 ---
 
-### 4.6 Seller Analytics Dashboard
+### 4.5 Seller Analytics Dashboard
 The seller workspace (`/seller/dashboard`) displays 4 live operational metrics:
 - **Total Revenue (₹):** Computed dynamically from all fulfilled and placed orders.
 - **Total Orders:** Count of buyer orders involving the seller's catalog.
 - **Active Products:** Number of live listings owned by the merchant.
 - **Low-Stock Alerts:** Real-time count of products whose stock has dipped below threshold.
+
+![Figure 4.5 — Seller Central Analytics Dashboard and Metrics](screenshots/05_seller_dashboard.png)
+*Figure 4.5 — Seller Central Analytics Dashboard and Metrics*
+
+---
+
+### 4.6 Seller Inventory Tracking & Low-Stock Alerts
+The inventory management screen provides merchants with granular oversight of their SKU stock levels, minimum reorder thresholds, and active status indicators. Items falling below the safety threshold are highlighted with alert badges prompting immediate restock.
+
+![Figure 4.6 — Seller Inventory Management and Restock Monitor](screenshots/06_seller_inventory.png)
+*Figure 4.6 — Seller Inventory Management and Restock Monitor*
 
 ---
 
