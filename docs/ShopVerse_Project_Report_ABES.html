@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>ShopVerse - Project Report (ABES Engineering College)</title>
+<title>ShopVerse — Academic Project Report (ABES Engineering College)</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
   @page {
     size: A4;
-    margin: 20mm 18mm 20mm 18mm;
+    margin: 18mm 18mm 18mm 18mm;
   }
   * { box-sizing: border-box; }
   body {
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #0f172a;
-    line-height: 1.55;
+    font-family: Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.5;
     font-size: 13px;
     background: #ffffff;
     margin: 0;
@@ -22,57 +21,61 @@
   .cover-page {
     page-break-after: always;
     text-align: center;
-    padding: 30px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 90vh;
+    padding: 20px 10px;
+    font-family: 'Times New Roman', serif;
   }
-  .college-code { font-size: 13px; font-weight: 700; color: #64748b; margin-bottom: 4px; }
-  .college-name { font-size: 24px; font-weight: 800; color: #4f46e5; margin: 4px 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-  .college-sub { font-size: 14px; font-weight: 600; color: #334155; margin-bottom: 2px; }
-  .college-aff { font-size: 12px; font-style: italic; color: #64748b; margin-bottom: 30px; }
-  .report-label { font-size: 14px; font-weight: 800; letter-spacing: 1.5px; color: #64748b; margin-bottom: 6px; }
-  .project-title { font-size: 26px; font-weight: 800; color: #4f46e5; margin: 8px 0; font-family: 'Plus Jakarta Sans', sans-serif; }
-  .project-sub { font-size: 13px; color: #334155; max-width: 650px; margin: 0 auto 30px; }
+  .college-code { font-size: 12px; font-weight: bold; color: #475569; margin-bottom: 8px; }
+  .college-logo { margin: 8px 0; }
+  .college-logo img { height: 110px; width: auto; }
+  .college-name { font-size: 24px; font-weight: bold; color: #4f46e5; margin: 6px 0; letter-spacing: 0.5px; }
+  .college-city { font-size: 14px; font-weight: bold; color: #1e293b; margin-bottom: 4px; }
+  .college-aff { font-size: 12.5px; font-style: italic; color: #475569; margin-bottom: 22px; }
+  .report-label { font-size: 15px; font-weight: bold; color: #475569; margin-bottom: 4px; letter-spacing: 1px; }
+  .project-title { font-size: 26px; font-weight: bold; color: #4f46e5; margin: 6px 0; }
+  .project-sub { font-size: 13px; font-weight: bold; color: #1e293b; max-width: 650px; margin: 0 auto 20px; }
   .degree-label { font-size: 12px; font-style: italic; color: #475569; margin-bottom: 4px; }
-  .degree-name { font-size: 15px; font-weight: 800; color: #0f172a; margin: 0 0 4px; }
-  .dept-name { font-size: 13px; font-weight: 700; color: #334155; margin-bottom: 30px; }
+  .degree-name { font-size: 15px; font-weight: bold; color: #1e293b; margin: 0 0 4px; }
+  .dept-name { font-size: 14px; font-weight: bold; color: #1e293b; margin-bottom: 6px; }
+  .prog-name { font-size: 12px; color: #475569; margin-bottom: 20px; }
   
-  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 12px; }
-  th, td { padding: 10px 14px; border: 1px solid #cbd5e1; text-align: left; }
-  th { background: #eef2ff; color: #312e81; font-weight: 700; }
-  .meta-table td:first-child { width: 30%; font-weight: 700; background: #f8fafc; color: #475569; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 12px; }
+  th, td { padding: 8px 12px; border: 1px solid #cbd5e1; text-align: left; vertical-align: top; }
+  th { background: #eef2ff; color: #312e81; font-weight: bold; }
+  .tbl-cand { width: 85%; margin: 0 auto 20px; font-family: 'Times New Roman', serif; font-size: 13px; }
+  .tbl-cand td:first-child { width: 35%; font-weight: bold; background: #f8fafc; }
+  .tbl-meta td:first-child { width: 28%; font-weight: bold; background: #eef2ff; color: #312e81; }
   
-  h1 { font-size: 20px; font-weight: 800; color: #4f46e5; border-bottom: 2px solid #e0e7ff; padding-bottom: 6px; margin-top: 30px; page-break-after: avoid; font-family: 'Plus Jakarta Sans', sans-serif; }
-  h2 { font-size: 15px; font-weight: 700; color: #0f172a; margin-top: 20px; margin-bottom: 8px; page-break-after: avoid; }
-  h3 { font-size: 13px; font-weight: 700; color: #4338ca; margin-top: 14px; margin-bottom: 6px; page-break-after: avoid; }
-  p { margin: 8px 0; }
+  h1 { font-size: 18px; font-weight: bold; color: #4f46e5; border-bottom: 2px solid #e0e7ff; padding-bottom: 5px; margin-top: 28px; page-break-after: avoid; }
+  h2 { font-size: 14px; font-weight: bold; color: #1e293b; margin-top: 20px; margin-bottom: 6px; page-break-after: avoid; }
+  h3 { font-size: 12.5px; font-weight: bold; color: #4338ca; margin-top: 14px; margin-bottom: 4px; page-break-after: avoid; }
+  p { margin: 6px 0; }
   
+  .code-path { font-family: 'Courier New', monospace; font-size: 11px; color: #64748b; margin-bottom: 4px; }
   pre {
-    background: #f1f5f9;
+    background: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 12px;
-    font-family: Consolas, 'Courier New', monospace;
-    font-size: 11px;
-    line-height: 1.45;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 10.5px;
+    line-height: 1.4;
     overflow-x: auto;
     page-break-inside: avoid;
     white-space: pre-wrap;
+    word-break: break-all;
+    margin: 4px 0 14px;
   }
   .img-card {
     text-align: center;
-    margin: 18px 0;
+    margin: 16px 0;
     page-break-inside: avoid;
   }
   .img-card img {
-    max-width: 95%;
+    max-width: 96%;
     height: auto;
     border: 1px solid #cbd5e1;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
   }
   .img-caption {
     font-size: 11px;
@@ -80,251 +83,4039 @@
     font-style: italic;
     margin-top: 6px;
   }
-  .badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: 700; }
-  .badge-success { background: #dcfce7; color: #166534; }
+  .page-break { page-break-after: always; }
 </style>
 </head>
 <body>
 
-<!-- 1. COVER PAGE -->
+<!-- COVER PAGE -->
 <div class="cover-page">
-  <div class="college-code">College Code - 032</div>
+  <div class="college-code">College Code-032</div>
+  <div class="college-logo"><img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/abes_logo.png" alt="ABES Logo"></div>
   <div class="college-name">ABES ENGINEERING COLLEGE</div>
-  <div class="college-sub">Ghaziabad, Uttar Pradesh</div>
-  <div class="college-aff">Affiliated to Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow</div>
+  <div class="college-city">Ghaziabad, Uttar Pradesh</div>
+  <div class="college-aff">Affiliated to Dr. A.P.J. Abdul Kalam Technical University (AKTU), Uttar Pradesh</div>
   
-  <div style="margin: 25px 0;">
-    <div class="report-label">PROJECT REPORT ON</div>
-    <div class="project-title">ShopVerse — Online Market Place System</div>
-    <div class="project-sub">A Full-Stack Multi-Vendor E-Commerce Web Application: Architecture, Source Code & Output Report</div>
-  </div>
+  <div class="report-label">PROJECT REPORT</div>
+  <div style="font-size: 13px; margin-bottom: 2px;">on</div>
+  <div class="project-title">ShopVerse: Online Market Place System</div>
+  <div class="project-sub">A Full-Stack Multi-Vendor Web Application: Source Code & Output Report</div>
+  
+  <div class="degree-label">Submitted in partial fulfilment of the requirements for the degree of</div>
+  <div class="degree-name">Bachelor of Technology / Master of Computer Applications</div>
+  <div style="font-size: 12px; margin-bottom: 2px;">in</div>
+  <div class="dept-name">Computer Science & Engineering / Information Technology</div>
+  <div class="prog-name">Training Programme: Project Internship & Major/Minor Project Evaluation</div>
 
-  <div style="margin-bottom: 25px;">
-    <div class="degree-label">Submitted in partial fulfilment of the requirements for the degree of</div>
-    <div class="degree-name">Master of Computer Applications (MCA) / Bachelor of Technology</div>
-    <div class="dept-name">Department of Computer Applications / Information Technology</div>
-  </div>
-
-  <table style="width: 80%; margin: 0 auto 25px;">
+  <table class="tbl-cand">
     <tr><td>Submitted by:</td><td><b>ANSHIKA JAISWAL</b></td></tr>
-    <tr><td>University Roll Number:</td><td>[University Roll Number]</td></tr>
-    <tr><td>Project Guide / Mentor:</td><td>[Project Guide / Faculty Mentor Name]</td></tr>
+    <tr><td>University Roll Number:</td><td>23003201450014</td></tr>
+    <tr><td>Project Guide:</td><td>Mrs. Charshini Bandreddi / Faculty Guide</td></tr>
+    <tr><td>Department:</td><td>Department of Computer Applications / Information Technology</td></tr>
     <tr><td>Academic Session:</td><td>2025–2026 / 2026–2027</td></tr>
     <tr><td>Submission Date:</td><td>21 November 2026</td></tr>
   </table>
-
-  <table class="meta-table" style="width: 90%; margin: 0 auto; font-size: 11px;">
-    <tr><td>PROJECT NAME</td><td>ShopVerse — Multi-Vendor Online Market Place System</td></tr>
-    <tr><td>LEARNER</td><td>Anshika Jaiswal</td></tr>
-    <tr><td>TECH STACK</td><td>Angular 14 · Spring Boot 3.2.5 · Spring Security 6 (JWT) · MySQL 8.0</td></tr>
-    <tr><td>BUILD SYSTEM</td><td>Apache Maven (pom.xml) · Angular CLI (ng serve)</td></tr>
-    <tr><td>DATABASE</td><td>MySQL 8.0 (shopverse_db, 9 relational 3NF tables)</td></tr>
-    <tr><td>GITHUB REPOSITORY</td><td>https://github.com/AnshikaJaiswal201/Java-online-market-place</td></tr>
-  </table>
 </div>
 
-<!-- 2. EXECUTIVE SUMMARY -->
+<!-- TITLE & METADATA -->
+<div style="margin-top: 10px;">
+  <div style="font-size: 20px; font-weight: bold; color: #4f46e5;">ShopVerse — Online Market Place System</div>
+  <div style="font-size: 12px; color: #64748b; margin-bottom: 12px;">Complete Source Code & Output Screenshots Document for Academic / Project Submission</div>
+</div>
+
+<table class="tbl-meta">
+  <tr><td>PROJECT NAME</td><td>ShopVerse — Multi-Vendor Online Market Place System</td></tr>
+  <tr><td>LEARNER</td><td><b>Anshika Jaiswal</b></td></tr>
+  <tr><td>ROLL NO.</td><td>23003201450014</td></tr>
+  <tr><td>PROJECT GUIDE</td><td>Mrs. Charshini Bandreddi / Faculty Mentor</td></tr>
+  <tr><td>TECH STACK</td><td>Angular 14 (Frontend SPA) · Java 17 + Spring Boot 3.2.5 (Backend REST API) · Spring Security 6 + JWT + BCrypt · Spring Data JPA · MySQL 8.0 (Database)</td></tr>
+  <tr><td>BUILD SYSTEM</td><td>Apache Maven 3.9 (mvn spring-boot:run) · Angular CLI (ng serve) · Node.js 18+</td></tr>
+  <tr><td>DATABASE ENGINE</td><td>MySQL 8.0 (shopverse_db with 9 normalized 3NF tables and HikariCP connection pooling)</td></tr>
+  <tr><td>REPOSITORY</td><td><a href="https://github.com/AnshikaJaiswal201/Java-online-market-place">https://github.com/AnshikaJaiswal201/Java-online-market-place</a></td></tr>
+  <tr><td>VERIFICATION STATUS</td><td>Fully Compiled, Tested & Deployed on Localhost (Backend: port 8080, Frontend: port 4200)</td></tr>
+</table>
+
+<!-- SECTION 1 -->
 <h1>1. Executive Summary & Architecture</h1>
-<p>The <b>ShopVerse Online Market Place System</b> is an enterprise-grade multi-vendor e-commerce platform designed to bridge Indian local merchants (sellers) and buyers (customers) on a single unified portal. Built around native Indian commercial categories—Electronics, Traditional Wear & Sarees, Spices & Herbs, and Handicrafts—the platform operates as a modern 3-Tier Enterprise Application:</p>
-<ul>
-  <li><b>Presentation Tier (Client SPA):</b> Angular 14 with reactive forms, client-side route guards, and JWT HTTP interception.</li>
-  <li><b>Application Tier (REST API):</b> Java 17 and Spring Boot 3.2.5 with stateless Spring Security 6, BCrypt encryption, and ACID-compliant @Transactional business logic.</li>
-  <li><b>Data Tier (Relational Storage):</b> Local MySQL 8.0 server under the <code>shopverse_db</code> database in 3NF across 9 interconnected tables.</li>
-</ul>
+<p>The <b>ShopVerse Online Market Place System</b> is an enterprise-grade multi-vendor e-commerce platform designed to connect Indian merchants (sellers) and buyers (customers) on a unified digital storefront. Built around native Indian product verticals—Electronics & Gadgets, Traditional Indian Wear & Banarasi Sarees, Spices & Gourmet Herbs, and Handicrafts & Home Decor—the platform operates as a modern 3-Tier Enterprise Application: an Angular 14 Single Page Application (SPA), a Java 17 and Spring Boot 3.2.5 RESTful API backend with Spring Security 6, and a local MySQL 8.0 database engine accessed via Spring Data JPA and Hibernate ORM.</p>
+<p>An authenticated customer can search 24 pre-seeded Indian catalog products, filter items by category, manage persistent shopping carts, and execute atomic transactional checkouts with stock decrement guarantees. Merchants log into their dedicated Seller Central workspace to inspect real-time revenue metrics formatted in Indian Rupees (₹), track order volumes, monitor stock levels, update SKU inventories, and receive automated low-stock warnings when inventory drops below threshold limits.</p>
 
-<h2>1.1 Project Folder Structure</h2>
+<h2>1.1 Project folder structure</h2>
+<div class="code-path">Path: ShopVerse-Project/</div>
 <pre>ShopVerse-Project/
-├── database/mysql_schema.sql         # Complete MySQL 8.0 DDL & 24 seed products
-├── docs/system_context_diagram_dfd0.png # DFD Level 0 Context Diagram
-├── docs/screenshots/                 # High-resolution UI screenshots
-├── backend/pom.xml                   # Maven build file (Spring Web, Security, JPA, MySQL)
-│   └── src/main/java/com/marketplace/
-│       ├── MarketplaceApplication.java# Entry point with @EnableJpaAuditing
-│       ├── config/SecurityConfig.java# Spring Security 6 & BCrypt filter configuration
-│       ├── modules/auth/             # Authentication, BCrypt hashing, JWT issuance
-│       ├── modules/product/          # Product catalog CRUD & category filtering
-│       ├── modules/inventory/        # Atomic stock deduction & low-stock alerts
-│       └── modules/order/            # Shopping cart & transactional checkout service
-└── frontend/package.json             # npm dependencies (Angular 14, RxJS, FontAwesome)
-    └── src/app/
-        ├── app-routing.module.ts     # Client routing & Auth/Role Guards
-        ├── core/services/auth.service.ts # Token session & RxJS BehaviorSubject state
-        └── features/                 # Auth, Customer Catalog, Cart, Seller Dashboard</pre>
+├── README.md                              # Project setup, tech stack, and API documentation
+├── database/
+│   ├── mysql_schema.sql                   # MySQL 8.0 DDL & 24 product seed script
+│   └── schema.sql                         # Database schema definitions
+├── docs/
+│   ├── system_context_diagram_dfd0.png    # DFD Level 0 Context Diagram
+│   ├── ShopVerse_Project_Report_ABES.docx # Comprehensive Academic Project Report (DOCX)
+│   ├── ShopVerse_Project_Report_ABES.pdf  # Comprehensive Academic Project Report (PDF)
+│   └── screenshots/                       # Running application UI screenshots
+├── backend/                               # Spring Boot 3.2.5 (Java 17) REST API
+│   ├── pom.xml                            # Maven build file (Spring Web, Security, JPA, MySQL, JJWT)
+│   └── src/main/
+│       ├── resources/
+│       │   ├── application.properties     # Production configuration
+│       │   └── application-local.yml      # Local dev configuration (port 8080, MySQL shopverse_db)
+│       └── java/com/marketplace/
+│           ├── MarketplaceApplication.java# Application main entry point (@SpringBootApplication)
+│           ├── common/                    # ApiResponse generic envelope & global constants
+│           ├── config/                    # SecurityConfig, WebMvcConfig, DataInitializer
+│           ├── exception/                 # GlobalExceptionHandler & custom exception classes
+│           ├── security/                  # JwtTokenProvider, JwtAuthenticationFilter, UserDetailsService
+│           └── modules/
+│               ├── auth/                  # User & Role entities, AuthController, AuthServiceImpl
+│               ├── product/               # Product & Category entities, ProductController
+│               ├── inventory/             # Inventory entity, low-stock alerts, SellerInventoryController
+│               ├── order/                 # CartItem, Order, OrderItem entities, OrderServiceImpl
+│               └── dashboard/             # SellerDashboardController, SellerDashboardServiceImpl
+└── frontend/                              # Angular 14 Single Page Application (SPA)
+    ├── package.json                       # npm dependencies (Angular Core, RxJS, FontAwesome)
+    ├── angular.json                       # Angular workspace build & asset configuration
+    └── src/
+        ├── index.html                     # HTML root template with Inter and Poppins fonts
+        ├── styles.css                     # Global design system & utility styling
+        └── app/
+            ├── app.module.ts              # Root NgModule registering HttpClientModule & Interceptors
+            ├── app-routing.module.ts      # Client routes & Auth/Role Route Guards
+            ├── core/                      # Services, JWT Interceptor, Auth & Role Guards
+            ├── shared/                    # Models & INR currency pipe
+            └── features/                  # Auth, Customer Catalog & Cart, Seller Central</pre>
 
-<!-- 3. PROJECT WORKFLOW -->
-<h1>2. Project Workflow & System Context Diagram</h1>
-<p>The workflow guides guest visitors into registered customers or sellers. All data persists to MySQL in real time.</p>
+<h2>1.2 Folder structure explained</h2>
+<table>
+  <tr><th>Folder / File</th><th>Purpose</th></tr>
+  <tr><td><b>ShopVerse-Project/</b></td><td>Root repository folder containing frontend, backend, database scripts, and documentation.</td></tr>
+  <tr><td><b>README.md</b></td><td>Project notes, system architecture, setup commands, and API endpoint documentation.</td></tr>
+  <tr><td><b>database/mysql_schema.sql</b></td><td>Complete MySQL 8.0 DDL script creating 9 normalized tables and 24 seed catalog products.</td></tr>
+  <tr><td><b>docs/system_context_diagram_dfd0.png</b></td><td>High-resolution DFD Level 0 Context Diagram illustrating Process 0.0 with 3 external entities.</td></tr>
+  <tr><td><b>docs/screenshots/</b></td><td>Actual high-resolution UI output screenshots captured from running frontend on port 4200.</td></tr>
+  <tr><td><b>backend/pom.xml</b></td><td>Apache Maven build file declaring Java 17, Spring Boot starters, MySQL Connector-J, and JJWT.</td></tr>
+  <tr><td><b>backend/src/.../application-local.yml</b></td><td>Spring Boot configuration for database URL, credentials, port 8080, and JWT secret key.</td></tr>
+  <tr><td><b>backend/.../MarketplaceApplication.java</b></td><td>Spring Boot main class annotated with @SpringBootApplication and @EnableJpaAuditing.</td></tr>
+  <tr><td><b>backend/.../config/SecurityConfig.java</b></td><td>Spring Security 6 configuration establishing stateless JWT filter chain and BCrypt encoder.</td></tr>
+  <tr><td><b>backend/.../security/JwtTokenProvider.java</b></td><td>Cryptographic utility generating and validating HMAC-SHA256 Bearer JWT tokens.</td></tr>
+  <tr><td><b>backend/.../modules/auth/</b></td><td>Authentication module handling registration, BCrypt hashing, and user credential persistence.</td></tr>
+  <tr><td><b>backend/.../modules/product/</b></td><td>Product catalog module providing keyword search, multi-category filtering, and pagination.</td></tr>
+  <tr><td><b>backend/.../modules/order/OrderServiceImpl.java</b></td><td>ACID transactional checkout service with atomic inventory deduction and cart flushing.</td></tr>
+  <tr><td><b>backend/.../modules/dashboard/</b></td><td>Seller Central analytics service computing live revenue in INR, order counts, and low-stock alerts.</td></tr>
+  <tr><td><b>frontend/package.json</b></td><td>Node.js dependencies: Angular 14, RxJS, TypeScript 4.8, and styling frameworks.</td></tr>
+  <tr><td><b>frontend/src/app/core/services/auth.service.ts</b></td><td>Angular service managing JWT authentication state via RxJS BehaviorSubject.</td></tr>
+  <tr><td><b>frontend/src/app/features/customer/</b></td><td>Customer portal components: Product catalog browsing, shopping cart, and order placement.</td></tr>
+</table>
+
+<!-- SECTION 2 -->
+<h1>2. Project Workflow & Architecture</h1>
+<h2>2.1 Step-by-step operation</h2>
+<ol>
+  <li><b>User Registration & Database Save:</b> A new user registers at /auth/register selecting either CUSTOMER or SELLER role. The Angular frontend dispatches a POST request to /api/auth/register. Spring Boot hashes the password using BCrypt with salt rounds = 10, associates the user with ROLE_CUSTOMER or ROLE_SELLER in the user_roles junction table, and commits the record to MySQL shopverse_db.users.</li>
+  <li><b>User Authentication & JWT Issuance:</b> The user signs in on /auth/login. Spring Security authenticates the credentials against MySQL database. Upon validation, the backend generates an HMAC-SHA256 JSON Web Token (JWT) with 24-hour expiration containing the user's ID, email, and authorities. Angular stores this token in browser LocalStorage.</li>
+  <li><b>Catalog Discovery & Category Filtering:</b> The customer explores 24 authentic Indian products across Electronics, Banarasi Sarees, Kashmiri Spices, and Handicrafts. Angular makes a GET request to /api/products, displaying live stock status, seller badges, and rupee pricing.</li>
+  <li><b>Shopping Cart Management:</b> Customers add items to their persistent shopping cart. The backend verifies real-time stock availability and recalculates dynamic subtotals. The Angular cart view provides quantity increment and decrement controls.</li>
+  <li><b>ACID Transactional Checkout:</b> When the customer confirms checkout, Spring Boot executes an atomic @Transactional service: stock quantities are deducted from the inventory table, an immutable order ORD-YYYYMMDD-XXXX is generated in the orders and order_items tables, and all cart items are flushed.</li>
+  <li><b>Seller Analytics & Inventory Restocking:</b> Merchants sign into Seller Central to inspect real-time gross revenue in INR (₹), fulfilled order counts, active listings, and inventory levels with automatic low-stock warnings when quantity &lt;= 5.</li>
+</ol>
+
+<h2>2.2 System Architecture</h2>
+<p>The application follows a decoupled Three-Tier Enterprise Architecture: Presentation Layer (Angular 14 SPA), Application / Business Logic Layer (Java 17 + Spring Boot 3.2.5 RESTful API), and Data Persistence Layer (MySQL 8.0 Relational Database). Communication between the frontend and backend is handled strictly via stateless HTTP REST JSON endpoints secured with Bearer JWT Authorization headers.</p>
+
+<h2>2.3 System Context Diagram (DFD Level 0)</h2>
+<p>The System Context Diagram (DFD Level 0) delineates the operational boundary of Process 0.0 (ShopVerse Online Market Place System) and illustrates data flows across the three external entities: Guest Visitor, Customer, and Seller.</p>
 <div class="img-card">
-  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/system_context_diagram_dfd0.png" alt="System Context Diagram">
+  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/system_context_diagram_dfd0.png" alt="DFD Level 0">
   <div class="img-caption">Figure 2.1 — System Context Diagram (DFD Level 0): Process 0.0 with 3 External Entities</div>
 </div>
 
-<!-- 4. TECH STACK -->
+<!-- SECTION 3 -->
 <h1>3. Technology Stack & Theory</h1>
 <table>
-  <tr><th>Component</th><th>Technology</th><th>Implementation Details</th></tr>
-  <tr><td><b>Frontend SPA</b></td><td>Angular 14 + TypeScript</td><td>Component-based views, RxJS BehaviorSubject state, Route Guards, JWT Interceptor.</td></tr>
-  <tr><td><b>Backend REST API</b></td><td>Java 17 + Spring Boot 3.2.5</td><td>Stateless Spring Security 6, Controller-Service-Repository architecture, Embedded Tomcat.</td></tr>
-  <tr><td><b>Security</b></td><td>JWT + BCrypt</td><td>HMAC-SHA256 bearer tokens with 24h expiration, BCrypt salted password hashing.</td></tr>
-  <tr><td><b>Database ORM</b></td><td>MySQL 8.0 + Spring Data JPA</td><td>Third Normal Form (3NF) relational schema across 9 tables, HikariCP connection pool.</td></tr>
+  <tr><th>Technology</th><th>Role & Implementation Details</th></tr>
+  <tr><td><b>Angular 14</b></td><td>Component-driven Single Page Application framework using declarative HTML templates, two-way data binding, dependency injection, and RxJS reactive streams. It provides seamless client-side routing without full browser reloads.</td></tr>
+  <tr><td><b>TypeScript 4.8</b></td><td>Strictly-typed superset of JavaScript providing static type verification, interfaces for data transfer objects (DTOs), compile-time error detection, and rich IDE autocompletion.</td></tr>
+  <tr><td><b>Spring Boot 3.2.5</b></td><td>Opinionated Java 17 framework that streamlines enterprise application development with embedded Apache Tomcat, auto-configuration, and robust dependency injection.</td></tr>
+  <tr><td><b>Spring Security 6 + JWT</b></td><td>Stateless bearer token authentication mechanism. Passwords are encrypted using BCrypt one-way hashing with salt rounds. Endpoints are protected with role-based access control (@PreAuthorize).</td></tr>
+  <tr><td><b>Spring Data JPA / Hibernate</b></td><td>Object-Relational Mapping (ORM) framework bridging Java entity models with MySQL relational tables, handling entity relationships, automated schema validation, and ACID transactional isolation.</td></tr>
+  <tr><td><b>MySQL 8.0 & HikariCP</b></td><td>Production relational database engine providing ACID transactional compliance, foreign key referential integrity, and high-performance connection pooling via HikariCP.</td></tr>
+  <tr><td><b>Apache Maven</b></td><td>Declarative build automation tool managing project lifecycle, compilation, packaging, and third-party dependency resolution via pom.xml.</td></tr>
 </table>
 
-<!-- 5. USER INTERFACE SCREENSHOTS -->
+<h2>3.1 Billing & Inventory Calculation Formulas</h2>
+<p>• <b>Line Item Subtotal:</b> Subtotal (₹) = Unit Price × Quantity</p>
+<p>• <b>Order Gross Total:</b> Total Amount = Sum of (Line Item Subtotals) + Shipping Fee (₹0 for Orders &gt;= ₹500)</p>
+<p>• <b>Atomic Stock Deduction:</b> Remaining Stock = Current Stock Quantity - Order Line Quantity (WHERE Current Stock &gt;= Order Line Quantity)</p>
+<p>• <b>Low-Stock Threshold Condition:</b> Alert Triggered WHEN stock_quantity &lt;= low_stock_threshold (default = 5)</p>
+
+<!-- SECTION 4 -->
 <h1>4. User Interface & Output Screenshots</h1>
-<p>The screenshots below were captured from the running application (Angular 14 on localhost:4200, Spring Boot on localhost:8080, and MySQL 8.0 on port 3306).</p>
+<p>The output screenshots below were captured directly from the live running application: Angular 14 frontend executing on http://localhost:4200 communicating with the Spring Boot 3.2.5 REST backend on port 8080 and MySQL 8.0 on port 3306.</p>
 
-<h2>4.1 Login Screen & Role Selection</h2>
+<h2>4.1 Login screen with user notification & role authentication</h2>
+<p>Figure 4.1 displays the active ShopVerse Sign In portal. When a new user completes registration, the application automatically redirects to the login screen with query parameters preserving the registered email and displaying a green confirmation alert banner: 'Account Registered & Saved in Database! Enter your password below to sign in.' The portal also provides quick one-click demo login buttons for Customer and Seller personas.</p>
 <div class="img-card">
-  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/01_login_screen.png" alt="Login Screen">
-  <div class="img-caption">Figure 4.1 — ShopVerse Sign In & Role Selection Screen</div>
+  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/real_login_screen.png" alt="Real Login Screen">
+  <div class="img-caption">Figure 4.1 — ShopVerse Sign In screen with pre-filled email and real-time database save notification banner</div>
 </div>
 
-<h2>4.2 Customer Registration & Real-Time Database Save</h2>
+<h2>4.2 Product catalog browsing with live filters and stock assurance</h2>
+<p>Figure 4.2 shows the live product catalog screen accessed by active user 'Aarav Patel (CUSTOMER)'. The catalog features 24 authentic Indian products organized into four categories: Electronics & Gadgets, Traditional Indian Wear, Spices & Gourmet, and Handicrafts & Home Decor. Each product card displays the unique SKU badge, verified merchant name, high-resolution product image, real-time stock assurance, and price in Indian Rupees (₹).</p>
 <div class="img-card">
-  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/02_register_screen.png" alt="Register Screen">
-  <div class="img-caption">Figure 4.2 — ShopVerse Account Registration with Role Selector</div>
+  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/real_catalog_screen.png" alt="Real Catalog Screen">
+  <div class="img-caption">Figure 4.2 — Product catalog browsing 24 Indian products across 4 categories with stock assurance</div>
 </div>
 
-<h2>4.3 Multi-Category Product Catalog</h2>
+<h2>4.3 Customer and seller account registration</h2>
+<p>Figure 4.3 illustrates the account creation screen. Users select their desired account type (Customer or Seller) via an interactive role toggle. Upon form submission, the backend securely hashes the password using BCrypt and persists the new user in MySQL users and user_roles tables.</p>
 <div class="img-card">
-  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/03_product_catalog.png" alt="Product Catalog">
-  <div class="img-caption">Figure 4.3 — Product Catalog with Multi-Category Filtering and Search (24 Products)</div>
+  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/02_register_screen.png" alt="Registration Screen">
+  <div class="img-caption">Figure 4.3 — ShopVerse Account Registration portal with interactive Role Selector</div>
 </div>
 
-<h2>4.4 Shopping Cart & Real-Time Calculations</h2>
+<h2>4.4 Shopping cart and dynamic total calculation</h2>
+<p>Figure 4.4 illustrates the shopping cart view where customers review their selected products, adjust quantities via plus and minus buttons, inspect dynamic line item subtotals, and review the overall order summary before proceeding to checkout.</p>
 <div class="img-card">
   <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/04_shopping_cart.png" alt="Shopping Cart">
-  <div class="img-caption">Figure 4.4 — Shopping Cart View with Line Items and Order Summary</div>
+  <div class="img-caption">Figure 4.4 — Shopping cart view with line items, quantity controls, and order summary</div>
 </div>
 
-<h2>4.5 Seller Analytics Dashboard</h2>
+<h2>4.5 Seller Central analytics dashboard</h2>
+<p>Figure 4.5 shows the Seller Central Dashboard designed for merchants. It renders key performance indicators: total gross revenue in INR (₹), fulfilled order count, active catalog listings, and automated low-stock warnings.</p>
 <div class="img-card">
   <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/05_seller_dashboard.png" alt="Seller Dashboard">
-  <div class="img-caption">Figure 4.5 — Seller Central Analytics Dashboard and Metrics</div>
+  <div class="img-caption">Figure 4.5 — Seller Central Analytics Dashboard with revenue in INR, order counts, and low-stock alerts</div>
 </div>
 
-<h2>4.6 Seller Inventory Management & Low-Stock Alerts</h2>
+<h2>4.6 Seller inventory tracking and restock management</h2>
+<p>Figure 4.6 displays the inventory management table where merchants monitor current stock levels against safety thresholds and execute instant stock replenishment updates.</p>
 <div class="img-card">
   <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/06_seller_inventory.png" alt="Seller Inventory">
-  <div class="img-caption">Figure 4.6 — Seller Inventory Management and Restock Monitor</div>
+  <div class="img-caption">Figure 4.6 — Seller Inventory Management table with low-stock threshold triggers</div>
 </div>
 
-<!-- 6. DATABASE DESIGN -->
-<h1>5. Database Design & SQL Operations</h1>
-<p>The MySQL database <code>shopverse_db</code> consists of 9 normalized 3NF tables with foreign key constraints:</p>
+<!-- SECTION 5 -->
+<h1>5. Database Design</h1>
+<p>The application relies on MySQL 8.0 under the database named shopverse_db. The database architecture is designed in Third Normal Form (3NF) across 9 relational tables to ensure data integrity, eliminate redundancy, and support concurrent transactional order processing.</p>
+
+<h2>5.1 Table description</h2>
 <table>
-  <tr><th>Table Name</th><th>Primary Key</th><th>Purpose</th></tr>
-  <tr><td><b>roles</b></td><td>role_id</td><td>ROLE_CUSTOMER, ROLE_SELLER.</td></tr>
-  <tr><td><b>users</b></td><td>user_id</td><td>Stores user credentials, BCrypt password hashes, and profile information.</td></tr>
-  <tr><td><b>user_roles</b></td><td>user_id, role_id</td><td>Many-to-Many junction mapping users to security roles.</td></tr>
-  <tr><td><b>categories</b></td><td>category_id</td><td>Product categories (Electronics, Wear, Spices, Crafts).</td></tr>
-  <tr><td><b>products</b></td><td>product_id</td><td>Product catalog listings with SKU, price in ₹, image URL.</td></tr>
-  <tr><td><b>inventory</b></td><td>inventory_id</td><td>Live stock counts and low-stock safety threshold triggers.</td></tr>
-  <tr><td><b>cart_items</b></td><td>cart_item_id</td><td>Customer persistent shopping cart items.</td></tr>
-  <tr><td><b>orders</b></td><td>order_id</td><td>Master customer orders with order numbers (ORD-YYYYMMDD-XXXX).</td></tr>
-  <tr><td><b>order_items</b></td><td>order_item_id</td><td>Purchased line items capturing historical unit price.</td></tr>
+  <tr><th>Table</th><th>Column</th><th>Type</th><th>Description</th></tr>
+  <tr><td><b>roles</b></td><td>role_id, role_name</td><td>BIGINT, VARCHAR</td><td>System security roles (ROLE_CUSTOMER, ROLE_SELLER)</td></tr>
+  <tr><td><b>users</b></td><td>user_id, email, password_hash, full_name, phone_number, is_active</td><td>BIGINT, VARCHAR, INT</td><td>User credentials, BCrypt password hash, contact information</td></tr>
+  <tr><td><b>user_roles</b></td><td>user_id, role_id</td><td>BIGINT, BIGINT</td><td>Many-to-many junction table assigning roles to users</td></tr>
+  <tr><td><b>categories</b></td><td>category_id, name, slug, description</td><td>BIGINT, VARCHAR, TEXT</td><td>Product categories (Electronics, Wear, Spices, Crafts)</td></tr>
+  <tr><td><b>products</b></td><td>product_id, seller_id, category_id, sku, name, price, is_active</td><td>BIGINT, DECIMAL, INT</td><td>Product listings with Indian context, SKU, rupee price, and images</td></tr>
+  <tr><td><b>inventory</b></td><td>inventory_id, product_id, stock_quantity, low_stock_threshold</td><td>BIGINT, INT</td><td>Real-time stock tracking with safety threshold trigger</td></tr>
+  <tr><td><b>cart_items</b></td><td>cart_item_id, user_id, product_id, quantity</td><td>BIGINT, INT</td><td>Persistent shopping cart records per authenticated user</td></tr>
+  <tr><td><b>orders</b></td><td>order_id, customer_id, order_number, total_amount, order_status</td><td>BIGINT, VARCHAR, DECIMAL</td><td>Master order record capturing order ID, total in ₹, and status</td></tr>
+  <tr><td><b>order_items</b></td><td>order_item_id, order_id, product_id, quantity, unit_price</td><td>BIGINT, INT, DECIMAL</td><td>Individual line items capturing historical purchase price</td></tr>
 </table>
 
-<!-- 7. BACKEND SOURCE CODE -->
+<h2>5.2 Database code (schema.sql)</h2>
+<div class="code-path">Path: database/mysql_schema.sql</div>
+<pre>-- ============================================================================
+-- SHOPVERSE E-COMMERCE - MYSQL 8.0 WORKBENCH SCHEMA &amp; SEED DATA SCRIPT
+-- ============================================================================
+
+CREATE DATABASE IF NOT EXISTS shopverse_db;
+USE shopverse_db;
+
+-- 1. Roles
+CREATE TABLE IF NOT EXISTS roles (
+    role_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    role_name VARCHAR(50) NOT NULL UNIQUE,
+    description VARCHAR(255)
+);
+
+-- 2. Users
+CREATE TABLE IF NOT EXISTS users (
+    user_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    full_name VARCHAR(100) NOT NULL,
+    phone_number VARCHAR(15),
+    address_line1 VARCHAR(255),
+    city VARCHAR(100),
+    state VARCHAR(100),
+    pin_code VARCHAR(10),
+    is_active TINYINT DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- 3. User Roles (Junction Table)
+CREATE TABLE IF NOT EXISTS user_roles (
+    user_id BIGINT NOT NULL,
+    role_id BIGINT NOT NULL,
+    PRIMARY KEY (user_id, role_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (role_id) REFERENCES roles(role_id) ON DELETE CASCADE
+);
+
+-- 4. Categories
+CREATE TABLE IF NOT EXISTS categories (
+    category_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    category_name VARCHAR(100) NOT NULL UNIQUE,
+    description VARCHAR(500),
+    is_active TINYINT DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 5. Products
+CREATE TABLE IF NOT EXISTS products (
+    product_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    seller_id BIGINT NOT NULL,
+    category_id BIGINT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    price DECIMAL(12, 2) NOT NULL,
+    sku VARCHAR(100) NOT NULL UNIQUE,
+    image_url VARCHAR(1000),
+    is_active TINYINT DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (seller_id) REFERENCES users(user_id),
+    FOREIGN KEY (category_id) REFERENCES categories(category_id)
+);
+
+-- 6. Inventory
+CREATE TABLE IF NOT EXISTS inventory (
+    inventory_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    product_id BIGINT NOT NULL UNIQUE,
+    stock_quantity INT NOT NULL DEFAULT 0,
+    low_stock_threshold INT NOT NULL DEFAULT 5,
+    last_restocked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
+);
+
+-- 7. Cart Items
+CREATE TABLE IF NOT EXISTS cart_items (
+    cart_item_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    product_id BIGINT NOT NULL,
+    quantity INT NOT NULL DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE,
+    UNIQUE KEY uq_user_product (user_id, product_id)
+);
+
+-- 8. Orders
+CREATE TABLE IF NOT EXISTS orders (
+    order_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    order_number VARCHAR(64) NOT NULL UNIQUE,
+    customer_id BIGINT NOT NULL,
+    total_amount DECIMAL(12, 2) NOT NULL,
+    order_status VARCHAR(50) NOT NULL DEFAULT &#x27;PLACED&#x27;,
+    shipping_address TEXT NOT NULL,
+    payment_method VARCHAR(50) NOT NULL,
+    payment_status VARCHAR(50) NOT NULL DEFAULT &#x27;PENDING&#x27;,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (customer_id) REFERENCES users(user_id)
+);
+
+-- 9. Order Items
+CREATE TABLE IF NOT EXISTS order_items (
+    order_item_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    order_id BIGINT NOT NULL,
+    product_id BIGINT NOT NULL,
+    seller_id BIGINT NOT NULL,
+    quantity INT NOT NULL,
+    unit_price DECIMAL(12, 2) NOT NULL,
+    subtotal DECIMAL(12, 2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES products(product_id),
+    FOREIGN KEY (seller_id) REFERENCES users(user_id)
+);
+
+-- ============================================================================
+-- SEED DATA (24 PRODUCTS, USERS, INVENTORY, ORDERS)
+-- ============================================================================
+
+-- Roles
+INSERT IGNORE INTO roles (role_id, role_name, description) VALUES (1, &#x27;ROLE_CUSTOMER&#x27;, &#x27;Customer role for shopping and placing orders&#x27;);
+INSERT IGNORE INTO roles (role_id, role_name, description) VALUES (2, &#x27;ROLE_SELLER&#x27;, &#x27;Merchant / Seller role for catalog and stock management&#x27;);
+
+-- Users (Default password: Password@123)
+INSERT IGNORE INTO users (user_id, email, password_hash, full_name, phone_number, address_line1, city, state, pin_code, is_a
+
+-- [Additional seed records omitted for brevity]</pre>
+
+<h2>5.3 SQL operations performed by the application</h2>
+<div class="code-path">Path: database/operations.sql</div>
+<pre>-- 1. User Registration (Executed by AuthServiceImpl upon POST /api/auth/register):
+INSERT INTO users (email, password_hash, full_name, phone_number, is_active)
+VALUES ('pooja@gmail.com', '$2a$10$v52GqXQ2q8z...', 'Pooja Verma', '+91 9876543210', 1);
+
+INSERT INTO user_roles (user_id, role_id)
+VALUES (LAST_INSERT_ID(), (SELECT role_id FROM roles WHERE role_name = 'ROLE_CUSTOMER'));
+
+-- 2. User Authentication (Executed by UserDetailsServiceImpl upon POST /api/auth/login):
+SELECT u.user_id, u.email, u.password_hash, u.full_name, r.role_name
+FROM users u
+JOIN user_roles ur ON u.user_id = ur.user_id
+JOIN roles r ON ur.role_id = r.role_id
+WHERE u.email = 'pooja@gmail.com' AND u.is_active = 1;
+
+-- 3. Product Catalog Browsing with Category Filter:
+SELECT p.product_id, p.sku, p.name, p.price, p.image_url, i.stock_quantity, u.full_name AS seller_name
+FROM products p
+JOIN inventory i ON p.product_id = i.product_id
+JOIN users u ON p.seller_id = u.user_id
+WHERE p.category_id = 1 AND p.is_active = 1;
+
+-- 4. Atomic Inventory Stock Deduction during Order Checkout:
+UPDATE inventory
+SET stock_quantity = stock_quantity - 2
+WHERE product_id = 1 AND stock_quantity >= 2;
+
+-- 5. Master Order and Order Line Item Insertion:
+INSERT INTO orders (order_number, customer_id, total_amount, order_status, payment_status)
+VALUES ('ORD-20261121-1042', 3, 3998.00, 'PLACED', 'PAID');
+
+INSERT INTO order_items (order_id, product_id, quantity, unit_price)
+VALUES (LAST_INSERT_ID(), 1, 2, 1999.00);
+
+-- 6. Seller Analytics Aggregations:
+SELECT 
+    COALESCE(SUM(oi.quantity * oi.unit_price), 0.00) AS total_revenue,
+    COUNT(DISTINCT o.order_id) AS total_orders,
+    COUNT(DISTINCT p.product_id) AS active_products
+FROM products p
+LEFT JOIN order_items oi ON p.product_id = oi.product_id
+LEFT JOIN orders o ON oi.order_id = o.order_id
+WHERE p.seller_id = 2;</pre>
+
+<h2>5.4 Sample data seen in the output</h2>
+<table>
+  <tr><th>SKU</th><th>Product Name</th><th>Category</th><th>Price (₹)</th><th>Stock Status</th></tr>
+  <tr><td>BOAT-ROC-550-BLK</td><td>boAt Rockerz 550 Wireless Bluetooth Headphones</td><td>Electronics & Gadgets</td><td>₹1,999.00</td><td>45 in Stock</td></tr>
+  <tr><td>NOIS-CFP-GRD-BLU</td><td>Noise ColorFit Pulse Grand Smartwatch</td><td>Electronics & Gadgets</td><td>₹1,499.00</td><td>60 in Stock</td></tr>
+  <tr><td>BAN-SILK-SAR-RED</td><td>Pure Banarasi Katan Silk Handloom Saree</td><td>Traditional Indian Wear</td><td>₹8,499.00</td><td>8 in Stock</td></tr>
+  <tr><td>KASH-SAF-A1-05G</td><td>Authentic Kashmiri Mongra Saffron (5g)</td><td>Spices & Gourmet</td><td>₹1,850.00</td><td>30 in Stock</td></tr>
+  <tr><td>JAIP-BLU-POT-VAS</td><td>Jaipur Handcrafted Blue Pottery Floral Vase</td><td>Handicrafts & Home Decor</td><td>₹1,250.00</td><td>12 in Stock</td></tr>
+</table>
+
+<!-- SECTION 6 -->
 <h1>6. Backend Source Code (Spring Boot 3 + Java 17)</h1>
-<h2>6.1 Security Configuration (SecurityConfig.java)</h2>
-<pre>@Configuration
+<h2>6.1 Build file and configuration</h2>
+<div class="code-path">Path: backend/pom.xml</div>
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 
+         https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;3.2.5&lt;/version&gt;
+        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+    &lt;/parent&gt;
+
+    &lt;groupId&gt;com.marketplace&lt;/groupId&gt;
+    &lt;artifactId&gt;online-marketplace-backend&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
+    &lt;name&gt;online-marketplace-backend&lt;/name&gt;
+    &lt;description&gt;Online Market Place E-Commerce Backend with Spring Boot 3.x and Oracle 21c XE&lt;/description&gt;
+
+    &lt;properties&gt;
+        &lt;java.version&gt;17&lt;/java.version&gt;
+        &lt;jjwt.version&gt;0.11.5&lt;/jjwt.version&gt;
+        &lt;ojdbc.version&gt;21.9.0.0&lt;/ojdbc.version&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencies&gt;
+        &lt;!-- Spring Boot Starter Web --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Spring Boot Starter Data JPA --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Spring Boot Starter Security --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Spring Boot Starter Validation --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-validation&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- MySQL Connector/J for MySQL Workbench connection --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.mysql&lt;/groupId&gt;
+            &lt;artifactId&gt;mysql-connector-j&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Oracle JDBC Driver for Oracle 21c XE --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.oracle.database.jdbc&lt;/groupId&gt;
+            &lt;artifactId&gt;ojdbc11&lt;/artifactId&gt;
+            &lt;version&gt;${ojdbc.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- H2 In-Memory Database for instant zero-setup local dev/testing --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+            &lt;artifactId&gt;h2&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- JWT Dependencies (io.jsonwebtoken) --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;io.jsonwebtoken&lt;/groupId&gt;
+            &lt;artifactId&gt;jjwt-api&lt;/artifactId&gt;
+            &lt;version&gt;${jjwt.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;io.jsonwebtoken&lt;/groupId&gt;
+            &lt;artifactId&gt;jjwt-impl&lt;/artifactId&gt;
+            &lt;version&gt;${jjwt.version}&lt;/version&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;io.jsonwebtoken&lt;/groupId&gt;
+            &lt;artifactId&gt;jjwt-jackson&lt;/artifactId&gt;
+            &lt;version&gt;${jjwt.version}&lt;/version&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Spring Boot DevTools (Optional developer convenience) --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+            &lt;optional&gt;true&lt;/optional&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Spring Boot Test Starter --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-security-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+&lt;/project&gt;
+</pre>
+
+<div class="code-path">Path: backend/src/main/resources/application-local.yml</div>
+<pre>server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: shopverse-backend-mysql
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/shopverse_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;serverTimezone=Asia/Kolkata&amp;allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Nishi@123SQL
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    open-in-view: false
+
+app:
+  jwt:
+    secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+    expiration-ms: 86400000
+  cors:
+    allowed-origins: http://localhost:4200
+</pre>
+
+<h2>6.2 Application entry point</h2>
+<div class="code-path">Path: backend/src/main/java/com/marketplace/MarketplaceApplication.java</div>
+<pre>package com.marketplace;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+
+@SpringBootApplication
+@EnableJpaAuditing
+public class MarketplaceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MarketplaceApplication.class, args);
+    }
+}
+</pre>
+
+<h2>6.3 Security configuration & JWT authentication</h2>
+<div class="code-path">Path: backend/src/main/java/com/marketplace/config/SecurityConfig.java</div>
+<pre>package com.marketplace.config;
+
+import com.marketplace.security.JwtAuthenticationEntryPoint;
+import com.marketplace.security.JwtAuthenticationFilter;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+@Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
+
+    private final JwtAuthenticationEntryPoint unauthorizedHandler;
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+
+    public SecurityConfig(JwtAuthenticationEntryPoint unauthorizedHandler,
+                          JwtAuthenticationFilter jwtAuthenticationFilter) {
+        this.unauthorizedHandler = unauthorizedHandler;
+        this.jwtAuthenticationFilter = jwtAuthenticationFilter;
+    }
+
     @Bean
-    public PasswordEncoder passwordEncoder() { return new BCryptPasswordEncoder(); }
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+        return authConfig.getAuthenticationManager();
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable()).cors(Customizer.withDefaults())
-            .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**", "/api/products/**", "/api/categories/**").permitAll()
-                .requestMatchers("/api/seller/**").hasAuthority("ROLE_SELLER")
-                .requestMatchers("/api/cart/**").hasAuthority("ROLE_CUSTOMER")
-                .requestMatchers("/api/orders/**").authenticated()
+        http
+            .csrf(csrf -&gt; csrf.ignoringRequestMatchers(&quot;/h2-console/**&quot;).disable())
+            .cors(Customizer.withDefaults())
+            .headers(headers -&gt; headers.frameOptions(frame -&gt; frame.disable()))
+            .exceptionHandling(exception -&gt; exception.authenticationEntryPoint(unauthorizedHandler))
+            .sessionManagement(session -&gt; session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .authorizeHttpRequests(auth -&gt; auth
+                // Public H2 Database Console
+                .requestMatchers(&quot;/h2-console/**&quot;).permitAll()
+
+                // Public authentication endpoints
+                .requestMatchers(&quot;/api/auth/**&quot;).permitAll()
+
+                // Public product and category browsing
+                .requestMatchers(HttpMethod.GET, &quot;/api/products/**&quot;).permitAll()
+                .requestMatchers(HttpMethod.GET, &quot;/api/categories/**&quot;).permitAll()
+
+                // Seller-specific endpoints
+                .requestMatchers(&quot;/api/seller/**&quot;).hasAuthority(&quot;ROLE_SELLER&quot;)
+
+                // Customer shopping cart
+                .requestMatchers(&quot;/api/cart/**&quot;).hasAuthority(&quot;ROLE_CUSTOMER&quot;)
+
+                // General authenticated actions (placing orders, viewing order history, profile)
+                .requestMatchers(&quot;/api/orders/**&quot;).authenticated()
+                .requestMatchers(&quot;/api/customer/**&quot;).authenticated()
+
+                // All other requests require authentication
                 .anyRequest().authenticated()
             );
+
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+
         return http.build();
     }
-}</pre>
+}
+</pre>
 
-<h2>6.2 User Registration & BCrypt Service (AuthServiceImpl.java)</h2>
-<pre>@Service
+<div class="code-path">Path: backend/src/main/java/com/marketplace/security/JwtTokenProvider.java</div>
+<pre>package com.marketplace.security;
+
+import io.jsonwebtoken.*;
+import io.jsonwebtoken.security.Keys;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.stereotype.Component;
+
+import java.nio.charset.StandardCharsets;
+import java.security.Key;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Component
+public class JwtTokenProvider {
+
+    private static final Logger logger = LoggerFactory.getLogger(JwtTokenProvider.class);
+
+    @Value(&quot;${app.jwt.secret}&quot;)
+    private String jwtSecret;
+
+    @Value(&quot;${app.jwt.expiration-ms}&quot;)
+    private long jwtExpirationMs;
+
+    private Key getSigningKey() {
+        byte[] keyBytes = jwtSecret.getBytes(StandardCharsets.UTF_8);
+        return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    public String generateToken(Authentication authentication) {
+        CustomUserDetails userPrincipal = (CustomUserDetails) authentication.getPrincipal();
+
+        List&lt;String&gt; roles = userPrincipal.getAuthorities().stream()
+                .map(GrantedAuthority::getAuthority)
+                .collect(Collectors.toList());
+
+        Date now = new Date();
+        Date expiryDate = new Date(now.getTime() + jwtExpirationMs);
+
+        return Jwts.builder()
+                .setSubject(userPrincipal.getUsername())
+                .claim(&quot;userId&quot;, userPrincipal.getUserId())
+                .claim(&quot;fullName&quot;, userPrincipal.getFullName())
+                .claim(&quot;roles&quot;, roles)
+                .setIssuedAt(now)
+                .setExpiration(expiryDate)
+                .signWith(getSigningKey(), SignatureAlgorithm.HS256)
+                .compact();
+    }
+
+    public String getEmailFromToken(String token) {
+        Claims claims = Jwts.parserBuilder()
+                .setSigningKey(getSigningKey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+
+        return claims.getSubject();
+    }
+
+    public boolean validateToken(String authToken) {
+        try {
+            Jwts.parserBuilder()
+                    .setSigningKey(getSigningKey())
+                    .build()
+                    .parseClaimsJws(authToken);
+            return true;
+        } catch (SecurityException | MalformedJwtException e) {
+            logger.error(&quot;Invalid JWT signature: {}&quot;, e.getMessage());
+        } catch (ExpiredJwtException e) {
+            logger.error(&quot;JWT token is expired: {}&quot;, e.getMessage());
+        } catch (UnsupportedJwtException e) {
+            logger.error(&quot;JWT token is unsupported: {}&quot;, e.getMessage());
+        } catch (IllegalArgumentException e) {
+            logger.error(&quot;JWT claims string is empty: {}&quot;, e.getMessage());
+        }
+        return false;
+    }
+}
+</pre>
+
+<div class="code-path">Path: backend/src/main/java/com/marketplace/security/JwtAuthenticationFilter.java</div>
+<pre>package com.marketplace.security;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import java.io.IOException;
+
+@Component
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+    private final JwtTokenProvider tokenProvider;
+    private final UserDetailsServiceImpl userDetailsService;
+
+    public JwtAuthenticationFilter(JwtTokenProvider tokenProvider, UserDetailsServiceImpl userDetailsService) {
+        this.tokenProvider = tokenProvider;
+        this.userDetailsService = userDetailsService;
+    }
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request,
+                                    HttpServletResponse response,
+                                    FilterChain filterChain) throws ServletException, IOException {
+        try {
+            String jwt = parseJwt(request);
+            if (StringUtils.hasText(jwt) &amp;&amp; tokenProvider.validateToken(jwt)) {
+                String email = tokenProvider.getEmailFromToken(jwt);
+                UserDetails userDetails = userDetailsService.loadUserByUsername(email);
+
+                UsernamePasswordAuthenticationToken authentication =
+                        new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
+        } catch (Exception e) {
+            logger.error(&quot;Cannot set user authentication: {}&quot;, e);
+        }
+
+        filterChain.doFilter(request, response);
+    }
+
+    private String parseJwt(HttpServletRequest request) {
+        String headerAuth = request.getHeader(&quot;Authorization&quot;);
+        if (StringUtils.hasText(headerAuth) &amp;&amp; headerAuth.startsWith(&quot;Bearer &quot;)) {
+            return headerAuth.substring(7);
+        }
+        return null;
+    }
+}
+</pre>
+
+<h2>6.4 Model (entity) classes</h2>
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/auth/entity/User.java</div>
+<pre>package com.marketplace.modules.auth.entity;
+
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+@Table(name = &quot;USERS&quot;)
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = &quot;USER_ID&quot;)
+    private Long userId;
+
+    @Column(name = &quot;EMAIL&quot;, unique = true, nullable = false, length = 100)
+    private String email;
+
+    @Column(name = &quot;PASSWORD_HASH&quot;, nullable = false, length = 255)
+    private String password;
+
+    @Column(name = &quot;FULL_NAME&quot;, nullable = false, length = 100)
+    private String fullName;
+
+    @Column(name = &quot;PHONE_NUMBER&quot;, length = 15)
+    private String phoneNumber;
+
+    @Column(name = &quot;ADDRESS_LINE1&quot;, length = 200)
+    private String addressLine1;
+
+    @Column(name = &quot;CITY&quot;, length = 50)
+    private String city;
+
+    @Column(name = &quot;STATE&quot;, length = 50)
+    private String state;
+
+    @Column(name = &quot;PIN_CODE&quot;, length = 10)
+    private String pinCode;
+
+    @Column(name = &quot;IS_ACTIVE&quot;, nullable = false)
+    private Integer isActive = 1;
+
+    @Column(name = &quot;CREATED_AT&quot;, nullable = false, updatable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    @Column(name = &quot;UPDATED_AT&quot;, nullable = false)
+    private LocalDateTime updatedAt = LocalDateTime.now();
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        name = &quot;USER_ROLES&quot;,
+        joinColumns = @JoinColumn(name = &quot;USER_ID&quot;),
+        inverseJoinColumns = @JoinColumn(name = &quot;ROLE_ID&quot;)
+    )
+    private Set&lt;Role&gt; roles = new HashSet&lt;&gt;();
+
+    public User() {
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+        if (this.isActive == null) {
+            this.isActive = 1;
+        }
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public boolean isEnabled() {
+        return isActive != null &amp;&amp; isActive == 1;
+    }
+
+    // Getters and Setters
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddressLine1() {
+        return addressLine1;
+    }
+
+    public void setAddressLine1(String addressLine1) {
+        this.addressLine1 = addressLine1;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getPinCode() {
+        return pinCode;
+    }
+
+    public void setPinCode(String pinCode) {
+        this.pinCode = pinCode;
+    }
+
+    public Integer getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Integer isActive) {
+        this.isActive = isActive;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Set&lt;Role&gt; getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set&lt;Role&gt; roles) {
+        this.roles = roles;
+    }
+}
+</pre>
+
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/product/entity/Product.java</div>
+<pre>package com.marketplace.modules.product.entity;
+
+import com.marketplace.modules.auth.entity.User;
+import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = &quot;PRODUCTS&quot;)
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = &quot;PRODUCT_ID&quot;)
+    private Long productId;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = &quot;SELLER_ID&quot;, nullable = false)
+    private User seller;
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = &quot;CATEGORY_ID&quot;, nullable = false)
+    private Category category;
+
+    @Column(name = &quot;NAME&quot;, nullable = false, length = 150)
+    private String name;
+
+    @Lob
+    @Column(name = &quot;DESCRIPTION&quot;)
+    private String description;
+
+    @Column(name = &quot;PRICE&quot;, nullable = false, precision = 12, scale = 2)
+    private BigDecimal price;
+
+    @Column(name = &quot;SKU&quot;, unique = true, nullable = false, length = 60)
+    private String sku;
+
+    @Column(name = &quot;IMAGE_URL&quot;, length = 500)
+    private String imageUrl;
+
+    @Column(name = &quot;IS_ACTIVE&quot;, nullable = false)
+    private Integer isActive = 1;
+
+    @Column(name = &quot;CREATED_AT&quot;, nullable = false, updatable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    @Column(name = &quot;UPDATED_AT&quot;, nullable = false)
+    private LocalDateTime updatedAt = LocalDateTime.now();
+
+    public Product() {
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+        if (this.isActive == null) {
+            this.isActive = 1;
+        }
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public boolean isProductActive() {
+        return isActive != null &amp;&amp; isActive == 1;
+    }
+
+    // Getters and Setters
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
+
+    public User getSeller() {
+        return seller;
+    }
+
+    public void setSeller(User seller) {
+        this.seller = seller;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public Integer getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Integer isActive) {
+        this.isActive = isActive;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+}
+</pre>
+
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/inventory/entity/Inventory.java</div>
+<pre>package com.marketplace.modules.inventory.entity;
+
+import com.marketplace.modules.product.entity.Product;
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = &quot;INVENTORY&quot;)
+public class Inventory {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = &quot;INVENTORY_ID&quot;)
+    private Long inventoryId;
+
+    @OneToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = &quot;PRODUCT_ID&quot;, unique = true, nullable = false)
+    private Product product;
+
+    @Column(name = &quot;STOCK_QUANTITY&quot;, nullable = false)
+    private Integer stockQuantity = 0;
+
+    @Column(name = &quot;LOW_STOCK_THRESHOLD&quot;, nullable = false)
+    private Integer lowStockThreshold = 5;
+
+    @Column(name = &quot;LAST_RESTOCKED_AT&quot;)
+    private LocalDateTime lastRestockedAt = LocalDateTime.now();
+
+    @Column(name = &quot;UPDATED_AT&quot;, nullable = false)
+    private LocalDateTime updatedAt = LocalDateTime.now();
+
+    public Inventory() {
+    }
+
+    public Inventory(Product product, Integer stockQuantity, Integer lowStockThreshold) {
+        this.product = product;
+        this.stockQuantity = stockQuantity;
+        this.lowStockThreshold = (lowStockThreshold != null) ? lowStockThreshold : 5;
+        this.lastRestockedAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    @PrePersist
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public boolean isLowStock() {
+        return stockQuantity != null &amp;&amp; lowStockThreshold != null &amp;&amp; stockQuantity &lt;= lowStockThreshold;
+    }
+
+    // Getters and Setters
+    public Long getInventoryId() {
+        return inventoryId;
+    }
+
+    public void setInventoryId(Long inventoryId) {
+        this.inventoryId = inventoryId;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public Integer getStockQuantity() {
+        return stockQuantity;
+    }
+
+    public void setStockQuantity(Integer stockQuantity) {
+        this.stockQuantity = stockQuantity;
+    }
+
+    public Integer getLowStockThreshold() {
+        return lowStockThreshold;
+    }
+
+    public void setLowStockThreshold(Integer lowStockThreshold) {
+        this.lowStockThreshold = lowStockThreshold;
+    }
+
+    public LocalDateTime getLastRestockedAt() {
+        return lastRestockedAt;
+    }
+
+    public void setLastRestockedAt(LocalDateTime lastRestockedAt) {
+        this.lastRestockedAt = lastRestockedAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+}
+</pre>
+
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/order/entity/Order.java</div>
+<pre>package com.marketplace.modules.order.entity;
+
+import com.marketplace.modules.auth.entity.User;
+import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = &quot;ORDERS&quot;)
+public class Order {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = &quot;ORDER_ID&quot;)
+    private Long orderId;
+
+    @Column(name = &quot;ORDER_NUMBER&quot;, unique = true, nullable = false, length = 40)
+    private String orderNumber;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = &quot;CUSTOMER_ID&quot;, nullable = false)
+    private User customer;
+
+    @Column(name = &quot;TOTAL_AMOUNT&quot;, nullable = false, precision = 12, scale = 2)
+    private BigDecimal totalAmount;
+
+    @Column(name = &quot;ORDER_STATUS&quot;, nullable = false, length = 20)
+    private String orderStatus = &quot;PLACED&quot;;
+
+    @Column(name = &quot;SHIPPING_ADDRESS&quot;, nullable = false, length = 500)
+    private String shippingAddress;
+
+    @Column(name = &quot;PAYMENT_METHOD&quot;, nullable = false, length = 30)
+    private String paymentMethod = &quot;UPI&quot;;
+
+    @Column(name = &quot;PAYMENT_STATUS&quot;, nullable = false, length = 20)
+    private String paymentStatus = &quot;PAID&quot;;
+
+    @Column(name = &quot;CREATED_AT&quot;, nullable = false, updatable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    @Column(name = &quot;UPDATED_AT&quot;, nullable = false)
+    private LocalDateTime updatedAt = LocalDateTime.now();
+
+    @OneToMany(mappedBy = &quot;order&quot;, cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List&lt;OrderItem&gt; items = new ArrayList&lt;&gt;();
+
+    public Order() {
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public void addItem(OrderItem item) {
+        items.add(item);
+        item.setOrder(this);
+    }
+
+    // Getters and Setters
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    public String getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(String orderNumber) {
+        this.orderNumber = orderNumber;
+    }
+
+    public User getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(User customer) {
+        this.customer = customer;
+    }
+
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public String getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public List&lt;OrderItem&gt; getItems() {
+        return items;
+    }
+
+    public void setItems(List&lt;OrderItem&gt; items) {
+        this.items = items;
+    }
+}
+</pre>
+
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/order/entity/CartItem.java</div>
+<pre>package com.marketplace.modules.order.entity;
+
+import com.marketplace.modules.auth.entity.User;
+import com.marketplace.modules.product.entity.Product;
+import jakarta.persistence.*;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(
+    name = &quot;CART_ITEMS&quot;,
+    uniqueConstraints = @UniqueConstraint(name = &quot;uq_user_product_cart&quot;, columnNames = {&quot;USER_ID&quot;, &quot;PRODUCT_ID&quot;})
+)
+public class CartItem {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = &quot;CART_ITEM_ID&quot;)
+    private Long cartItemId;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = &quot;USER_ID&quot;, nullable = false)
+    private User user;
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = &quot;PRODUCT_ID&quot;, nullable = false)
+    private Product product;
+
+    @Column(name = &quot;QUANTITY&quot;, nullable = false)
+    private Integer quantity = 1;
+
+    @Column(name = &quot;CREATED_AT&quot;, nullable = false, updatable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    @Column(name = &quot;UPDATED_AT&quot;, nullable = false)
+    private LocalDateTime updatedAt = LocalDateTime.now();
+
+    public CartItem() {
+    }
+
+    public CartItem(User user, Product product, Integer quantity) {
+        this.user = user;
+        this.product = product;
+        this.quantity = quantity;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    @PrePersist
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public Long getCartItemId() {
+        return cartItemId;
+    }
+
+    public void setCartItemId(Long cartItemId) {
+        this.cartItemId = cartItemId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+}
+</pre>
+
+<h2>6.5 Repository interfaces</h2>
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/auth/repository/UserRepository.java</div>
+<pre>package com.marketplace.modules.auth.repository;
+
+import com.marketplace.modules.auth.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface UserRepository extends JpaRepository&lt;User, Long&gt; {
+    Optional&lt;User&gt; findByEmail(String email);
+    boolean existsByEmail(String email);
+}
+</pre>
+
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/product/repository/ProductRepository.java</div>
+<pre>package com.marketplace.modules.product.repository;
+
+import com.marketplace.modules.product.entity.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface ProductRepository extends JpaRepository&lt;Product, Long&gt; {
+
+    Optional&lt;Product&gt; findBySku(String sku);
+
+    boolean existsBySku(String sku);
+
+    List&lt;Product&gt; findByIsActiveOrderByCreatedAtDesc(Integer isActive);
+
+    List&lt;Product&gt; findBySeller_UserIdOrderByCreatedAtDesc(Long sellerId);
+
+    List&lt;Product&gt; findBySeller_UserIdAndIsActiveOrderByCreatedAtDesc(Long sellerId, Integer isActive);
+
+    long countBySeller_UserIdAndIsActive(Long sellerId, Integer isActive);
+
+    @Query(&quot;SELECT p FROM Product p WHERE p.isActive = 1 &quot; +
+           &quot;AND (:categoryId IS NULL OR p.category.categoryId = :categoryId) &quot; +
+           &quot;AND (:keywordPattern IS NULL OR LOWER(p.name) LIKE :keywordPattern) &quot; +
+           &quot;ORDER BY p.createdAt DESC&quot;)
+    List&lt;Product&gt; searchActiveProducts(
+            @Param(&quot;categoryId&quot;) Long categoryId,
+            @Param(&quot;keywordPattern&quot;) String keywordPattern
+    );
+}
+</pre>
+
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/order/repository/OrderRepository.java</div>
+<pre>package com.marketplace.modules.order.repository;
+
+import com.marketplace.modules.order.entity.Order;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface OrderRepository extends JpaRepository&lt;Order, Long&gt; {
+
+    Optional&lt;Order&gt; findByOrderNumber(String orderNumber);
+
+    List&lt;Order&gt; findByCustomer_UserIdOrderByCreatedAtDesc(Long customerId);
+
+    @Query(&quot;SELECT COUNT(DISTINCT o.orderId) FROM Order o JOIN o.items i WHERE i.seller.userId = :sellerId&quot;)
+    long countOrdersBySellerId(@Param(&quot;sellerId&quot;) Long sellerId);
+
+    @Query(&quot;SELECT COALESCE(SUM(i.subtotal), 0) FROM OrderItem i WHERE i.seller.userId = :sellerId AND i.order.orderStatus != &#x27;CANCELLED&#x27;&quot;)
+    BigDecimal calculateTotalRevenueBySellerId(@Param(&quot;sellerId&quot;) Long sellerId);
+
+    @Query(&quot;SELECT DISTINCT o FROM Order o JOIN o.items i WHERE i.seller.userId = :sellerId ORDER BY o.createdAt DESC&quot;)
+    List&lt;Order&gt; findOrdersBySellerId(@Param(&quot;sellerId&quot;) Long sellerId);
+}
+</pre>
+
+<h2>6.6 REST controllers & business services</h2>
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/auth/controller/AuthController.java</div>
+<pre>package com.marketplace.modules.auth.controller;
+
+import com.marketplace.common.ApiResponse;
+import com.marketplace.modules.auth.dto.AuthResponse;
+import com.marketplace.modules.auth.dto.LoginRequest;
+import com.marketplace.modules.auth.dto.RegisterRequest;
+import com.marketplace.modules.auth.dto.UserProfileResponse;
+import com.marketplace.modules.auth.service.AuthService;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/api/auth&quot;)
+public class AuthController {
+
+    private final AuthService authService;
+
+    public AuthController(AuthService authService) {
+        this.authService = authService;
+    }
+
+    @PostMapping(&quot;/register&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;AuthResponse&gt;&gt; register(@Valid @RequestBody RegisterRequest request) {
+        AuthResponse response = authService.register(request);
+        return new ResponseEntity&lt;&gt;(ApiResponse.ok(&quot;User registered successfully&quot;, response), HttpStatus.CREATED);
+    }
+
+    @PostMapping(&quot;/login&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;AuthResponse&gt;&gt; login(@Valid @RequestBody LoginRequest request) {
+        AuthResponse response = authService.login(request);
+        return ResponseEntity.ok(ApiResponse.ok(&quot;Login successful&quot;, response));
+    }
+
+    @GetMapping(&quot;/me&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;UserProfileResponse&gt;&gt; getCurrentUser(Authentication authentication) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return new ResponseEntity&lt;&gt;(ApiResponse.error(&quot;Unauthorized&quot;), HttpStatus.UNAUTHORIZED);
+        }
+        UserProfileResponse profile = authService.getCurrentUserProfile(authentication.getName());
+        return ResponseEntity.ok(ApiResponse.ok(&quot;User profile retrieved successfully&quot;, profile));
+    }
+}
+</pre>
+
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/auth/service/AuthServiceImpl.java</div>
+<pre>package com.marketplace.modules.auth.service;
+
+import com.marketplace.common.Constants;
+import com.marketplace.exception.BadRequestException;
+import com.marketplace.exception.ResourceNotFoundException;
+import com.marketplace.modules.auth.dto.AuthResponse;
+import com.marketplace.modules.auth.dto.LoginRequest;
+import com.marketplace.modules.auth.dto.RegisterRequest;
+import com.marketplace.modules.auth.dto.UserProfileResponse;
+import com.marketplace.modules.auth.entity.Role;
+import com.marketplace.modules.auth.entity.User;
+import com.marketplace.modules.auth.repository.RoleRepository;
+import com.marketplace.modules.auth.repository.UserRepository;
+import com.marketplace.security.CustomUserDetails;
+import com.marketplace.security.JwtTokenProvider;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+@Service
 public class AuthServiceImpl implements AuthService {
+
+    private final AuthenticationManager authenticationManager;
+    private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final JwtTokenProvider tokenProvider;
+
+    public AuthServiceImpl(AuthenticationManager authenticationManager,
+                           UserRepository userRepository,
+                           RoleRepository roleRepository,
+                           PasswordEncoder passwordEncoder,
+                           JwtTokenProvider tokenProvider) {
+        this.authenticationManager = authenticationManager;
+        this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.tokenProvider = tokenProvider;
+    }
+
+    @Override
+    public AuthResponse login(LoginRequest request) {
+        String email = request.getEmail() != null ? request.getEmail().trim().toLowerCase() : &quot;&quot;;
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(email, request.getPassword())
+        );
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String jwt = tokenProvider.generateToken(authentication);
+
+        CustomUserDetails userPrincipal = (CustomUserDetails) authentication.getPrincipal();
+        List&lt;String&gt; roles = userPrincipal.getAuthorities().stream()
+                .map(GrantedAuthority::getAuthority)
+                .collect(Collectors.toList());
+
+        return new AuthResponse(jwt, userPrincipal.getUserId(), userPrincipal.getUsername(),
+                userPrincipal.getFullName(), roles);
+    }
+
+    @Override
     @Transactional
     public AuthResponse register(RegisterRequest request) {
-        String email = request.getEmail().trim().toLowerCase();
+        String email = request.getEmail() != null ? request.getEmail().trim().toLowerCase() : &quot;&quot;;
         if (userRepository.existsByEmail(email)) {
-            throw new BadRequestException("Email is already registered: " + email);
+            throw new BadRequestException(&quot;Error: Email is already registered: &quot; + email);
         }
+
         User user = new User();
         user.setEmail(email);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setFullName(request.getFullName().trim());
+        user.setFullName(request.getFullName() != null ? request.getFullName().trim() : &quot;&quot;);
+        user.setPhoneNumber(request.getPhoneNumber());
+        user.setAddressLine1(request.getAddressLine1());
+        user.setCity(request.getCity());
+        user.setState(request.getState());
+        user.setPinCode(request.getPinCode());
         user.setIsActive(1);
-        Role userRole = roleRepository.findByRoleName("ROLE_" + request.getRole().toUpperCase())
-                .orElseGet(() -> roleRepository.save(new Role("ROLE_" + request.getRole().toUpperCase())));
-        user.getRoles().add(userRole);
+
+        String roleStr = request.getRole() != null ? request.getRole().trim().toUpperCase() : &quot;CUSTOMER&quot;;
+        String normalizedRoleName = roleStr.startsWith(&quot;ROLE_&quot;) ? roleStr : &quot;ROLE_&quot; + roleStr;
+
+        if (!normalizedRoleName.equals(Constants.ROLE_CUSTOMER) &amp;&amp; !normalizedRoleName.equals(Constants.ROLE_SELLER)) {
+            throw new BadRequestException(&quot;Invalid role specified. Allowed values: CUSTOMER, SELLER&quot;);
+        }
+
+        Role userRole = roleRepository.findByRoleName(normalizedRoleName)
+                .orElseGet(() -&gt; roleRepository.save(new Role(normalizedRoleName, &quot;Role for &quot; + normalizedRoleName)));
+
+        Set&lt;Role&gt; roles = new HashSet&lt;&gt;();
+        roles.add(userRole);
+        user.setRoles(roles);
+
         User savedUser = userRepository.save(user);
 
-        Authentication auth = authenticationManager.authenticate(
-            new UsernamePasswordAuthenticationToken(email, request.getPassword()));
-        String jwt = tokenProvider.generateToken(auth);
-        return new AuthResponse(jwt, savedUser.getUserId(), savedUser.getEmail(), savedUser.getFullName(), List.of(userRole.getRoleName()));
+        // Authenticate new registered user
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(email, request.getPassword())
+        );
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String jwt = tokenProvider.generateToken(authentication);
+
+        List&lt;String&gt; roleNames = savedUser.getRoles().stream()
+                .map(Role::getRoleName)
+                .collect(Collectors.toList());
+
+        return new AuthResponse(jwt, savedUser.getUserId(), savedUser.getEmail(), savedUser.getFullName(), roleNames);
     }
-}</pre>
 
-<!-- 8. FRONTEND SOURCE CODE -->
+    @Override
+    @Transactional(readOnly = true)
+    public UserProfileResponse getCurrentUserProfile(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -&gt; new ResourceNotFoundException(&quot;User&quot;, &quot;email&quot;, email));
+
+        UserProfileResponse response = new UserProfileResponse();
+        response.setUserId(user.getUserId());
+        response.setEmail(user.getEmail());
+        response.setFullName(user.getFullName());
+        response.setPhoneNumber(user.getPhoneNumber());
+        response.setAddressLine1(user.getAddressLine1());
+        response.setCity(user.getCity());
+        response.setState(user.getState());
+        response.setPinCode(user.getPinCode());
+        response.setCreatedAt(user.getCreatedAt());
+        response.setRoles(user.getRoles().stream().map(Role::getRoleName).collect(Collectors.toList()));
+
+        return response;
+    }
+}
+</pre>
+
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/product/controller/ProductController.java</div>
+<pre>package com.marketplace.modules.product.controller;
+
+import com.marketplace.common.ApiResponse;
+import com.marketplace.modules.product.dto.CategoryDto;
+import com.marketplace.modules.product.dto.ProductResponse;
+import com.marketplace.modules.product.service.ProductService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/api&quot;)
+public class ProductController {
+
+    private final ProductService productService;
+
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
+
+    @GetMapping(&quot;/products&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;List&lt;ProductResponse&gt;&gt;&gt; getActiveProducts(
+            @RequestParam(required = false) Long categoryId,
+            @RequestParam(required = false) String keyword) {
+        List&lt;ProductResponse&gt; products = productService.getActiveProducts(categoryId, keyword);
+        return ResponseEntity.ok(ApiResponse.ok(&quot;Products retrieved successfully&quot;, products));
+    }
+
+    @GetMapping(&quot;/products/{id}&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;ProductResponse&gt;&gt; getProductById(@PathVariable Long id) {
+        ProductResponse product = productService.getProductById(id);
+        return ResponseEntity.ok(ApiResponse.ok(&quot;Product details retrieved&quot;, product));
+    }
+
+    @GetMapping(&quot;/categories&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;List&lt;CategoryDto&gt;&gt;&gt; getCategories() {
+        List&lt;CategoryDto&gt; categories = productService.getAllCategories();
+        return ResponseEntity.ok(ApiResponse.ok(&quot;Categories retrieved successfully&quot;, categories));
+    }
+}
+</pre>
+
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/order/controller/CartController.java</div>
+<pre>package com.marketplace.modules.order.controller;
+
+import com.marketplace.common.ApiResponse;
+import com.marketplace.modules.order.dto.CartItemRequest;
+import com.marketplace.modules.order.dto.CartSummaryResponse;
+import com.marketplace.modules.order.service.CartService;
+import com.marketplace.security.CustomUserDetails;
+import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping(&quot;/api/cart&quot;)
+@PreAuthorize(&quot;hasAuthority(&#x27;ROLE_CUSTOMER&#x27;)&quot;)
+public class CartController {
+
+    private final CartService cartService;
+
+    public CartController(CartService cartService) {
+        this.cartService = cartService;
+    }
+
+    @GetMapping
+    public ResponseEntity&lt;ApiResponse&lt;CartSummaryResponse&gt;&gt; getCart(
+            @AuthenticationPrincipal CustomUserDetails userDetails) {
+        CartSummaryResponse summary = cartService.getCart(userDetails.getUserId());
+        return ResponseEntity.ok(ApiResponse.ok(&quot;Shopping cart retrieved&quot;, summary));
+    }
+
+    @PostMapping(&quot;/items&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;CartSummaryResponse&gt;&gt; addToCart(
+            @AuthenticationPrincipal CustomUserDetails userDetails,
+            @Valid @RequestBody CartItemRequest request) {
+        CartSummaryResponse summary = cartService.addToCart(userDetails.getUserId(), request);
+        return ResponseEntity.ok(ApiResponse.ok(&quot;Item added to cart&quot;, summary));
+    }
+
+    @PutMapping(&quot;/items/{cartItemId}&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;CartSummaryResponse&gt;&gt; updateQuantity(
+            @AuthenticationPrincipal CustomUserDetails userDetails,
+            @PathVariable Long cartItemId,
+            @RequestParam int quantity) {
+        CartSummaryResponse summary = cartService.updateQuantity(userDetails.getUserId(), cartItemId, quantity);
+        return ResponseEntity.ok(ApiResponse.ok(&quot;Cart item quantity updated&quot;, summary));
+    }
+
+    @DeleteMapping(&quot;/items/{cartItemId}&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;CartSummaryResponse&gt;&gt; removeFromCart(
+            @AuthenticationPrincipal CustomUserDetails userDetails,
+            @PathVariable Long cartItemId) {
+        CartSummaryResponse summary = cartService.removeFromCart(userDetails.getUserId(), cartItemId);
+        return ResponseEntity.ok(ApiResponse.ok(&quot;Item removed from cart&quot;, summary));
+    }
+
+    @DeleteMapping
+    public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; clearCart(
+            @AuthenticationPrincipal CustomUserDetails userDetails) {
+        cartService.clearCart(userDetails.getUserId());
+        return ResponseEntity.ok(ApiResponse.ok(&quot;Cart cleared successfully&quot;, null));
+    }
+}
+</pre>
+
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/order/service/OrderServiceImpl.java</div>
+<pre>package com.marketplace.modules.order.service;
+
+import com.marketplace.common.Constants;
+import com.marketplace.exception.BadRequestException;
+import com.marketplace.exception.ResourceNotFoundException;
+import com.marketplace.modules.auth.entity.User;
+import com.marketplace.modules.auth.repository.UserRepository;
+import com.marketplace.modules.inventory.service.InventoryService;
+import com.marketplace.modules.order.dto.CheckoutRequest;
+import com.marketplace.modules.order.dto.OrderItemResponse;
+import com.marketplace.modules.order.dto.OrderResponse;
+import com.marketplace.modules.order.dto.OrderStatusUpdateRequest;
+import com.marketplace.modules.order.entity.CartItem;
+import com.marketplace.modules.order.entity.Order;
+import com.marketplace.modules.order.entity.OrderItem;
+import com.marketplace.modules.order.repository.CartItemRepository;
+import com.marketplace.modules.order.repository.OrderRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
+
+@Service
+public class OrderServiceImpl implements OrderService {
+
+    private final OrderRepository orderRepository;
+    private final CartItemRepository cartItemRepository;
+    private final UserRepository userRepository;
+    private final InventoryService inventoryService;
+
+    public OrderServiceImpl(OrderRepository orderRepository,
+                            CartItemRepository cartItemRepository,
+                            UserRepository userRepository,
+                            InventoryService inventoryService) {
+        this.orderRepository = orderRepository;
+        this.cartItemRepository = cartItemRepository;
+        this.userRepository = userRepository;
+        this.inventoryService = inventoryService;
+    }
+
+    @Override
+    @Transactional(isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
+    public OrderResponse checkout(Long customerId, CheckoutRequest request) {
+        User customer = userRepository.findById(customerId)
+                .orElseThrow(() -&gt; new ResourceNotFoundException(&quot;Customer&quot;, &quot;id&quot;, customerId));
+
+        List&lt;CartItem&gt; cartItems = cartItemRepository.findByUser_UserIdOrderByCreatedAtDesc(customerId);
+        if (cartItems.isEmpty()) {
+            throw new BadRequestException(&quot;Your cart is empty. Add products before checking out.&quot;);
+        }
+
+        // Build Order
+        Order order = new Order();
+        String dateStr = LocalDateTime.now().format(DateTimeFormatter.ofPattern(&quot;yyyyMMdd&quot;));
+        int randomSuffix = ThreadLocalRandom.current().nextInt(1000, 9999);
+        order.setOrderNumber(&quot;ORD-&quot; + dateStr + &quot;-&quot; + randomSuffix);
+        order.setCustomer(customer);
+        order.setShippingAddress(request.getShippingAddress());
+        order.setPaymentMethod(request.getPaymentMethod() != null ? request.getPaymentMethod() : &quot;UPI&quot;);
+        order.setPaymentStatus(Constants.PAYMENT_STATUS_PAID); // Mock checkout payment success
+        order.setOrderStatus(Constants.ORDER_STATUS_PLACED);
+
+        BigDecimal totalAmount = BigDecimal.ZERO;
+        List&lt;OrderItem&gt; orderItems = new ArrayList&lt;&gt;();
+
+        for (CartItem cartItem : cartItems) {
+            Long productId = cartItem.getProduct().getProductId();
+            int quantity = cartItem.getQuantity();
+
+            // Atomic inventory deduction with rollback protection
+            inventoryService.deductStock(productId, quantity);
+
+            BigDecimal unitPrice = cartItem.getProduct().getPrice();
+            BigDecimal subtotal = unitPrice.multiply(BigDecimal.valueOf(quantity));
+            totalAmount = totalAmount.add(subtotal);
+
+            OrderItem orderItem = new OrderItem(
+                    order,
+                    cartItem.getProduct(),
+                    cartItem.getProduct().getSeller(),
+                    quantity,
+                    unitPrice,
+                    subtotal
+            );
+            orderItems.add(orderItem);
+        }
+
+        order.setTotalAmount(totalAmount);
+        order.setItems(orderItems);
+
+        Order savedOrder = orderRepository.save(order);
+
+        // Clear cart after successful checkout
+        cartItemRepository.deleteByUser_UserId(customerId);
+
+        return mapToOrderResponse(savedOrder);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public OrderResponse getOrderById(Long orderId) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -&gt; new ResourceNotFoundException(&quot;Order&quot;, &quot;id&quot;, orderId));
+        return mapToOrderResponse(order);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List&lt;OrderResponse&gt; getCustomerOrders(Long customerId) {
+        return orderRepository.findByCustomer_UserIdOrderByCreatedAtDesc(customerId).stream()
+                .map(this::mapToOrderResponse)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List&lt;OrderResponse&gt; getSellerOrders(Long sellerId) {
+        return orderRepository.findOrdersBySellerId(sellerId).stream()
+                .map(this::mapToOrderResponse)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional
+    public OrderResponse updateOrderStatus(Long orderId, OrderStatusUpdateRequest request) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -&gt; new ResourceNotFoundException(&quot;Order&quot;, &quot;id&quot;, orderId));
+
+        String targetStatus = request.getOrderStatus().toUpperCase().trim();
+
+        // Restore inventory if an order is cancelled
+        if (Constants.ORDER_STATUS_CANCELLED.equals(targetStatus) &amp;&amp;
+                !Constants.ORDER_STATUS_CANCELLED.equals(order.getOrderStatus())) {
+            for (OrderItem item : order.getItems()) {
+                inventoryService.restoreStock(item.getProduct().getProductId(), item.getQuantity());
+            }
+        }
+
+        order.setOrderStatus(targetStatus);
+        Order updated = orderRepository.save(order);
+        return mapToOrderResponse(updated);
+    }
+
+    private OrderResponse mapToOrderResponse(Order order) {
+        OrderResponse res = new OrderResponse();
+        res.setOrderId(order.getOrderId());
+        res.setOrderNumber(order.getOrderNumber());
+        res.setCustomerId(order.getCustomer().getUserId());
+        res.setCustomerName(order.getCustomer().getFullName());
+        res.setCustomerEmail(order.getCustomer().getEmail());
+        res.setTotalAmount(order.getTotalAmount());
+        res.setOrderStatus(order.getOrderStatus());
+        res.setShippingAddress(order.getShippingAddress());
+        res.setPaymentMethod(order.getPaymentMethod());
+        res.setPaymentStatus(order.getPaymentStatus());
+        res.setCreatedAt(order.getCreatedAt());
+        res.setUpdatedAt(order.getUpdatedAt());
+
+        List&lt;OrderItemResponse&gt; itemResponses = order.getItems().stream().map(item -&gt; {
+            OrderItemResponse ir = new OrderItemResponse();
+            ir.setOrderItemId(item.getOrderItemId());
+            ir.setProductId(item.getProduct().getProductId());
+            ir.setProductName(item.getProduct().getName());
+            ir.setSku(item.getProduct().getSku());
+            ir.setImageUrl(item.getProduct().getImageUrl());
+            ir.setSellerId(item.getSeller().getUserId());
+            ir.setSellerName(item.getSeller().getFullName());
+            ir.setQuantity(item.getQuantity());
+            ir.setUnitPrice(item.getUnitPrice());
+            ir.setSubtotal(item.getSubtotal());
+            return ir;
+        }).collect(Collectors.toList());
+
+        res.setItems(itemResponses);
+        return res;
+    }
+}
+</pre>
+
+<div class="code-path">Path: backend/src/main/java/com/marketplace/modules/dashboard/controller/SellerDashboardController.java</div>
+<pre>package com.marketplace.modules.dashboard.controller;
+
+import com.marketplace.common.ApiResponse;
+import com.marketplace.modules.dashboard.dto.SellerDashboardMetrics;
+import com.marketplace.modules.dashboard.service.SellerDashboardService;
+import com.marketplace.security.CustomUserDetails;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(&quot;/api/seller/dashboard&quot;)
+@PreAuthorize(&quot;hasAuthority(&#x27;ROLE_SELLER&#x27;)&quot;)
+public class SellerDashboardController {
+
+    private final SellerDashboardService dashboardService;
+
+    public SellerDashboardController(SellerDashboardService dashboardService) {
+        this.dashboardService = dashboardService;
+    }
+
+    @GetMapping(&quot;/metrics&quot;)
+    public ResponseEntity&lt;ApiResponse&lt;SellerDashboardMetrics&gt;&gt; getDashboardMetrics(
+            @AuthenticationPrincipal CustomUserDetails userDetails) {
+        SellerDashboardMetrics metrics = dashboardService.getSellerMetrics(userDetails.getUserId());
+        return ResponseEntity.ok(ApiResponse.ok(&quot;Seller metrics retrieved successfully&quot;, metrics));
+    }
+}
+</pre>
+
+<h2>6.7 API endpoints</h2>
+<table>
+  <tr><th>Method</th><th>Endpoint</th><th>Purpose</th></tr>
+  <tr><td>POST</td><td>/api/auth/register</td><td>Register a new user (Customer or Seller) with BCrypt password hashing</td></tr>
+  <tr><td>POST</td><td>/api/auth/login</td><td>Authenticate credentials and issue 24-hr HMAC-SHA256 Bearer JWT token</td></tr>
+  <tr><td>GET</td><td>/api/auth/me</td><td>Get currently authenticated user profile and roles</td></tr>
+  <tr><td>GET</td><td>/api/products</td><td>Search and filter product catalog by category, keyword, and price</td></tr>
+  <tr><td>GET</td><td>/api/products/&#123;id&#125;</td><td>Get product details with real-time stock assurance</td></tr>
+  <tr><td>GET</td><td>/api/categories</td><td>List all product categories (Electronics, Wear, Spices, Crafts)</td></tr>
+  <tr><td>GET</td><td>/api/cart</td><td>Retrieve active customer shopping cart with line items and subtotal</td></tr>
+  <tr><td>POST</td><td>/api/cart/items</td><td>Add a product to the user's shopping cart</td></tr>
+  <tr><td>DELETE</td><td>/api/cart/items/&#123;id&#125;</td><td>Remove an item from the customer's cart</td></tr>
+  <tr><td>POST</td><td>/api/orders/checkout</td><td>Execute ACID transactional checkout: atomic stock decrement & order creation</td></tr>
+  <tr><td>GET</td><td>/api/seller/dashboard/metrics</td><td>Get merchant dashboard metrics: revenue in ₹, orders count, low-stock warnings</td></tr>
+  <tr><td>GET</td><td>/api/seller/inventory</td><td>View real-time stock levels, low-stock alerts, and threshold configurations</td></tr>
+</table>
+
+<!-- SECTION 7 -->
 <h1>7. Frontend Source Code (Angular 14 + TypeScript)</h1>
-<h2>7.1 Application Routing & Route Guards (app-routing.module.ts)</h2>
-<pre>const routes: Routes = [
-  { path: '', redirectTo: 'products', pathMatch: 'full' },
-  { path: 'products', component: ProductListComponent },
-  { path: 'auth/login', component: LoginComponent },
-  { path: 'auth/register', component: RegisterComponent },
-  { path: 'cart', component: CartViewComponent, canActivate: [AuthGuard, RoleGuard], data: { role: 'ROLE_CUSTOMER' } },
-  { path: 'seller/dashboard', component: SellerDashboardComponent, canActivate: [AuthGuard, RoleGuard], data: { role: 'ROLE_SELLER' } },
-  { path: '**', redirectTo: 'products' }
-];</pre>
+<h2>7.1 Project configuration & routing</h2>
+<div class="code-path">Path: frontend/package.json</div>
+<pre>{
+  &quot;name&quot;: &quot;online-marketplace-frontend&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;scripts&quot;: {
+    &quot;ng&quot;: &quot;ng&quot;,
+    &quot;start&quot;: &quot;ng serve&quot;,
+    &quot;build&quot;: &quot;ng build&quot;,
+    &quot;watch&quot;: &quot;ng build --watch --configuration development&quot;,
+    &quot;test&quot;: &quot;ng test&quot;
+  },
+  &quot;private&quot;: true,
+  &quot;dependencies&quot;: {
+    &quot;@angular/animations&quot;: &quot;^14.2.12&quot;,
+    &quot;@angular/common&quot;: &quot;^14.2.12&quot;,
+    &quot;@angular/compiler&quot;: &quot;^14.2.12&quot;,
+    &quot;@angular/core&quot;: &quot;^14.2.12&quot;,
+    &quot;@angular/forms&quot;: &quot;^14.2.12&quot;,
+    &quot;@angular/platform-browser&quot;: &quot;^14.2.12&quot;,
+    &quot;@angular/platform-browser-dynamic&quot;: &quot;^14.2.12&quot;,
+    &quot;@angular/router&quot;: &quot;^14.2.12&quot;,
+    &quot;rxjs&quot;: &quot;~7.5.0&quot;,
+    &quot;tslib&quot;: &quot;^2.3.0&quot;,
+    &quot;zone.js&quot;: &quot;~0.11.4&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@angular-devkit/build-angular&quot;: &quot;^14.2.12&quot;,
+    &quot;@angular/cli&quot;: &quot;~14.2.12&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;^14.2.12&quot;,
+    &quot;typescript&quot;: &quot;~4.7.2&quot;
+  }
+}
+</pre>
 
-<h2>7.2 Authentication State Service (auth.service.ts)</h2>
-<pre>@Injectable({ providedIn: 'root' })
+<div class="code-path">Path: frontend/src/app/app.module.ts</div>
+<pre>import { NgModule } from &#x27;@angular/core&#x27;;
+import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
+import { HttpClientModule, HTTP_INTERCEPTORS } from &#x27;@angular/common/http&#x27;;
+import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+
+import { AppRoutingModule } from &#x27;./app-routing.module&#x27;;
+import { AppComponent } from &#x27;./app.component&#x27;;
+
+// Interceptors
+import { JwtInterceptor } from &#x27;./core/interceptors/jwt.interceptor&#x27;;
+import { ErrorInterceptor } from &#x27;./core/interceptors/error.interceptor&#x27;;
+
+// Shared Components &amp; Pipes
+import { NavbarComponent } from &#x27;./shared/components/navbar/navbar.component&#x27;;
+import { FooterComponent } from &#x27;./shared/components/footer/footer.component&#x27;;
+import { InrCurrencyPipe } from &#x27;./shared/pipes/inr-currency.pipe&#x27;;
+
+// Auth Features
+import { LoginComponent } from &#x27;./features/auth/login/login.component&#x27;;
+import { RegisterComponent } from &#x27;./features/auth/register/register.component&#x27;;
+
+// Customer Features
+import { ProductListComponent } from &#x27;./features/customer/catalog/product-list.component&#x27;;
+import { CartViewComponent } from &#x27;./features/customer/cart/cart-view.component&#x27;;
+import { CheckoutComponent } from &#x27;./features/customer/checkout/checkout.component&#x27;;
+import { OrderHistoryComponent } from &#x27;./features/customer/orders/order-history.component&#x27;;
+
+// Seller Features
+import { SellerDashboardComponent } from &#x27;./features/seller/dashboard/seller-dashboard.component&#x27;;
+import { SellerProductsComponent } from &#x27;./features/seller/products/seller-products.component&#x27;;
+import { SellerInventoryComponent } from &#x27;./features/seller/inventory/seller-inventory.component&#x27;;
+import { SellerOrdersComponent } from &#x27;./features/seller/orders/seller-orders.component&#x27;;
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    InrCurrencyPipe,
+    LoginComponent,
+    RegisterComponent,
+    ProductListComponent,
+    CartViewComponent,
+    CheckoutComponent,
+    OrderHistoryComponent,
+    SellerDashboardComponent,
+    SellerProductsComponent,
+    SellerInventoryComponent,
+    SellerOrdersComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+</pre>
+
+<div class="code-path">Path: frontend/src/app/app-routing.module.ts</div>
+<pre>import { NgModule } from &#x27;@angular/core&#x27;;
+import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+
+import { LoginComponent } from &#x27;./features/auth/login/login.component&#x27;;
+import { RegisterComponent } from &#x27;./features/auth/register/register.component&#x27;;
+import { ProductListComponent } from &#x27;./features/customer/catalog/product-list.component&#x27;;
+import { CartViewComponent } from &#x27;./features/customer/cart/cart-view.component&#x27;;
+import { CheckoutComponent } from &#x27;./features/customer/checkout/checkout.component&#x27;;
+import { OrderHistoryComponent } from &#x27;./features/customer/orders/order-history.component&#x27;;
+
+import { SellerDashboardComponent } from &#x27;./features/seller/dashboard/seller-dashboard.component&#x27;;
+import { SellerProductsComponent } from &#x27;./features/seller/products/seller-products.component&#x27;;
+import { SellerInventoryComponent } from &#x27;./features/seller/inventory/seller-inventory.component&#x27;;
+import { SellerOrdersComponent } from &#x27;./features/seller/orders/seller-orders.component&#x27;;
+
+import { AuthGuard } from &#x27;./core/guards/auth.guard&#x27;;
+import { RoleGuard } from &#x27;./core/guards/role.guard&#x27;;
+
+const routes: Routes = [
+  { path: &#x27;&#x27;, redirectTo: &#x27;products&#x27;, pathMatch: &#x27;full&#x27; },
+  { path: &#x27;products&#x27;, component: ProductListComponent },
+
+  // Auth
+  { path: &#x27;login&#x27;, redirectTo: &#x27;auth/login&#x27;, pathMatch: &#x27;full&#x27; },
+  { path: &#x27;register&#x27;, redirectTo: &#x27;auth/register&#x27;, pathMatch: &#x27;full&#x27; },
+  { path: &#x27;auth/login&#x27;, component: LoginComponent },
+  { path: &#x27;auth/register&#x27;, component: RegisterComponent },
+
+  // Customer Routes
+  {
+    path: &#x27;cart&#x27;,
+    component: CartViewComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: &#x27;ROLE_CUSTOMER&#x27; }
+  },
+  {
+    path: &#x27;checkout&#x27;,
+    component: CheckoutComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: &#x27;ROLE_CUSTOMER&#x27; }
+  },
+  {
+    path: &#x27;orders&#x27;,
+    component: OrderHistoryComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: &#x27;ROLE_CUSTOMER&#x27; }
+  },
+
+  // Seller Routes
+  {
+    path: &#x27;seller/dashboard&#x27;,
+    component: SellerDashboardComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: &#x27;ROLE_SELLER&#x27; }
+  },
+  {
+    path: &#x27;seller/products&#x27;,
+    component: SellerProductsComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: &#x27;ROLE_SELLER&#x27; }
+  },
+  {
+    path: &#x27;seller/inventory&#x27;,
+    component: SellerInventoryComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: &#x27;ROLE_SELLER&#x27; }
+  },
+  {
+    path: &#x27;seller/orders&#x27;,
+    component: SellerOrdersComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: { role: &#x27;ROLE_SELLER&#x27; }
+  },
+
+  { path: &#x27;**&#x27;, redirectTo: &#x27;products&#x27; }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+</pre>
+
+<h2>7.2 Services, models, and HTTP interceptors</h2>
+<div class="code-path">Path: frontend/src/app/shared/models/models.ts</div>
+<pre>export interface ApiResponse&lt;T&gt; {
+  success: boolean;
+  message: string;
+  data: T;
+  timestamp: string;
+}
+
+export interface User {
+  userId: number;
+  email: string;
+  fullName: string;
+  phoneNumber?: string;
+  addressLine1?: string;
+  city?: string;
+  state?: string;
+  pinCode?: string;
+  roles: string[];
+}
+
+export interface AuthResponse {
+  token: string;
+  tokenType: string;
+  userId: number;
+  email: string;
+  fullName: string;
+  roles: string[];
+}
+
+export interface Category {
+  categoryId: number;
+  categoryName: string;
+  description: string;
+}
+
+export interface Product {
+  productId: number;
+  name: string;
+  description: string;
+  price: number;
+  sku: string;
+  imageUrl: string;
+  isActive: number;
+  categoryId: number;
+  categoryName: string;
+  sellerId: number;
+  sellerName: string;
+  stockQuantity: number;
+  lowStockThreshold: number;
+  lowStock: boolean;
+  createdAt: string;
+}
+
+export interface ProductRequest {
+  name: string;
+  description?: string;
+  price: number;
+  sku: string;
+  imageUrl?: string;
+  categoryId: number;
+  initialStock: number;
+  lowStockThreshold: number;
+}
+
+export interface InventoryItem {
+  inventoryId: number;
+  productId: number;
+  productName: string;
+  sku: string;
+  price: number;
+  stockQuantity: number;
+  lowStockThreshold: number;
+  lowStock: boolean;
+  lastRestockedAt: string;
+}
+
+export interface CartItem {
+  cartItemId: number;
+  productId: number;
+  productName: string;
+  sku: string;
+  price: number;
+  imageUrl: string;
+  quantity: number;
+  subtotal: number;
+  availableStock: number;
+}
+
+export interface CartSummary {
+  items: CartItem[];
+  totalAmount: number;
+  totalItemCount: number;
+}
+
+export interface OrderItem {
+  orderItemId: number;
+  productId: number;
+  productName: string;
+  sku: string;
+  imageUrl: string;
+  sellerId: number;
+  sellerName: string;
+  quantity: number;
+  unitPrice: number;
+  subtotal: number;
+}
+
+export interface Order {
+  orderId: number;
+  orderNumber: string;
+  customerId: number;
+  customerName: string;
+  customerEmail: string;
+  totalAmount: number;
+  orderStatus: &#x27;PLACED&#x27; | &#x27;CONFIRMED&#x27; | &#x27;SHIPPED&#x27; | &#x27;DELIVERED&#x27; | &#x27;CANCELLED&#x27;;
+  shippingAddress: string;
+  paymentMethod: string;
+  paymentStatus: string;
+  createdAt: string;
+  items: OrderItem[];
+}
+
+export interface CheckoutRequest {
+  shippingAddress: string;
+  paymentMethod: string;
+}
+
+export interface SellerDashboardMetrics {
+  totalRevenueInr: number;
+  totalOrdersCount: number;
+  activeProductsCount: number;
+  lowStockCount: number;
+}
+</pre>
+
+<div class="code-path">Path: frontend/src/app/core/services/auth.service.ts</div>
+<pre>import { Injectable } from &#x27;@angular/core&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { BehaviorSubject, Observable, tap } from &#x27;rxjs&#x27;;
+import { environment } from &#x27;../../../environments/environment&#x27;;
+import { ApiResponse, AuthResponse, User } from &#x27;../../shared/models/models&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
 export class AuthService {
   private apiUrl = `${environment.apiUrl}/auth`;
-  private currentUserSubject = new BehaviorSubject<User | null>(null);
+  private currentUserSubject = new BehaviorSubject&lt;User | null&gt;(null);
   public currentUser$ = this.currentUserSubject.asObservable();
 
-  login(credentials: any): Observable<ApiResponse<AuthResponse>> {
-    return this.http.post<ApiResponse<AuthResponse>>(`${this.apiUrl}/login`, credentials);
+  constructor(private http: HttpClient) {
+    this.loadStoredUser();
   }
 
-  register(userData: any): Observable<ApiResponse<AuthResponse>> {
+  private loadStoredUser(): void {
+    const storedUser = localStorage.getItem(&#x27;user_details&#x27;);
+    if (storedUser) {
+      try {
+        this.currentUserSubject.next(JSON.parse(storedUser));
+      } catch (e) {
+        this.logout();
+      }
+    }
+  }
+
+  login(credentials: { email: string; password: string }): Observable&lt;ApiResponse&lt;AuthResponse&gt;&gt; {
+    return this.http.post&lt;ApiResponse&lt;AuthResponse&gt;&gt;(`${this.apiUrl}/login`, credentials).pipe(
+      tap(res =&gt; {
+        if (res.success &amp;&amp; res.data) {
+          this.setSession(res.data);
+        }
+      })
+    );
+  }
+
+  register(userData: any): Observable&lt;ApiResponse&lt;AuthResponse&gt;&gt; {
     this.logout();
-    return this.http.post<ApiResponse<AuthResponse>>(`${this.apiUrl}/register`, userData);
+    return this.http.post&lt;ApiResponse&lt;AuthResponse&gt;&gt;(`${this.apiUrl}/register`, userData);
   }
 
-  setSession(authData: AuthResponse): void {
-    localStorage.setItem('auth_token', authData.token);
-    localStorage.setItem('user_details', JSON.stringify(authData));
-    this.currentUserSubject.next(authData);
+  private setSession(authData: AuthResponse): void {
+    localStorage.setItem(&#x27;auth_token&#x27;, authData.token);
+    const user: User = {
+      userId: authData.userId,
+      email: authData.email,
+      fullName: authData.fullName,
+      roles: authData.roles
+    };
+    localStorage.setItem(&#x27;user_details&#x27;, JSON.stringify(user));
+    this.currentUserSubject.next(user);
   }
-}</pre>
 
-<!-- 9. CONCLUSION -->
+  logout(): void {
+    localStorage.removeItem(&#x27;auth_token&#x27;);
+    localStorage.removeItem(&#x27;user_details&#x27;);
+    this.currentUserSubject.next(null);
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem(&#x27;auth_token&#x27;);
+  }
+
+  isLoggedIn(): boolean {
+    return !!this.getToken();
+  }
+
+  currentUserValue(): User | null {
+    return this.currentUserSubject.value;
+  }
+
+  hasRole(role: string): boolean {
+    const user = this.currentUserValue();
+    if (!user || !user.roles) return false;
+    const normalized = role.startsWith(&#x27;ROLE_&#x27;) ? role : `ROLE_${role}`;
+    return user.roles.includes(normalized);
+  }
+
+  isCustomer(): boolean {
+    return this.hasRole(&#x27;ROLE_CUSTOMER&#x27;);
+  }
+
+  isSeller(): boolean {
+    return this.hasRole(&#x27;ROLE_SELLER&#x27;);
+  }
+}
+</pre>
+
+<div class="code-path">Path: frontend/src/app/core/interceptors/jwt.interceptor.ts</div>
+<pre>import { Injectable } from &#x27;@angular/core&#x27;;
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from &#x27;@angular/common/http&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { AuthService } from &#x27;../services/auth.service&#x27;;
+
+@Injectable()
+export class JwtInterceptor implements HttpInterceptor {
+  constructor(private authService: AuthService) {}
+
+  intercept(request: HttpRequest&lt;unknown&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;unknown&gt;&gt; {
+    const token = this.authService.getToken();
+    if (token) {
+      request = request.clone({
+        setHeaders: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    }
+    return next.handle(request);
+  }
+}
+</pre>
+
+<div class="code-path">Path: frontend/src/app/core/guards/auth.guard.ts</div>
+<pre>import { Injectable } from &#x27;@angular/core&#x27;;
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from &#x27;@angular/router&#x27;;
+import { AuthService } from &#x27;../services/auth.service&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class AuthGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    if (this.authService.isLoggedIn()) {
+      return true;
+    }
+
+    this.router.navigate([&#x27;/auth/login&#x27;], { queryParams: { returnUrl: state.url } });
+    return false;
+  }
+}
+</pre>
+
+<h2>7.3 Feature components (TypeScript & HTML)</h2>
+<div class="code-path">Path: frontend/src/app/features/auth/login/login.component.ts</div>
+<pre>import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { AuthService } from &#x27;../../../core/services/auth.service&#x27;;
+
+@Component({
+  selector: &#x27;app-login&#x27;,
+  templateUrl: &#x27;./login.component.html&#x27;,
+  styleUrls: [&#x27;./login.component.css&#x27;]
+})
+export class LoginComponent implements OnInit {
+  loginForm: FormGroup;
+  loading = false;
+  errorMessage = &#x27;&#x27;;
+  registeredSuccess = false;
+  returnUrl = &#x27;/&#x27;;
+
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+    this.loginForm = this.fb.group({
+      email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+      password: [&#x27;&#x27;, [Validators.required]]
+    });
+  }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params =&gt; {
+      if (params[&#x27;registered&#x27;] === &#x27;true&#x27;) {
+        this.registeredSuccess = true;
+        const regEmail = params[&#x27;email&#x27;] || &#x27;&#x27;;
+        if (regEmail) {
+          this.loginForm.patchValue({ email: regEmail });
+        }
+      } else if (this.authService.isLoggedIn()) {
+        this.redirectUser();
+      }
+    });
+    this.returnUrl = this.route.snapshot.queryParams[&#x27;returnUrl&#x27;] || &#x27;/&#x27;;
+  }
+
+  onSubmit(): void {
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    this.loading = true;
+    this.errorMessage = &#x27;&#x27;;
+
+    this.authService.login(this.loginForm.value).subscribe({
+      next: () =&gt; {
+        this.loading = false;
+        this.redirectUser();
+      },
+      error: (err) =&gt; {
+        this.loading = false;
+        this.errorMessage = err.message || &#x27;Login failed. Please check your credentials.&#x27;;
+      }
+    });
+  }
+
+  private redirectUser(): void {
+    if (this.authService.isSeller()) {
+      this.router.navigate([&#x27;/seller/dashboard&#x27;]);
+    } else {
+      this.router.navigate([this.returnUrl !== &#x27;/&#x27; ? this.returnUrl : &#x27;/products&#x27;]);
+    }
+  }
+
+  // Quick fill test credentials
+  fillCredentials(email: string): void {
+    this.loginForm.patchValue({
+      email: email,
+      password: &#x27;Password@123&#x27;
+    });
+  }
+}
+</pre>
+
+<div class="code-path">Path: frontend/src/app/features/auth/login/login.component.html</div>
+<pre>&lt;div class=&quot;auth-wrapper&quot;&gt;
+  &lt;div class=&quot;card auth-card&quot;&gt;
+    &lt;div class=&quot;auth-header&quot;&gt;
+      &lt;i class=&quot;fa-solid fa-lock auth-icon&quot;&gt;&lt;/i&gt;
+      &lt;h2&gt;Sign In to ShopVerse&lt;/h2&gt;
+      &lt;p class=&quot;auth-subtitle&quot;&gt;Access your orders, wishlist, or seller dashboard&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Registration Success Alert --&gt;
+    &lt;div class=&quot;alert alert-success&quot; *ngIf=&quot;registeredSuccess&quot; style=&quot;background-color: #d1e7dd; color: #0f5132; border: 1px solid #badbcc; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; font-size: 14px;&quot;&gt;
+      &lt;i class=&quot;fa-solid fa-circle-check&quot; style=&quot;color: #198754; font-size: 18px;&quot;&gt;&lt;/i&gt;
+      &lt;div&gt;
+        &lt;strong&gt;Account Registered &amp;amp; Saved in Database!&lt;/strong&gt;&lt;br /&gt;
+        Enter your password below to sign in.
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Error Alert --&gt;
+    &lt;div class=&quot;alert alert-danger&quot; *ngIf=&quot;errorMessage&quot;&gt;
+      &lt;i class=&quot;fa-solid fa-circle-exclamation&quot;&gt;&lt;/i&gt;
+      &lt;span&gt;{{ errorMessage }}&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;form [formGroup]=&quot;loginForm&quot; (ngSubmit)=&quot;onSubmit()&quot;&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;email&quot;&gt;Email Address&lt;/label&gt;
+        &lt;input 
+          id=&quot;email&quot; 
+          type=&quot;email&quot; 
+          formControlName=&quot;email&quot; 
+          class=&quot;form-control&quot; 
+          placeholder=&quot;name@example.com&quot;
+        /&gt;
+        &lt;div class=&quot;form-error&quot; *ngIf=&quot;loginForm.get(&#x27;email&#x27;)?.touched &amp;&amp; loginForm.get(&#x27;email&#x27;)?.invalid&quot;&gt;
+          Please enter a valid email address.
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
+        &lt;input 
+          id=&quot;password&quot; 
+          type=&quot;password&quot; 
+          formControlName=&quot;password&quot; 
+          class=&quot;form-control&quot; 
+          placeholder=&quot;••••••••&quot;
+        /&gt;
+        &lt;div class=&quot;form-error&quot; *ngIf=&quot;loginForm.get(&#x27;password&#x27;)?.touched &amp;&amp; loginForm.get(&#x27;password&#x27;)?.invalid&quot;&gt;
+          Password is required.
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary btn-block&quot; [disabled]=&quot;loginForm.invalid || loading&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-arrow-right-to-bracket&quot; *ngIf=&quot;!loading&quot;&gt;&lt;/i&gt;
+        &lt;i class=&quot;fa-solid fa-spinner fa-spin&quot; *ngIf=&quot;loading&quot;&gt;&lt;/i&gt;
+        {{ loading ? &#x27;Signing In...&#x27; : &#x27;Sign In&#x27; }}
+      &lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;!-- Quick Demo Accounts --&gt;
+    &lt;div class=&quot;demo-accounts&quot;&gt;
+      &lt;p class=&quot;demo-title&quot;&gt;Quick Demo Login:&lt;/p&gt;
+      &lt;div class=&quot;demo-buttons&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-outline btn-sm&quot; (click)=&quot;fillCredentials(&#x27;seller.sharma@marketplace.in&#x27;)&quot;&gt;
+          &lt;i class=&quot;fa-solid fa-store&quot;&gt;&lt;/i&gt; Seller Demo
+        &lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-outline btn-sm&quot; (click)=&quot;fillCredentials(&#x27;aarav.patel@gmail.com&#x27;)&quot;&gt;
+          &lt;i class=&quot;fa-solid fa-user&quot;&gt;&lt;/i&gt; Customer Demo
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;auth-footer&quot;&gt;
+      &lt;span&gt;Don&#x27;t have an account?&lt;/span&gt;
+      &lt;a routerLink=&quot;/auth/register&quot;&gt;Create Account&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<div class="code-path">Path: frontend/src/app/features/auth/register/register.component.ts</div>
+<pre>import { Component } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { AuthService } from &#x27;../../../core/services/auth.service&#x27;;
+
+@Component({
+  selector: &#x27;app-register&#x27;,
+  templateUrl: &#x27;./register.component.html&#x27;,
+  styleUrls: [&#x27;./register.component.css&#x27;]
+})
+export class RegisterComponent {
+  registerForm: FormGroup;
+  loading = false;
+  errorMessage = &#x27;&#x27;;
+
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.registerForm = this.fb.group({
+      fullName: [&#x27;&#x27;, [Validators.required, Validators.minLength(2)]],
+      email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+      password: [&#x27;&#x27;, [Validators.required, Validators.minLength(6)]],
+      role: [&#x27;CUSTOMER&#x27;, [Validators.required]],
+      phoneNumber: [&#x27;&#x27;],
+      addressLine1: [&#x27;&#x27;],
+      city: [&#x27;&#x27;],
+      state: [&#x27;&#x27;],
+      pinCode: [&#x27;&#x27;]
+    });
+  }
+
+  onSubmit(): void {
+    if (this.registerForm.invalid) {
+      this.registerForm.markAllAsTouched();
+      this.errorMessage = &#x27;Please fill all required fields correctly (Name, valid Email, min 6-character Password).&#x27;;
+      return;
+    }
+
+    this.loading = true;
+    this.errorMessage = &#x27;&#x27;;
+
+    const payload = { ...this.registerForm.value };
+
+    this.authService.register(payload).subscribe({
+      next: () =&gt; {
+        this.loading = false;
+        // Redirect to login page with pre-filled email so user can sign in and show Ma&#x27;am
+        this.router.navigate([&#x27;/auth/login&#x27;], {
+          queryParams: { registered: &#x27;true&#x27;, email: payload.email }
+        });
+      },
+      error: (err) =&gt; {
+        this.loading = false;
+        this.errorMessage = err.message || &#x27;Registration failed. Please try again.&#x27;;
+      }
+    });
+  }
+}
+</pre>
+
+<div class="code-path">Path: frontend/src/app/features/auth/register/register.component.html</div>
+<pre>&lt;div class=&quot;auth-wrapper&quot;&gt;
+  &lt;div class=&quot;card auth-card&quot;&gt;
+    &lt;div class=&quot;auth-header&quot;&gt;
+      &lt;i class=&quot;fa-solid fa-user-plus auth-icon&quot;&gt;&lt;/i&gt;
+      &lt;h2&gt;Create Your Account&lt;/h2&gt;
+      &lt;p class=&quot;auth-subtitle&quot;&gt;Join ShopVerse as a Customer or Seller&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Error Alert --&gt;
+    &lt;div class=&quot;alert alert-danger&quot; *ngIf=&quot;errorMessage&quot;&gt;
+      &lt;i class=&quot;fa-solid fa-circle-exclamation&quot;&gt;&lt;/i&gt;
+      &lt;span&gt;{{ errorMessage }}&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;form [formGroup]=&quot;registerForm&quot; (ngSubmit)=&quot;onSubmit()&quot;&gt;
+      &lt;!-- Account Type / Role Selector --&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label&gt;I want to register as:&lt;/label&gt;
+        &lt;div class=&quot;role-selector&quot;&gt;
+          &lt;label class=&quot;role-option&quot; [class.selected]=&quot;registerForm.get(&#x27;role&#x27;)?.value === &#x27;CUSTOMER&#x27;&quot;&gt;
+            &lt;input type=&quot;radio&quot; formControlName=&quot;role&quot; value=&quot;CUSTOMER&quot; /&gt;
+            &lt;i class=&quot;fa-solid fa-basket-shopping&quot;&gt;&lt;/i&gt;
+            &lt;span&gt;Customer&lt;/span&gt;
+          &lt;/label&gt;
+          &lt;label class=&quot;role-option&quot; [class.selected]=&quot;registerForm.get(&#x27;role&#x27;)?.value === &#x27;SELLER&#x27;&quot;&gt;
+            &lt;input type=&quot;radio&quot; formControlName=&quot;role&quot; value=&quot;SELLER&quot; /&gt;
+            &lt;i class=&quot;fa-solid fa-store&quot;&gt;&lt;/i&gt;
+            &lt;span&gt;Merchant / Seller&lt;/span&gt;
+          &lt;/label&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;fullName&quot;&gt;Full Name / Business Name *&lt;/label&gt;
+        &lt;input id=&quot;fullName&quot; type=&quot;text&quot; formControlName=&quot;fullName&quot; class=&quot;form-control&quot; placeholder=&quot;e.g. Aarav Patel or Sharma Handlooms&quot; /&gt;
+        &lt;div class=&quot;form-error&quot; *ngIf=&quot;registerForm.get(&#x27;fullName&#x27;)?.touched &amp;&amp; registerForm.get(&#x27;fullName&#x27;)?.invalid&quot;&gt;
+          Full Name is required.
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;email&quot;&gt;Email Address *&lt;/label&gt;
+        &lt;input id=&quot;email&quot; type=&quot;email&quot; formControlName=&quot;email&quot; class=&quot;form-control&quot; placeholder=&quot;name@example.com&quot; /&gt;
+        &lt;div class=&quot;form-error&quot; *ngIf=&quot;registerForm.get(&#x27;email&#x27;)?.touched &amp;&amp; registerForm.get(&#x27;email&#x27;)?.invalid&quot;&gt;
+          Please enter a valid email address.
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;password&quot;&gt;Password (min 6 characters) *&lt;/label&gt;
+        &lt;input id=&quot;password&quot; type=&quot;password&quot; formControlName=&quot;password&quot; class=&quot;form-control&quot; placeholder=&quot;••••••••&quot; /&gt;
+        &lt;div class=&quot;form-error&quot; *ngIf=&quot;registerForm.get(&#x27;password&#x27;)?.touched &amp;&amp; registerForm.get(&#x27;password&#x27;)?.invalid&quot;&gt;
+          Password must be at least 6 characters.
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-row&quot;&gt;
+        &lt;div class=&quot;form-group col&quot;&gt;
+          &lt;label for=&quot;phoneNumber&quot;&gt;Mobile Number&lt;/label&gt;
+          &lt;input id=&quot;phoneNumber&quot; type=&quot;text&quot; formControlName=&quot;phoneNumber&quot; class=&quot;form-control&quot; placeholder=&quot;+91 9876543210&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-group col&quot;&gt;
+          &lt;label for=&quot;pinCode&quot;&gt;PIN Code&lt;/label&gt;
+          &lt;input id=&quot;pinCode&quot; type=&quot;text&quot; formControlName=&quot;pinCode&quot; class=&quot;form-control&quot; placeholder=&quot;380015&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;addressLine1&quot;&gt;Address&lt;/label&gt;
+        &lt;input id=&quot;addressLine1&quot; type=&quot;text&quot; formControlName=&quot;addressLine1&quot; class=&quot;form-control&quot; placeholder=&quot;Street, locality or shop address&quot; /&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-row&quot;&gt;
+        &lt;div class=&quot;form-group col&quot;&gt;
+          &lt;label for=&quot;city&quot;&gt;City&lt;/label&gt;
+          &lt;input id=&quot;city&quot; type=&quot;text&quot; formControlName=&quot;city&quot; class=&quot;form-control&quot; placeholder=&quot;e.g. Bengaluru&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-group col&quot;&gt;
+          &lt;label for=&quot;state&quot;&gt;State&lt;/label&gt;
+          &lt;input id=&quot;state&quot; type=&quot;text&quot; formControlName=&quot;state&quot; class=&quot;form-control&quot; placeholder=&quot;e.g. Karnataka&quot; /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary btn-block&quot; [disabled]=&quot;registerForm.invalid || loading&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-check&quot; *ngIf=&quot;!loading&quot;&gt;&lt;/i&gt;
+        &lt;i class=&quot;fa-solid fa-spinner fa-spin&quot; *ngIf=&quot;loading&quot;&gt;&lt;/i&gt;
+        {{ loading ? &#x27;Creating Account...&#x27; : &#x27;Complete Registration&#x27; }}
+      &lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;div class=&quot;auth-footer&quot;&gt;
+      &lt;span&gt;Already have an account?&lt;/span&gt;
+      &lt;a routerLink=&quot;/auth/login&quot;&gt;Sign In&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<div class="code-path">Path: frontend/src/app/features/customer/catalog/product-list.component.ts</div>
+<pre>import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ProductService } from &#x27;../../../core/services/product.service&#x27;;
+import { CartService } from &#x27;../../../core/services/cart.service&#x27;;
+import { AuthService } from &#x27;../../../core/services/auth.service&#x27;;
+import { Category, Product } from &#x27;../../../shared/models/models&#x27;;
+
+@Component({
+  selector: &#x27;app-product-list&#x27;,
+  templateUrl: &#x27;./product-list.component.html&#x27;,
+  styleUrls: [&#x27;./product-list.component.css&#x27;]
+})
+export class ProductListComponent implements OnInit {
+  products: Product[] = [];
+  categories: Category[] = [];
+  selectedCategoryId?: number;
+  searchKeyword = &#x27;&#x27;;
+  loading = false;
+  successMessage = &#x27;&#x27;;
+  errorMessage = &#x27;&#x27;;
+
+  constructor(
+    private productService: ProductService,
+    private cartService: CartService,
+    public authService: AuthService
+  ) {}
+
+  ngOnInit(): void {
+    this.loadCategories();
+    this.loadProducts();
+  }
+
+  loadCategories(): void {
+    this.productService.getCategories().subscribe({
+      next: (res) =&gt; {
+        if (res.success) {
+          this.categories = res.data;
+        }
+      }
+    });
+  }
+
+  loadProducts(): void {
+    this.loading = true;
+    this.productService.getActiveProducts(this.selectedCategoryId, this.searchKeyword).subscribe({
+      next: (res) =&gt; {
+        this.loading = false;
+        if (res.success) {
+          this.products = res.data;
+        }
+      },
+      error: (err) =&gt; {
+        this.loading = false;
+        this.errorMessage = err.message || &#x27;Failed to load products&#x27;;
+      }
+    });
+  }
+
+  selectCategory(categoryId?: number): void {
+    this.selectedCategoryId = categoryId;
+    this.loadProducts();
+  }
+
+  onSearch(): void {
+    this.loadProducts();
+  }
+
+  addToCart(product: Product): void {
+    if (!this.authService.isLoggedIn()) {
+      alert(&#x27;Please sign in as a Customer to add products to your cart.&#x27;);
+      return;
+    }
+
+    if (!this.authService.isCustomer()) {
+      alert(&#x27;Sellers cannot add products to cart. Please log in with a Customer account.&#x27;);
+      return;
+    }
+
+    this.cartService.addToCart(product.productId, 1).subscribe({
+      next: () =&gt; {
+        this.successMessage = `Added &quot;${product.name}&quot; to your cart!`;
+        setTimeout(() =&gt; this.successMessage = &#x27;&#x27;, 3000);
+      },
+      error: (err) =&gt; {
+        alert(err.message || &#x27;Failed to add item to cart&#x27;);
+      }
+    });
+  }
+}
+</pre>
+
+<div class="code-path">Path: frontend/src/app/features/customer/catalog/product-list.component.html</div>
+<pre>&lt;div class=&quot;catalog-page&quot;&gt;
+  &lt;!-- Hero / Banner --&gt;
+  &lt;div class=&quot;hero-banner&quot;&gt;
+    &lt;h1&gt;Explore Authentic Products &amp; Crafts&lt;/h1&gt;
+    &lt;p&gt;Directly sourced from trusted verified sellers across India with real-time stock assurance&lt;/p&gt;
+    
+    &lt;!-- Search Bar --&gt;
+    &lt;div class=&quot;search-box&quot;&gt;
+      &lt;i class=&quot;fa-solid fa-magnifying-glass search-icon&quot;&gt;&lt;/i&gt;
+      &lt;input 
+        type=&quot;text&quot; 
+        [(ngModel)]=&quot;searchKeyword&quot; 
+        (keyup.enter)=&quot;onSearch()&quot; 
+        placeholder=&quot;Search boAt headphones, Banarasi silk sarees, spices...&quot; 
+        class=&quot;search-input&quot;
+      /&gt;
+      &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;onSearch()&quot;&gt;Search&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Notification Toast --&gt;
+  &lt;div class=&quot;alert alert-success toast-alert&quot; *ngIf=&quot;successMessage&quot;&gt;
+    &lt;i class=&quot;fa-solid fa-circle-check&quot;&gt;&lt;/i&gt;
+    &lt;span&gt;{{ successMessage }}&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Category Filter Pills --&gt;
+  &lt;div class=&quot;category-filters&quot;&gt;
+    &lt;button 
+      class=&quot;filter-pill&quot; 
+      [class.active]=&quot;selectedCategoryId === undefined&quot; 
+      (click)=&quot;selectCategory(undefined)&quot;&gt;
+      All Products
+    &lt;/button&gt;
+    &lt;button 
+      *ngFor=&quot;let cat of categories&quot; 
+      class=&quot;filter-pill&quot; 
+      [class.active]=&quot;selectedCategoryId === cat.categoryId&quot; 
+      (click)=&quot;selectCategory(cat.categoryId)&quot;&gt;
+      {{ cat.categoryName }}
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Product Grid --&gt;
+  &lt;div class=&quot;product-grid&quot; *ngIf=&quot;!loading &amp;&amp; products.length &gt; 0&quot;&gt;
+    &lt;div class=&quot;card product-card&quot; *ngFor=&quot;let product of products&quot;&gt;
+      &lt;div class=&quot;product-image-wrap&quot;&gt;
+        &lt;img [src]=&quot;product.imageUrl || &#x27;https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&#x27;&quot; [alt]=&quot;product.name&quot; class=&quot;product-image&quot; /&gt;
+        &lt;span class=&quot;category-badge&quot;&gt;{{ product.categoryName }}&lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;product-content&quot;&gt;
+        &lt;div class=&quot;sku-seller-row&quot;&gt;
+          &lt;span class=&quot;sku-tag&quot;&gt;SKU: {{ product.sku }}&lt;/span&gt;
+          &lt;span class=&quot;seller-tag&quot;&gt;&lt;i class=&quot;fa-solid fa-shop&quot;&gt;&lt;/i&gt; {{ product.sellerName }}&lt;/span&gt;
+        &lt;/div&gt;
+
+        &lt;h3 class=&quot;product-title&quot; [title]=&quot;product.name&quot;&gt;{{ product.name }}&lt;/h3&gt;
+        &lt;p class=&quot;product-desc&quot;&gt;{{ product.description }}&lt;/p&gt;
+
+        &lt;div class=&quot;price-stock-row&quot;&gt;
+          &lt;div class=&quot;product-price&quot;&gt;{{ product.price | inr }}&lt;/div&gt;
+
+          &lt;!-- Real-Time Stock Status --&gt;
+          &lt;div class=&quot;stock-status&quot;&gt;
+            &lt;span *ngIf=&quot;product.stockQuantity === 0&quot; class=&quot;badge badge-danger&quot;&gt;Out of Stock&lt;/span&gt;
+            &lt;span *ngIf=&quot;product.stockQuantity &gt; 0 &amp;&amp; product.lowStock&quot; class=&quot;badge badge-warning&quot;&gt;
+              Only {{ product.stockQuantity }} left!
+            &lt;/span&gt;
+            &lt;span *ngIf=&quot;product.stockQuantity &gt; 0 &amp;&amp; !product.lowStock&quot; class=&quot;badge badge-success&quot;&gt;
+              In Stock ({{ product.stockQuantity }})
+            &lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;button 
+          class=&quot;btn btn-primary btn-add-cart&quot; 
+          [disabled]=&quot;product.stockQuantity === 0&quot; 
+          (click)=&quot;addToCart(product)&quot;&gt;
+          &lt;i class=&quot;fa-solid fa-cart-plus&quot;&gt;&lt;/i&gt;
+          {{ product.stockQuantity === 0 ? &#x27;Out of Stock&#x27; : &#x27;Add to Cart&#x27; }}
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Loading State --&gt;
+  &lt;div class=&quot;empty-state&quot; *ngIf=&quot;loading&quot;&gt;
+    &lt;i class=&quot;fa-solid fa-spinner fa-spin fa-2x&quot;&gt;&lt;/i&gt;
+    &lt;p&gt;Loading catalog items...&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Empty State --&gt;
+  &lt;div class=&quot;empty-state card&quot; *ngIf=&quot;!loading &amp;&amp; products.length === 0&quot;&gt;
+    &lt;i class=&quot;fa-solid fa-box-open empty-icon&quot;&gt;&lt;/i&gt;
+    &lt;h3&gt;No active products found&lt;/h3&gt;
+    &lt;p&gt;Try clearing your search query or selecting a different category.&lt;/p&gt;
+    &lt;button class=&quot;btn btn-outline&quot; (click)=&quot;selectedCategoryId = undefined; searchKeyword = &#x27;&#x27;; loadProducts()&quot;&gt;
+      Reset All Filters
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<div class="code-path">Path: frontend/src/app/features/customer/cart/cart-view.component.ts</div>
+<pre>import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { CartService } from &#x27;../../../core/services/cart.service&#x27;;
+import { CartItem, CartSummary } from &#x27;../../../shared/models/models&#x27;;
+
+@Component({
+  selector: &#x27;app-cart-view&#x27;,
+  templateUrl: &#x27;./cart-view.component.html&#x27;,
+  styleUrls: [&#x27;./cart-view.component.css&#x27;]
+})
+export class CartViewComponent implements OnInit {
+  cart: CartSummary | null = null;
+  loading = false;
+  errorMessage = &#x27;&#x27;;
+
+  constructor(
+    private cartService: CartService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.fetchCart();
+  }
+
+  fetchCart(): void {
+    this.loading = true;
+    this.cartService.loadCart().subscribe({
+      next: (res) =&gt; {
+        this.loading = false;
+        if (res.success) {
+          this.cart = res.data;
+        }
+      },
+      error: (err) =&gt; {
+        this.loading = false;
+        this.errorMessage = err.message || &#x27;Failed to load shopping cart&#x27;;
+      }
+    });
+  }
+
+  increaseQuantity(item: CartItem): void {
+    if (item.quantity &gt;= item.availableStock) {
+      alert(`Cannot exceed available stock of ${item.availableStock} units`);
+      return;
+    }
+    this.cartService.updateQuantity(item.cartItemId, item.quantity + 1).subscribe({
+      next: (res) =&gt; {
+        if (res.success) {
+          this.cart = res.data;
+        }
+      },
+      error: (err) =&gt; alert(err.message)
+    });
+  }
+
+  decreaseQuantity(item: CartItem): void {
+    if (item.quantity &lt;= 1) {
+      this.removeItem(item);
+      return;
+    }
+    this.cartService.updateQuantity(item.cartItemId, item.quantity - 1).subscribe({
+      next: (res) =&gt; {
+        if (res.success) {
+          this.cart = res.data;
+        }
+      },
+      error: (err) =&gt; alert(err.message)
+    });
+  }
+
+  removeItem(item: CartItem): void {
+    if (confirm(`Remove &quot;${item.productName}&quot; from your cart?`)) {
+      this.cartService.removeFromCart(item.cartItemId).subscribe({
+        next: (res) =&gt; {
+          if (res.success) {
+            this.cart = res.data;
+          }
+        },
+        error: (err) =&gt; alert(err.message)
+      });
+    }
+  }
+
+  clearCart(): void {
+    if (confirm(&#x27;Are you sure you want to empty your entire cart?&#x27;)) {
+      this.cartService.clearCart().subscribe({
+        next: () =&gt; {
+          this.cart = null;
+        },
+        error: (err) =&gt; alert(err.message)
+      });
+    }
+  }
+
+  proceedToCheckout(): void {
+    this.router.navigate([&#x27;/checkout&#x27;]);
+  }
+}
+</pre>
+
+<div class="code-path">Path: frontend/src/app/features/customer/cart/cart-view.component.html</div>
+<pre>&lt;div class=&quot;cart-page&quot;&gt;
+  &lt;div class=&quot;page-header&quot;&gt;
+    &lt;h2&gt;&lt;i class=&quot;fa-solid fa-cart-shopping&quot;&gt;&lt;/i&gt; Shopping Cart&lt;/h2&gt;
+    &lt;button class=&quot;btn btn-outline btn-sm&quot; *ngIf=&quot;cart &amp;&amp; cart.items.length &gt; 0&quot; (click)=&quot;clearCart()&quot;&gt;
+      &lt;i class=&quot;fa-solid fa-trash-can&quot;&gt;&lt;/i&gt; Clear Cart
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Loading State --&gt;
+  &lt;div class=&quot;empty-state&quot; *ngIf=&quot;loading&quot;&gt;
+    &lt;i class=&quot;fa-solid fa-spinner fa-spin fa-2x&quot;&gt;&lt;/i&gt;
+    &lt;p&gt;Loading your shopping cart...&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Error Alert --&gt;
+  &lt;div class=&quot;alert alert-danger&quot; *ngIf=&quot;errorMessage&quot;&gt;
+    &lt;i class=&quot;fa-solid fa-circle-exclamation&quot;&gt;&lt;/i&gt;
+    &lt;span&gt;{{ errorMessage }}&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Cart with Items --&gt;
+  &lt;div class=&quot;cart-layout&quot; *ngIf=&quot;!loading &amp;&amp; cart &amp;&amp; cart.items.length &gt; 0&quot;&gt;
+    &lt;!-- Item List Table --&gt;
+    &lt;div class=&quot;card cart-items-card&quot;&gt;
+      &lt;div class=&quot;table-responsive&quot;&gt;
+        &lt;table class=&quot;table&quot;&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Product&lt;/th&gt;
+              &lt;th&gt;Unit Price&lt;/th&gt;
+              &lt;th&gt;Quantity&lt;/th&gt;
+              &lt;th&gt;Subtotal&lt;/th&gt;
+              &lt;th&gt;Action&lt;/th&gt;
+            &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+            &lt;tr *ngFor=&quot;let item of cart.items&quot;&gt;
+              &lt;td&gt;
+                &lt;div class=&quot;item-product-info&quot;&gt;
+                  &lt;img [src]=&quot;item.imageUrl || &#x27;https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=200&#x27;&quot; class=&quot;item-img&quot; /&gt;
+                  &lt;div&gt;
+                    &lt;h4 class=&quot;item-title&quot;&gt;{{ item.productName }}&lt;/h4&gt;
+                    &lt;span class=&quot;item-sku&quot;&gt;SKU: {{ item.sku }}&lt;/span&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/td&gt;
+              &lt;td&gt;{{ item.price | inr }}&lt;/td&gt;
+              &lt;td&gt;
+                &lt;div class=&quot;qty-control&quot;&gt;
+                  &lt;button class=&quot;qty-btn&quot; (click)=&quot;decreaseQuantity(item)&quot;&gt;-&lt;/button&gt;
+                  &lt;span class=&quot;qty-value&quot;&gt;{{ item.quantity }}&lt;/span&gt;
+                  &lt;button class=&quot;qty-btn&quot; (click)=&quot;increaseQuantity(item)&quot; [disabled]=&quot;item.quantity &gt;= item.availableStock&quot;&gt;+&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;small class=&quot;stock-hint&quot; *ngIf=&quot;item.quantity &gt;= item.availableStock&quot;&gt;Max stock reached&lt;/small&gt;
+              &lt;/td&gt;
+              &lt;td class=&quot;item-subtotal&quot;&gt;{{ item.subtotal | inr }}&lt;/td&gt;
+              &lt;td&gt;
+                &lt;button class=&quot;btn-remove&quot; (click)=&quot;removeItem(item)&quot; title=&quot;Remove item&quot;&gt;
+                  &lt;i class=&quot;fa-solid fa-trash&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+              &lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Order Summary Sidebar --&gt;
+    &lt;div class=&quot;card summary-card&quot;&gt;
+      &lt;h3&gt;Order Summary&lt;/h3&gt;
+      &lt;div class=&quot;summary-line&quot;&gt;
+        &lt;span&gt;Total Items:&lt;/span&gt;
+        &lt;span&gt;{{ cart.totalItemCount }}&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;summary-line&quot;&gt;
+        &lt;span&gt;Delivery / Shipping:&lt;/span&gt;
+        &lt;span class=&quot;badge badge-success&quot;&gt;Free Delivery&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;summary-divider&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;summary-line total-line&quot;&gt;
+        &lt;span&gt;Grand Total:&lt;/span&gt;
+        &lt;span class=&quot;total-price&quot;&gt;{{ cart.totalAmount | inr }}&lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;button class=&quot;btn btn-primary btn-block btn-checkout&quot; (click)=&quot;proceedToCheckout()&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-shield-halved&quot;&gt;&lt;/i&gt; Proceed to Checkout
+      &lt;/button&gt;
+
+      &lt;div class=&quot;trust-badges&quot;&gt;
+        &lt;span&gt;&lt;i class=&quot;fa-solid fa-lock&quot;&gt;&lt;/i&gt; 100% Secure Checkout&lt;/span&gt;
+        &lt;span&gt;&lt;i class=&quot;fa-solid fa-rotate-left&quot;&gt;&lt;/i&gt; 7-Day Replacement&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Empty Cart State --&gt;
+  &lt;div class=&quot;empty-state card&quot; *ngIf=&quot;!loading &amp;&amp; (!cart || cart.items.length === 0)&quot;&gt;
+    &lt;i class=&quot;fa-solid fa-cart-arrow-down empty-icon&quot;&gt;&lt;/i&gt;
+    &lt;h3&gt;Your shopping cart is empty&lt;/h3&gt;
+    &lt;p&gt;Looks like you haven&#x27;t added anything to your cart yet.&lt;/p&gt;
+    &lt;a routerLink=&quot;/products&quot; class=&quot;btn btn-primary&quot;&gt;
+      &lt;i class=&quot;fa-solid fa-store&quot;&gt;&lt;/i&gt; Start Shopping
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<div class="code-path">Path: frontend/src/app/features/seller/dashboard/seller-dashboard.component.ts</div>
+<pre>import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { SellerService } from &#x27;../../../core/services/seller.service&#x27;;
+import { InventoryItem, SellerDashboardMetrics } from &#x27;../../../shared/models/models&#x27;;
+
+@Component({
+  selector: &#x27;app-seller-dashboard&#x27;,
+  templateUrl: &#x27;./seller-dashboard.component.html&#x27;,
+  styleUrls: [&#x27;./seller-dashboard.component.css&#x27;]
+})
+export class SellerDashboardComponent implements OnInit {
+  metrics: SellerDashboardMetrics | null = null;
+  lowStockItems: InventoryItem[] = [];
+  loading = false;
+  errorMessage = &#x27;&#x27;;
+
+  constructor(private sellerService: SellerService) {}
+
+  ngOnInit(): void {
+    this.fetchDashboardData();
+  }
+
+  fetchDashboardData(): void {
+    this.loading = true;
+    this.sellerService.getDashboardMetrics().subscribe({
+      next: (res) =&gt; {
+        if (res.success) {
+          this.metrics = res.data;
+        }
+      },
+      error: (err) =&gt; {
+        this.errorMessage = err.message || &#x27;Failed to load dashboard metrics&#x27;;
+      }
+    });
+
+    this.sellerService.getLowStockInventory().subscribe({
+      next: (res) =&gt; {
+        this.loading = false;
+        if (res.success) {
+          this.lowStockItems = res.data;
+        }
+      },
+      error: () =&gt; {
+        this.loading = false;
+      }
+    });
+  }
+}
+</pre>
+
+<div class="code-path">Path: frontend/src/app/features/seller/dashboard/seller-dashboard.component.html</div>
+<pre>&lt;div class=&quot;dashboard-page&quot;&gt;
+  &lt;div class=&quot;page-header&quot;&gt;
+    &lt;div&gt;
+      &lt;h2&gt;&lt;i class=&quot;fa-solid fa-chart-line&quot;&gt;&lt;/i&gt; Merchant Dashboard&lt;/h2&gt;
+      &lt;p class=&quot;page-subtitle&quot;&gt;Real-time revenue, catalog health, and inventory status&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;header-actions&quot;&gt;
+      &lt;a routerLink=&quot;/seller/products&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-plus&quot;&gt;&lt;/i&gt; Add Product
+      &lt;/a&gt;
+      &lt;a routerLink=&quot;/seller/inventory&quot; class=&quot;btn btn-outline btn-sm&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-warehouse&quot;&gt;&lt;/i&gt; Manage Stock
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Loading State --&gt;
+  &lt;div class=&quot;empty-state&quot; *ngIf=&quot;loading &amp;&amp; !metrics&quot;&gt;
+    &lt;i class=&quot;fa-solid fa-spinner fa-spin fa-2x&quot;&gt;&lt;/i&gt;
+    &lt;p&gt;Calculating merchant metrics...&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Error Alert --&gt;
+  &lt;div class=&quot;alert alert-danger&quot; *ngIf=&quot;errorMessage&quot;&gt;
+    &lt;i class=&quot;fa-solid fa-circle-exclamation&quot;&gt;&lt;/i&gt;
+    &lt;span&gt;{{ errorMessage }}&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Summary Metric Cards --&gt;
+  &lt;div class=&quot;metrics-grid&quot; *ngIf=&quot;metrics&quot;&gt;
+    &lt;!-- Total Revenue Card --&gt;
+    &lt;div class=&quot;card metric-card&quot;&gt;
+      &lt;div class=&quot;metric-icon-wrap bg-blue&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-indian-rupee-sign&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;metric-content&quot;&gt;
+        &lt;span class=&quot;metric-label&quot;&gt;Total Revenue&lt;/span&gt;
+        &lt;h3 class=&quot;metric-value&quot;&gt;{{ metrics.totalRevenueInr | inr }}&lt;/h3&gt;
+        &lt;span class=&quot;metric-hint&quot;&gt;Settled &amp; in-transit orders&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Total Orders Card --&gt;
+    &lt;div class=&quot;card metric-card&quot;&gt;
+      &lt;div class=&quot;metric-icon-wrap bg-purple&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-truck-fast&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;metric-content&quot;&gt;
+        &lt;span class=&quot;metric-label&quot;&gt;Total Orders&lt;/span&gt;
+        &lt;h3 class=&quot;metric-value&quot;&gt;{{ metrics.totalOrdersCount }}&lt;/h3&gt;
+        &lt;span class=&quot;metric-hint&quot;&gt;Customer checkouts&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Active Products Card --&gt;
+    &lt;div class=&quot;card metric-card&quot;&gt;
+      &lt;div class=&quot;metric-icon-wrap bg-green&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-tags&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;metric-content&quot;&gt;
+        &lt;span class=&quot;metric-label&quot;&gt;Active Products&lt;/span&gt;
+        &lt;h3 class=&quot;metric-value&quot;&gt;{{ metrics.activeProductsCount }}&lt;/h3&gt;
+        &lt;span class=&quot;metric-hint&quot;&gt;Visible in marketplace&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Low Stock Alert Card --&gt;
+    &lt;div class=&quot;card metric-card&quot; [class.alert-card]=&quot;metrics.lowStockCount &gt; 0&quot;&gt;
+      &lt;div class=&quot;metric-icon-wrap bg-amber&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-triangle-exclamation&quot;&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;metric-content&quot;&gt;
+        &lt;span class=&quot;metric-label&quot;&gt;Low Stock SKUs&lt;/span&gt;
+        &lt;h3 class=&quot;metric-value&quot; [class.danger-text]=&quot;metrics.lowStockCount &gt; 0&quot;&gt;{{ metrics.lowStockCount }}&lt;/h3&gt;
+        &lt;span class=&quot;metric-hint&quot;&gt;Threshold breached&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Low Stock Alert Table --&gt;
+  &lt;div class=&quot;card section-card&quot; *ngIf=&quot;lowStockItems.length &gt; 0&quot;&gt;
+    &lt;div class=&quot;section-card-header alert-header&quot;&gt;
+      &lt;div class=&quot;header-left&quot;&gt;
+        &lt;i class=&quot;fa-solid fa-triangle-exclamation danger-icon&quot;&gt;&lt;/i&gt;
+        &lt;h3&gt;Low-Stock Urgent Replenishment Alerts&lt;/h3&gt;
+      &lt;/div&gt;
+      &lt;a routerLink=&quot;/seller/inventory&quot; class=&quot;btn btn-outline btn-sm&quot;&gt;Restock in Inventory&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;table-responsive&quot;&gt;
+      &lt;table class=&quot;table&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Product Name&lt;/th&gt;
+            &lt;th&gt;SKU&lt;/th&gt;
+            &lt;th&gt;Current Stock&lt;/th&gt;
+            &lt;th&gt;Alert Threshold&lt;/th&gt;
+            &lt;th&gt;Status&lt;/th&gt;
+            &lt;th&gt;Action&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr *ngFor=&quot;let item of lowStockItems&quot;&gt;
+            &lt;td&gt;&lt;strong&gt;{{ item.productName }}&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;code&gt;{{ item.sku }}&lt;/code&gt;&lt;/td&gt;
+            &lt;td&gt;
+              &lt;span class=&quot;stock-pill low-stock&quot;&gt;{{ item.stockQuantity }} units&lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td&gt;{{ item.lowStockThreshold }} units&lt;/td&gt;
+            &lt;td&gt;
+              &lt;span class=&quot;badge badge-danger&quot;&gt;Needs Restocking&lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;a routerLink=&quot;/seller/inventory&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;
+                Restock
+              &lt;/a&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<div class="code-path">Path: frontend/src/app/features/seller/inventory/seller-inventory.component.ts</div>
+<pre>import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { SellerService } from &#x27;../../../core/services/seller.service&#x27;;
+import { InventoryItem } from &#x27;../../../shared/models/models&#x27;;
+
+@Component({
+  selector: &#x27;app-seller-inventory&#x27;,
+  templateUrl: &#x27;./seller-inventory.component.html&#x27;,
+  styleUrls: [&#x27;./seller-inventory.component.css&#x27;]
+})
+export class SellerInventoryComponent implements OnInit {
+  inventory: InventoryItem[] = [];
+  loading = false;
+  selectedItem: InventoryItem | null = null;
+  stockForm: FormGroup;
+  showModal = false;
+  successMessage = &#x27;&#x27;;
+  errorMessage = &#x27;&#x27;;
+
+  constructor(
+    private sellerService: SellerService,
+    private fb: FormBuilder
+  ) {
+    this.stockForm = this.fb.group({
+      stockQuantity: [&#x27;&#x27;, [Validators.required, Validators.min(0)]],
+      lowStockThreshold: [&#x27;&#x27;, [Validators.required, Validators.min(1)]]
+    });
+  }
+
+  ngOnInit(): void {
+    this.fetchInventory();
+  }
+
+  fetchInventory(): void {
+    this.loading = true;
+    this.sellerService.getInventory().subscribe({
+      next: (res) =&gt; {
+        this.loading = false;
+        if (res.success) {
+          this.inventory = res.data;
+        }
+      },
+      error: (err) =&gt; {
+        this.loading = false;
+        this.errorMessage = err.message || &#x27;Failed to load inventory&#x27;;
+      }
+    });
+  }
+
+  openRestockModal(item: InventoryItem): void {
+    this.selectedItem = item;
+    this.stockForm.patchValue({
+      stockQuantity: item.stockQuantity,
+      lowStockThreshold: item.lowStockThreshold
+    });
+    this.showModal = true;
+  }
+
+  closeModal(): void {
+    this.showModal = false;
+    this.selectedItem = null;
+  }
+
+  onSubmit(): void {
+    if (this.stockForm.invalid || !this.selectedItem) {
+      return;
+    }
+
+    const { stockQuantity, lowStockThreshold } = this.stockForm.value;
+
+    this.sellerService.updateStock(this.selectedItem.inventoryId, stockQuantity, lowStockThreshold).subscribe({
+      next: (res) =&gt; {
+        if (res.success) {
+          this.closeModal();
+          this.fetchInventory();
+          this.successMessage = `Inventory updated for &quot;${res.data.productName}&quot;`;
+          setTimeout(() =&gt; this.successMessage = &#x27;&#x27;, 3000);
+        }
+      },
+      error: (err) =&gt; alert(err.message)
+    });
+  }
+}
+</pre>
+
+<div class="code-path">Path: frontend/src/app/features/seller/inventory/seller-inventory.component.html</div>
+<pre>&lt;div class=&quot;inventory-page&quot;&gt;
+  &lt;div class=&quot;page-header&quot;&gt;
+    &lt;div&gt;
+      &lt;h2&gt;&lt;i class=&quot;fa-solid fa-warehouse&quot;&gt;&lt;/i&gt; Real-Time Inventory Control&lt;/h2&gt;
+      &lt;p class=&quot;page-subtitle&quot;&gt;Track available stock quantities per SKU and configure automated low-stock alert thresholds&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Success Toast --&gt;
+  &lt;div class=&quot;alert alert-success toast-alert&quot; *ngIf=&quot;successMessage&quot;&gt;
+    &lt;i class=&quot;fa-solid fa-circle-check&quot;&gt;&lt;/i&gt;
+    &lt;span&gt;{{ successMessage }}&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Loading State --&gt;
+  &lt;div class=&quot;empty-state&quot; *ngIf=&quot;loading&quot;&gt;
+    &lt;i class=&quot;fa-solid fa-spinner fa-spin fa-2x&quot;&gt;&lt;/i&gt;
+    &lt;p&gt;Loading inventory...&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Inventory Table --&gt;
+  &lt;div class=&quot;card table-card&quot; *ngIf=&quot;!loading &amp;&amp; inventory.length &gt; 0&quot;&gt;
+    &lt;div class=&quot;table-responsive&quot;&gt;
+      &lt;table class=&quot;table&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Product Name&lt;/th&gt;
+            &lt;th&gt;SKU&lt;/th&gt;
+            &lt;th&gt;Price&lt;/th&gt;
+            &lt;th&gt;Current Stock&lt;/th&gt;
+            &lt;th&gt;Alert Threshold&lt;/th&gt;
+            &lt;th&gt;Health Status&lt;/th&gt;
+            &lt;th&gt;Last Restocked&lt;/th&gt;
+            &lt;th&gt;Action&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr *ngFor=&quot;let item of inventory&quot; [class.low-stock-row]=&quot;item.lowStock&quot;&gt;
+            &lt;td&gt;&lt;strong&gt;{{ item.productName }}&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;code&gt;{{ item.sku }}&lt;/code&gt;&lt;/td&gt;
+            &lt;td&gt;{{ item.price | inr }}&lt;/td&gt;
+            &lt;td&gt;
+              &lt;span class=&quot;stock-count&quot; [class.danger]=&quot;item.lowStock&quot;&gt;
+                {{ item.stockQuantity }} units
+              &lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td&gt;{{ item.lowStockThreshold }} units&lt;/td&gt;
+            &lt;td&gt;
+              &lt;span class=&quot;badge&quot; [ngClass]=&quot;item.lowStock ? &#x27;badge-danger&#x27; : &#x27;badge-success&#x27;&quot;&gt;
+                &lt;i [class]=&quot;item.lowStock ? &#x27;fa-solid fa-triangle-exclamation&#x27; : &#x27;fa-solid fa-circle-check&#x27;&quot;&gt;&lt;/i&gt;
+                {{ item.lowStock ? &#x27;Low Stock Alert&#x27; : &#x27;Healthy Stock&#x27; }}
+              &lt;/span&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;small class=&quot;text-muted&quot;&gt;{{ item.lastRestockedAt | date:&#x27;mediumDate&#x27; }}&lt;/small&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+              &lt;button class=&quot;btn btn-outline btn-sm&quot; (click)=&quot;openRestockModal(item)&quot;&gt;
+                &lt;i class=&quot;fa-solid fa-boxes-stacked&quot;&gt;&lt;/i&gt; Update Stock
+              &lt;/button&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Empty Inventory --&gt;
+  &lt;div class=&quot;empty-state card&quot; *ngIf=&quot;!loading &amp;&amp; inventory.length === 0&quot;&gt;
+    &lt;i class=&quot;fa-solid fa-warehouse empty-icon&quot;&gt;&lt;/i&gt;
+    &lt;h3&gt;No inventory records found&lt;/h3&gt;
+    &lt;p&gt;Inventory records are automatically created when you add products to your catalog.&lt;/p&gt;
+    &lt;a routerLink=&quot;/seller/products&quot; class=&quot;btn btn-primary&quot;&gt;
+      &lt;i class=&quot;fa-solid fa-plus&quot;&gt;&lt;/i&gt; Add Product
+    &lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Restock Modal --&gt;
+  &lt;div class=&quot;modal-backdrop&quot; *ngIf=&quot;showModal &amp;&amp; selectedItem&quot;&gt;
+    &lt;div class=&quot;card modal-card&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;h3&gt;Update Stock &amp;mdash; {{ selectedItem.productName }}&lt;/h3&gt;
+        &lt;button class=&quot;btn-close&quot; (click)=&quot;closeModal()&quot;&gt;&amp;times;&lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;form [formGroup]=&quot;stockForm&quot; (ngSubmit)=&quot;onSubmit()&quot;&gt;
+        &lt;div class=&quot;modal-body&quot;&gt;
+          &lt;p class=&quot;sku-hint&quot;&gt;SKU: &lt;code&gt;{{ selectedItem.sku }}&lt;/code&gt;&lt;/p&gt;
+
+          &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;stockQty&quot;&gt;Current Stock Quantity (Units in Warehouse) *&lt;/label&gt;
+            &lt;input id=&quot;stockQty&quot; type=&quot;number&quot; formControlName=&quot;stockQuantity&quot; class=&quot;form-control&quot; /&gt;
+            &lt;div class=&quot;form-error&quot; *ngIf=&quot;stockForm.get(&#x27;stockQuantity&#x27;)?.invalid&quot;&gt;
+              Quantity must be zero or a positive integer.
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;threshold&quot;&gt;Low-Stock Alert Threshold *&lt;/label&gt;
+            &lt;input id=&quot;threshold&quot; type=&quot;number&quot; formControlName=&quot;lowStockThreshold&quot; class=&quot;form-control&quot; /&gt;
+            &lt;div class=&quot;form-error&quot; *ngIf=&quot;stockForm.get(&#x27;lowStockThreshold&#x27;)?.invalid&quot;&gt;
+              Threshold must be at least 1 unit.
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;modal-footer&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-outline&quot; (click)=&quot;closeModal()&quot;&gt;Cancel&lt;/button&gt;
+          &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot; [disabled]=&quot;stockForm.invalid&quot;&gt;
+            &lt;i class=&quot;fa-solid fa-floppy-disk&quot;&gt;&lt;/i&gt; Save Stock
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2>7.4 Global stylesheet</h2>
+<div class="code-path">Path: frontend/src/styles.css</div>
+<pre>/* Global Styles &amp; Design System */
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary-color: #f97316;
+  --secondary-hover: #ea580c;
+  --success-color: #16a34a;
+  --danger-color: #dc2626;
+  --warning-color: #eab308;
+  --bg-color: #f8fafc;
+  --surface-color: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: &#x27;Inter&#x27;, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-container {
+  flex: 1;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 0.925rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--secondary-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: #ffffff;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.825rem;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  font-family: inherit;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-error {
+  color: var(--danger-color);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.badge-success {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.badge-warning {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+
+.badge-danger {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-info {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.badge-neutral {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+/* Cards */
+.card {
+  background-color: var(--surface-color);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* Responsive Table */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.table th {
+  background-color: #f8fafc;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.table tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Alert Boxes */
+.alert {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.alert-danger {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.alert-success {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+
+/* [Remaining utility classes omitted for brevity] */</pre>
+
+<!-- SECTION 8 -->
 <h1>8. Conclusion & Future Scope</h1>
-<p>The <b>ShopVerse Online Market Place System</b> demonstrates a complete, production-ready, full-stack multi-vendor e-commerce platform. All architectural layers have been implemented and verified: Angular 14 client SPA, Java 17 and Spring Boot 3 REST API with Spring Security 6 (JWT + BCrypt), and a normalized MySQL 8.0 relational database with ACID transactional integrity.</p>
-<h2>8.1 Future Scope</h2>
-<p>1. Live Payment Gateway Integration (Razorpay / Stripe SDKs with webhook listeners).<br/>
-2. Automated PDF GST Tax Invoices via iText / JasperReports.<br/>
-3. SMS and Email Order Dispatch Notifications via Twilio and Spring Boot Mail.<br/>
-4. Elasticsearch Integration for typo-tolerant fuzzy product search across large inventory catalogs.</p>
-
-<p style="text-align: center; margin-top: 40px; font-weight: 700; color: #64748b; font-size: 11px;">
-  Report Compiled &amp; Prepared for Academic Submission at ABES Engineering College (College Code: 032).
-</p>
+<p>The <b>ShopVerse Online Market Place System</b> successfully demonstrates an end-to-end multi-vendor e-commerce application engineered with production standards. All layers of the Three-Tier Architecture have been implemented, integrated, and validated: an Angular 14 reactive client SPA, a robust Java 17 and Spring Boot 3.2.5 REST backend with Spring Security 6 stateless JWT authentication, and a normalized MySQL 8.0 relational database engine with ACID transactional order processing.</p>
+<p>The output screenshots confirm that user registration saves credentials into MySQL, login issues valid JWT tokens, the product catalog showcases authentic Indian merchandise with live stock counts, and the seller dashboard accurately computes metrics in Indian Rupees (₹).</p>
+<p><b>Key future scope enhancements:</b></p>
+<ol>
+  <li><b>Payment Gateway Integration:</b> Integrate production payment webhooks using Razorpay and Stripe SDKs for automated UPI, credit card, and net banking reconciliation.</li>
+  <li><b>Automated PDF GST Invoicing:</b> Implement Spring Boot reporting services with iText or JasperReports to automatically generate downloadable GST tax invoice PDFs upon order completion.</li>
+  <li><b>SMS and Email Notifications:</b> Implement asynchronous messaging via Spring Boot Mail and Twilio APIs to dispatch dispatch notifications and delivery OTPs.</li>
+  <li><b>Full-Text Search with Elasticsearch:</b> Introduce an Elasticsearch cluster alongside MySQL to provide fuzzy keyword matching, typo-tolerance, and instant faceted search across massive catalogs.</li>
+</ol>
 
 </body>
 </html>
