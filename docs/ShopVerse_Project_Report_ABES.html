@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ShopVerse - Project Report (ABES Engineering College)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+  @page {
+    size: A4;
+    margin: 20mm 18mm 20mm 18mm;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0f172a;
+    line-height: 1.55;
+    font-size: 13px;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  .cover-page {
+    page-break-after: always;
+    text-align: center;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+  }
+  .college-code { font-size: 13px; font-weight: 700; color: #64748b; margin-bottom: 4px; }
+  .college-name { font-size: 24px; font-weight: 800; color: #4f46e5; margin: 4px 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .college-sub { font-size: 14px; font-weight: 600; color: #334155; margin-bottom: 2px; }
+  .college-aff { font-size: 12px; font-style: italic; color: #64748b; margin-bottom: 30px; }
+  .report-label { font-size: 14px; font-weight: 800; letter-spacing: 1.5px; color: #64748b; margin-bottom: 6px; }
+  .project-title { font-size: 26px; font-weight: 800; color: #4f46e5; margin: 8px 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+  .project-sub { font-size: 13px; color: #334155; max-width: 650px; margin: 0 auto 30px; }
+  .degree-label { font-size: 12px; font-style: italic; color: #475569; margin-bottom: 4px; }
+  .degree-name { font-size: 15px; font-weight: 800; color: #0f172a; margin: 0 0 4px; }
+  .dept-name { font-size: 13px; font-weight: 700; color: #334155; margin-bottom: 30px; }
+  
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 12px; }
+  th, td { padding: 10px 14px; border: 1px solid #cbd5e1; text-align: left; }
+  th { background: #eef2ff; color: #312e81; font-weight: 700; }
+  .meta-table td:first-child { width: 30%; font-weight: 700; background: #f8fafc; color: #475569; }
+  
+  h1 { font-size: 20px; font-weight: 800; color: #4f46e5; border-bottom: 2px solid #e0e7ff; padding-bottom: 6px; margin-top: 30px; page-break-after: avoid; font-family: 'Plus Jakarta Sans', sans-serif; }
+  h2 { font-size: 15px; font-weight: 700; color: #0f172a; margin-top: 20px; margin-bottom: 8px; page-break-after: avoid; }
+  h3 { font-size: 13px; font-weight: 700; color: #4338ca; margin-top: 14px; margin-bottom: 6px; page-break-after: avoid; }
+  p { margin: 8px 0; }
+  
+  pre {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 11px;
+    line-height: 1.45;
+    overflow-x: auto;
+    page-break-inside: avoid;
+    white-space: pre-wrap;
+  }
+  .img-card {
+    text-align: center;
+    margin: 18px 0;
+    page-break-inside: avoid;
+  }
+  .img-card img {
+    max-width: 95%;
+    height: auto;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  }
+  .img-caption {
+    font-size: 11px;
+    color: #64748b;
+    font-style: italic;
+    margin-top: 6px;
+  }
+  .badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: 700; }
+  .badge-success { background: #dcfce7; color: #166534; }
+</style>
+</head>
+<body>
+
+<!-- 1. COVER PAGE -->
+<div class="cover-page">
+  <div class="college-code">College Code - 032</div>
+  <div class="college-name">ABES ENGINEERING COLLEGE</div>
+  <div class="college-sub">Ghaziabad, Uttar Pradesh</div>
+  <div class="college-aff">Affiliated to Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow</div>
+  
+  <div style="margin: 25px 0;">
+    <div class="report-label">PROJECT REPORT ON</div>
+    <div class="project-title">ShopVerse — Online Market Place System</div>
+    <div class="project-sub">A Full-Stack Multi-Vendor E-Commerce Web Application: Architecture, Source Code & Output Report</div>
+  </div>
+
+  <div style="margin-bottom: 25px;">
+    <div class="degree-label">Submitted in partial fulfilment of the requirements for the degree of</div>
+    <div class="degree-name">Master of Computer Applications (MCA) / Bachelor of Technology</div>
+    <div class="dept-name">Department of Computer Applications / Information Technology</div>
+  </div>
+
+  <table style="width: 80%; margin: 0 auto 25px;">
+    <tr><td>Submitted by:</td><td><b>ANSHIKA JAISWAL</b></td></tr>
+    <tr><td>University Roll Number:</td><td>[University Roll Number]</td></tr>
+    <tr><td>Project Guide / Mentor:</td><td>[Project Guide / Faculty Mentor Name]</td></tr>
+    <tr><td>Academic Session:</td><td>2025–2026 / 2026–2027</td></tr>
+    <tr><td>Submission Date:</td><td>21 November 2026</td></tr>
+  </table>
+
+  <table class="meta-table" style="width: 90%; margin: 0 auto; font-size: 11px;">
+    <tr><td>PROJECT NAME</td><td>ShopVerse — Multi-Vendor Online Market Place System</td></tr>
+    <tr><td>LEARNER</td><td>Anshika Jaiswal</td></tr>
+    <tr><td>TECH STACK</td><td>Angular 14 · Spring Boot 3.2.5 · Spring Security 6 (JWT) · MySQL 8.0</td></tr>
+    <tr><td>BUILD SYSTEM</td><td>Apache Maven (pom.xml) · Angular CLI (ng serve)</td></tr>
+    <tr><td>DATABASE</td><td>MySQL 8.0 (shopverse_db, 9 relational 3NF tables)</td></tr>
+    <tr><td>GITHUB REPOSITORY</td><td>https://github.com/AnshikaJaiswal201/Java-online-market-place</td></tr>
+  </table>
+</div>
+
+<!-- 2. EXECUTIVE SUMMARY -->
+<h1>1. Executive Summary & Architecture</h1>
+<p>The <b>ShopVerse Online Market Place System</b> is an enterprise-grade multi-vendor e-commerce platform designed to bridge Indian local merchants (sellers) and buyers (customers) on a single unified portal. Built around native Indian commercial categories—Electronics, Traditional Wear & Sarees, Spices & Herbs, and Handicrafts—the platform operates as a modern 3-Tier Enterprise Application:</p>
+<ul>
+  <li><b>Presentation Tier (Client SPA):</b> Angular 14 with reactive forms, client-side route guards, and JWT HTTP interception.</li>
+  <li><b>Application Tier (REST API):</b> Java 17 and Spring Boot 3.2.5 with stateless Spring Security 6, BCrypt encryption, and ACID-compliant @Transactional business logic.</li>
+  <li><b>Data Tier (Relational Storage):</b> Local MySQL 8.0 server under the <code>shopverse_db</code> database in 3NF across 9 interconnected tables.</li>
+</ul>
+
+<h2>1.1 Project Folder Structure</h2>
+<pre>ShopVerse-Project/
+├── database/mysql_schema.sql         # Complete MySQL 8.0 DDL & 24 seed products
+├── docs/system_context_diagram_dfd0.png # DFD Level 0 Context Diagram
+├── docs/screenshots/                 # High-resolution UI screenshots
+├── backend/pom.xml                   # Maven build file (Spring Web, Security, JPA, MySQL)
+│   └── src/main/java/com/marketplace/
+│       ├── MarketplaceApplication.java# Entry point with @EnableJpaAuditing
+│       ├── config/SecurityConfig.java# Spring Security 6 & BCrypt filter configuration
+│       ├── modules/auth/             # Authentication, BCrypt hashing, JWT issuance
+│       ├── modules/product/          # Product catalog CRUD & category filtering
+│       ├── modules/inventory/        # Atomic stock deduction & low-stock alerts
+│       └── modules/order/            # Shopping cart & transactional checkout service
+└── frontend/package.json             # npm dependencies (Angular 14, RxJS, FontAwesome)
+    └── src/app/
+        ├── app-routing.module.ts     # Client routing & Auth/Role Guards
+        ├── core/services/auth.service.ts # Token session & RxJS BehaviorSubject state
+        └── features/                 # Auth, Customer Catalog, Cart, Seller Dashboard</pre>
+
+<!-- 3. PROJECT WORKFLOW -->
+<h1>2. Project Workflow & System Context Diagram</h1>
+<p>The workflow guides guest visitors into registered customers or sellers. All data persists to MySQL in real time.</p>
+<div class="img-card">
+  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/system_context_diagram_dfd0.png" alt="System Context Diagram">
+  <div class="img-caption">Figure 2.1 — System Context Diagram (DFD Level 0): Process 0.0 with 3 External Entities</div>
+</div>
+
+<!-- 4. TECH STACK -->
+<h1>3. Technology Stack & Theory</h1>
+<table>
+  <tr><th>Component</th><th>Technology</th><th>Implementation Details</th></tr>
+  <tr><td><b>Frontend SPA</b></td><td>Angular 14 + TypeScript</td><td>Component-based views, RxJS BehaviorSubject state, Route Guards, JWT Interceptor.</td></tr>
+  <tr><td><b>Backend REST API</b></td><td>Java 17 + Spring Boot 3.2.5</td><td>Stateless Spring Security 6, Controller-Service-Repository architecture, Embedded Tomcat.</td></tr>
+  <tr><td><b>Security</b></td><td>JWT + BCrypt</td><td>HMAC-SHA256 bearer tokens with 24h expiration, BCrypt salted password hashing.</td></tr>
+  <tr><td><b>Database ORM</b></td><td>MySQL 8.0 + Spring Data JPA</td><td>Third Normal Form (3NF) relational schema across 9 tables, HikariCP connection pool.</td></tr>
+</table>
+
+<!-- 5. USER INTERFACE SCREENSHOTS -->
+<h1>4. User Interface & Output Screenshots</h1>
+<p>The screenshots below were captured from the running application (Angular 14 on localhost:4200, Spring Boot on localhost:8080, and MySQL 8.0 on port 3306).</p>
+
+<h2>4.1 Login Screen & Role Selection</h2>
+<div class="img-card">
+  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/01_login_screen.png" alt="Login Screen">
+  <div class="img-caption">Figure 4.1 — ShopVerse Sign In & Role Selection Screen</div>
+</div>
+
+<h2>4.2 Customer Registration & Real-Time Database Save</h2>
+<div class="img-card">
+  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/02_register_screen.png" alt="Register Screen">
+  <div class="img-caption">Figure 4.2 — ShopVerse Account Registration with Role Selector</div>
+</div>
+
+<h2>4.3 Multi-Category Product Catalog</h2>
+<div class="img-card">
+  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/03_product_catalog.png" alt="Product Catalog">
+  <div class="img-caption">Figure 4.3 — Product Catalog with Multi-Category Filtering and Search (24 Products)</div>
+</div>
+
+<h2>4.4 Shopping Cart & Real-Time Calculations</h2>
+<div class="img-card">
+  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/04_shopping_cart.png" alt="Shopping Cart">
+  <div class="img-caption">Figure 4.4 — Shopping Cart View with Line Items and Order Summary</div>
+</div>
+
+<h2>4.5 Seller Analytics Dashboard</h2>
+<div class="img-card">
+  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/05_seller_dashboard.png" alt="Seller Dashboard">
+  <div class="img-caption">Figure 4.5 — Seller Central Analytics Dashboard and Metrics</div>
+</div>
+
+<h2>4.6 Seller Inventory Management & Low-Stock Alerts</h2>
+<div class="img-card">
+  <img src="file:///c:/Users/Anshika Jaiswal/Desktop/Minor Project/docs/screenshots/06_seller_inventory.png" alt="Seller Inventory">
+  <div class="img-caption">Figure 4.6 — Seller Inventory Management and Restock Monitor</div>
+</div>
+
+<!-- 6. DATABASE DESIGN -->
+<h1>5. Database Design & SQL Operations</h1>
+<p>The MySQL database <code>shopverse_db</code> consists of 9 normalized 3NF tables with foreign key constraints:</p>
+<table>
+  <tr><th>Table Name</th><th>Primary Key</th><th>Purpose</th></tr>
+  <tr><td><b>roles</b></td><td>role_id</td><td>ROLE_CUSTOMER, ROLE_SELLER.</td></tr>
+  <tr><td><b>users</b></td><td>user_id</td><td>Stores user credentials, BCrypt password hashes, and profile information.</td></tr>
+  <tr><td><b>user_roles</b></td><td>user_id, role_id</td><td>Many-to-Many junction mapping users to security roles.</td></tr>
+  <tr><td><b>categories</b></td><td>category_id</td><td>Product categories (Electronics, Wear, Spices, Crafts).</td></tr>
+  <tr><td><b>products</b></td><td>product_id</td><td>Product catalog listings with SKU, price in ₹, image URL.</td></tr>
+  <tr><td><b>inventory</b></td><td>inventory_id</td><td>Live stock counts and low-stock safety threshold triggers.</td></tr>
+  <tr><td><b>cart_items</b></td><td>cart_item_id</td><td>Customer persistent shopping cart items.</td></tr>
+  <tr><td><b>orders</b></td><td>order_id</td><td>Master customer orders with order numbers (ORD-YYYYMMDD-XXXX).</td></tr>
+  <tr><td><b>order_items</b></td><td>order_item_id</td><td>Purchased line items capturing historical unit price.</td></tr>
+</table>
+
+<!-- 7. BACKEND SOURCE CODE -->
+<h1>6. Backend Source Code (Spring Boot 3 + Java 17)</h1>
+<h2>6.1 Security Configuration (SecurityConfig.java)</h2>
+<pre>@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity
+public class SecurityConfig {
+    @Bean
+    public PasswordEncoder passwordEncoder() { return new BCryptPasswordEncoder(); }
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf(csrf -> csrf.disable()).cors(Customizer.withDefaults())
+            .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/auth/**", "/api/products/**", "/api/categories/**").permitAll()
+                .requestMatchers("/api/seller/**").hasAuthority("ROLE_SELLER")
+                .requestMatchers("/api/cart/**").hasAuthority("ROLE_CUSTOMER")
+                .requestMatchers("/api/orders/**").authenticated()
+                .anyRequest().authenticated()
+            );
+        http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+        return http.build();
+    }
+}</pre>
+
+<h2>6.2 User Registration & BCrypt Service (AuthServiceImpl.java)</h2>
+<pre>@Service
+public class AuthServiceImpl implements AuthService {
+    @Transactional
+    public AuthResponse register(RegisterRequest request) {
+        String email = request.getEmail().trim().toLowerCase();
+        if (userRepository.existsByEmail(email)) {
+            throw new BadRequestException("Email is already registered: " + email);
+        }
+        User user = new User();
+        user.setEmail(email);
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user.setFullName(request.getFullName().trim());
+        user.setIsActive(1);
+        Role userRole = roleRepository.findByRoleName("ROLE_" + request.getRole().toUpperCase())
+                .orElseGet(() -> roleRepository.save(new Role("ROLE_" + request.getRole().toUpperCase())));
+        user.getRoles().add(userRole);
+        User savedUser = userRepository.save(user);
+
+        Authentication auth = authenticationManager.authenticate(
+            new UsernamePasswordAuthenticationToken(email, request.getPassword()));
+        String jwt = tokenProvider.generateToken(auth);
+        return new AuthResponse(jwt, savedUser.getUserId(), savedUser.getEmail(), savedUser.getFullName(), List.of(userRole.getRoleName()));
+    }
+}</pre>
+
+<!-- 8. FRONTEND SOURCE CODE -->
+<h1>7. Frontend Source Code (Angular 14 + TypeScript)</h1>
+<h2>7.1 Application Routing & Route Guards (app-routing.module.ts)</h2>
+<pre>const routes: Routes = [
+  { path: '', redirectTo: 'products', pathMatch: 'full' },
+  { path: 'products', component: ProductListComponent },
+  { path: 'auth/login', component: LoginComponent },
+  { path: 'auth/register', component: RegisterComponent },
+  { path: 'cart', component: CartViewComponent, canActivate: [AuthGuard, RoleGuard], data: { role: 'ROLE_CUSTOMER' } },
+  { path: 'seller/dashboard', component: SellerDashboardComponent, canActivate: [AuthGuard, RoleGuard], data: { role: 'ROLE_SELLER' } },
+  { path: '**', redirectTo: 'products' }
+];</pre>
+
+<h2>7.2 Authentication State Service (auth.service.ts)</h2>
+<pre>@Injectable({ providedIn: 'root' })
+export class AuthService {
+  private apiUrl = `${environment.apiUrl}/auth`;
+  private currentUserSubject = new BehaviorSubject<User | null>(null);
+  public currentUser$ = this.currentUserSubject.asObservable();
+
+  login(credentials: any): Observable<ApiResponse<AuthResponse>> {
+    return this.http.post<ApiResponse<AuthResponse>>(`${this.apiUrl}/login`, credentials);
+  }
+
+  register(userData: any): Observable<ApiResponse<AuthResponse>> {
+    this.logout();
+    return this.http.post<ApiResponse<AuthResponse>>(`${this.apiUrl}/register`, userData);
+  }
+
+  setSession(authData: AuthResponse): void {
+    localStorage.setItem('auth_token', authData.token);
+    localStorage.setItem('user_details', JSON.stringify(authData));
+    this.currentUserSubject.next(authData);
+  }
+}</pre>
+
+<!-- 9. CONCLUSION -->
+<h1>8. Conclusion & Future Scope</h1>
+<p>The <b>ShopVerse Online Market Place System</b> demonstrates a complete, production-ready, full-stack multi-vendor e-commerce platform. All architectural layers have been implemented and verified: Angular 14 client SPA, Java 17 and Spring Boot 3 REST API with Spring Security 6 (JWT + BCrypt), and a normalized MySQL 8.0 relational database with ACID transactional integrity.</p>
+<h2>8.1 Future Scope</h2>
+<p>1. Live Payment Gateway Integration (Razorpay / Stripe SDKs with webhook listeners).<br/>
+2. Automated PDF GST Tax Invoices via iText / JasperReports.<br/>
+3. SMS and Email Order Dispatch Notifications via Twilio and Spring Boot Mail.<br/>
+4. Elasticsearch Integration for typo-tolerant fuzzy product search across large inventory catalogs.</p>
+
+<p style="text-align: center; margin-top: 40px; font-weight: 700; color: #64748b; font-size: 11px;">
+  Report Compiled &amp; Prepared for Academic Submission at ABES Engineering College (College Code: 032).
+</p>
+
+</body>
+</html>
